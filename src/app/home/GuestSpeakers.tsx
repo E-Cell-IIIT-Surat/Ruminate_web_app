@@ -2,13 +2,13 @@
 import styles from "./home.module.css";
 
 const speakers = [
-  "/speakers/IMG_4208.JPG",
-  "/speakers/Ekta mam.webp",
-  "/speakers/Krishna Sir.webp",
-  "/speakers/oshi.webp",
-  "/speakers/Pranjal Kamra.jpg"
+  "/some2.jpg",
+  "/some2.jpg",
+  "/some2.jpg",
+  "/some2.jpg",
+  "/some2.jpg"
 ];
- // replace with real images
+// replace with real images
 const testimonies = [
   {
     text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,

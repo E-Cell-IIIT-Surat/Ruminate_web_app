@@ -37,7 +37,7 @@ export default function PastEvents() {
             </div>
             <div className={styles.imageBlock}>
               <img
-                src={`/images/${event.image}`} // ✅ Uses public/images directory
+                src="/some2.jpg"
                 alt={event.title}
               />
             </div>

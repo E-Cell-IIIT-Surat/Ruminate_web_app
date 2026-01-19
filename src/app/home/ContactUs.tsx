@@ -7,17 +7,17 @@ const members = [
   {
     name: "Ronit Choudhary",
     role: "Tech Head",
-    image: "/contactUs/Copy of Ronit.JPG",
+    image: "/some2.jpg",
   },
   {
     name: "Himanshu Shekhar",
     role: "Secretary",
-    image: "/contactUs/Copy of Vivek.JPG",
+    image: "/some2.jpg",
   },
   {
     name: "Pratik Avhad",
     role: "Joint Secretary",
-    image: "/contactUs/Copy of Pratik.JPG",
+    image: "/some2.jpg",
   },
 ];
 

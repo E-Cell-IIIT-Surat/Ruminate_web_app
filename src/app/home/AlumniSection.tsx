@@ -7,8 +7,8 @@ interface Startup {
 }
 
 const startups: Startup[] = [
-  { name: "Kaspertech", logo: "/allumniStartups/Kaspertech.png" },
-  { name: "Startify", logo: "/allumniStartups/VysionTech.png" }
+  { name: "Kaspertech", logo: "/some2.jpg" },
+  { name: "Startify", logo: "/some2.jpg" }
 ];
 
 export default function AlumniSection() {

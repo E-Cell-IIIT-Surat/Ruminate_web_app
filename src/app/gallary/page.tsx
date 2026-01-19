@@ -59,14 +59,14 @@ export default function Gallery() {
 
   const navigateImage = (direction: 'prev' | 'next') => {
     if (photos.length === 0) return;
-    
+
     let newIndex = activeIndex;
     if (direction === 'prev') {
       newIndex = activeIndex > 0 ? activeIndex - 1 : photos.length - 1;
     } else {
       newIndex = activeIndex < photos.length - 1 ? activeIndex + 1 : 0;
     }
-    
+
     setActiveIndex(newIndex);
     setActiveImg(photos[newIndex].img);
   };
@@ -74,7 +74,7 @@ export default function Gallery() {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (!activeImg) return;
-      
+
       if (e.key === 'Escape') {
         closeImage();
       } else if (e.key === 'ArrowLeft') {
@@ -130,11 +130,8 @@ export default function Gallery() {
                 onClick={() => openImage(photo.img, idx)}
               >
                 <img
-                  src={`/images/${photo.img}`}
+                  src="/some2.jpg"
                   alt={`Gallery ${idx + 1}`}
-                  onError={(e) => {
-                    e.currentTarget.src = '/images/some2.jpg'; // Fallback image
-                  }}
                 />
               </div>
             ))}
@@ -156,14 +153,14 @@ export default function Gallery() {
             >
               <FaTimes />
             </button>
-            
+
             <img
               className="enlarged"
-              src={`/images/${activeImg}`}
+              src="/some2.jpg"
               alt={`Gallery ${activeIndex + 1}`}
               onClick={(e) => e.stopPropagation()}
             />
-            
+
             <div className="image-counter">
               {activeIndex + 1} of {photos.length}
             </div>

@@ -5,7 +5,7 @@ import styles from "./events.module.css";
 
 const slides = [
   {
-    image: "/images/some2.jpg",
+    image: "/some2.jpg",
     title: "E-Summit 2024",
     description: "Bringing together young entrepreneurs and industry experts through various workshops, empowering young innovators.",
   },
@@ -74,7 +74,7 @@ export default function ImageCarousel() {
       >
         <FaChevronLeft />
       </button>
-      
+
       <button
         onClick={handleNextClick}
         className={`${styles.carouselNav} ${styles.carouselNavNext}`}
@@ -89,9 +89,8 @@ export default function ImageCarousel() {
           <span
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`${styles.dot} ${
-              current === index ? styles.active : ""
-            }`}
+            className={`${styles.dot} ${current === index ? styles.active : ""
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -45,7 +45,7 @@ export default function Blogs() {
         {blogs.map((blog) => (
           <div className="blog-card" key={blog.id}>
             <img
-              src={`${blog.imageUrl}`}
+              src="/some2.jpg"
               alt={blog.title}
               className="blog-card-image"
             />
@@ -63,9 +63,9 @@ export default function Blogs() {
         ))}
       </div>
       <div className="footer12">
-      <Footer />
+        <Footer />
       </div>
     </div>
-      
+
   );
 }

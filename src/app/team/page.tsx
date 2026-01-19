@@ -54,9 +54,9 @@ export default function TeamPage() {
             <span className="highlight-gradient">the impossible</span>.
           </h1>
           <p className="hero-description">
-            Meet the passionate individuals who make Ruminate&apos;s vision a reality. 
-            From experienced faculty mentors to dedicated student leaders, our team 
-            brings together diverse expertise and unwavering commitment to fostering 
+            Meet the passionate individuals who make Ruminate&apos;s vision a reality.
+            From experienced faculty mentors to dedicated student leaders, our team
+            brings together diverse expertise and unwavering commitment to fostering
             entrepreneurial excellence.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function TeamPage() {
             <div className="back-layer"></div>
             <img
               className="front-image"
-              src="/coreTeam/IMG_3866.JPG"
+              src="/some2.jpg"
               alt="Team Photo"
             />
           </div>
@@ -89,7 +89,7 @@ export default function TeamPage() {
       {/* Team Display */}
       <section className="team">
         <h2>{activeCategory}</h2>
-        
+
         {loading ? (
           <div className="loading">
             Loading team members...
@@ -104,11 +104,8 @@ export default function TeamPage() {
             {team.map((member, index) => (
               <div className="card" key={index}>
                 <img
-                  src={`${member.img}`}
+                  src="/some2.jpg"
                   alt={member.name}
-                  onError={(e) => {
-                    e.currentTarget.src = '/images/some2.jpg'; // Fallback image
-                  }}
                 />
                 <div className="info">
                   <p className="name">{member.name}</p>

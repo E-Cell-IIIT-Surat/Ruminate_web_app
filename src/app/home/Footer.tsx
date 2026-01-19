@@ -17,6 +17,20 @@ export default function Footer() {
       return;
     }
 
+    // ============================================================
+    // EMAIL SENDING FUNCTIONALITY - CURRENTLY DISABLED
+    // ============================================================
+    // To re-enable email sending:
+    // 1. Uncomment the try-catch block below (lines 24-40)
+    // 2. Make sure the /api/send-email endpoint is properly configured
+    // 3. Remove or comment out the temporary success message below
+    // ============================================================
+
+    // TEMPORARY: Show success message without actually sending email
+    setMessage("Thanks for subscribing!");
+    setEmail(""); // reset field
+
+    /* UNCOMMENT THIS BLOCK TO RE-ENABLE EMAIL SENDING:
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
@@ -34,13 +48,14 @@ export default function Footer() {
       console.error("Error sending email:", err);
       setMessage("An error occurred. Try again later.");
     }
+    */
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.column}>
         <div className={styles.logoBlock}>
-          <img src="/fire2.png" alt="Ruminate Logo" className={styles.logo} />
+          <img src="/some2.jpg" alt="Ruminate Logo" className={styles.logo} />
           <h2 className={styles.logoText}>Ruminate</h2>
           <span className={styles.subText}>E-Cell IIIT Surat</span>
         </div>
