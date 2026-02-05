@@ -7,15 +7,14 @@ interface Startup {
 }
 
 const startups: Startup[] = [
-  { name: "Kaspertech", logo: "/some2.jpg" },
-  { name: "Startify", logo: "/some2.jpg" }
+  { name: "Kaspertech", logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/KasperTech.png" },
+  { name: "Vysion Tech", logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/VysionTech.png" }
 ];
 
 export default function AlumniSection() {
   return (
     <section className={styles.alumniSection}>
       <div className={styles.alumniTitleBlock}>
-        <div className={styles.alumniLine}></div>
         <h2 className={styles.alumniHeading}>
           Alumni <span className={styles.orangeText}>Startups</span>
         </h2>

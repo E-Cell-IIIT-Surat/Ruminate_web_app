@@ -2,11 +2,11 @@
 import styles from "./home.module.css";
 
 const speakers = [
-  "/some2.jpg",
-  "/some2.jpg",
-  "/some2.jpg",
-  "/some2.jpg",
-  "/some2.jpg"
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Ekta%20mam.webp",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/IMG_4208.JPG",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Krishna%20Sir.webp",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Pranjal%20Kamra.jpg",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/oshi.webp"
 ];
 // replace with real images
 const testimonies = [
