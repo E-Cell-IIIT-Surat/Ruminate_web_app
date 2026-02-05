@@ -43,7 +43,6 @@ export default function CollaborationSection() {
   return (
     <section className={styles.collabSection}>
       <div className={styles.collabTitleBlock}>
-        <div className={styles.collabLine}></div>
         <h2 className={styles.collabHeading}>Collaboration</h2>
       </div>
       <div className={styles.collabScroll} ref={scrollRef}>

@@ -5,19 +5,19 @@ import Link from "next/link";
 
 const members = [
   {
-    name: "Ronit Choudhary",
-    role: "Tech Head",
-    image: "/some2.jpg",
-  },
-  {
     name: "Himanshu Shekhar",
     role: "Secretary",
-    image: "/some2.jpg",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/SmartSelect_20250709_154618_Photos.jpg",
   },
   {
     name: "Pratik Avhad",
     role: "Joint Secretary",
-    image: "/some2.jpg",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Pratik.JPG",
+  },
+  {
+    name: "Ronit Choudhary",
+    role: "Tech Head",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ronit.JPG",
   },
 ];
 

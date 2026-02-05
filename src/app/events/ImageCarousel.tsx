@@ -5,17 +5,17 @@ import styles from "./events.module.css";
 
 const slides = [
   {
-    image: "/some2.jpg",
-    title: "E-Summit 2024",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Events/E-Summit%202026.jpg",
+    title: "E-Summit 2026",
     description: "Bringing together young entrepreneurs and industry experts through various workshops, empowering young innovators.",
   },
   {
-    image: "/images/some2.jpg",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Events/SSIP.jpg",
     title: "SSIP",
     description: "SSIP (Student Startup and Innovation Policy) Gujarat is a state-wide initiative promoting student-led innovation, entrepreneurship, and problem-solving across educational institutions.",
   },
   {
-    image: "/images/some2.jpg",
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Events/KTB.jpg",
     title: "KTB",
     description: "An opportunity to learn and analyze about the multiple businesses in the city, and learn about the business directly from the entrepreneurs.",
   }
