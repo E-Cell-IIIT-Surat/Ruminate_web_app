@@ -21,7 +21,7 @@ const facultyData: Faculty[] = [
   {
     name: "Dr. Nishad G. Deshpandey",
     title: "Faculty Advisor, Ruminate Club",
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/website-images/Faculties/NishadDeshpandeSir.jpg",
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/NishadDeshpandeSir.jpg",
     message:
       "Ruminate empowers students to challenge limits and think beyond convention...",
   },
