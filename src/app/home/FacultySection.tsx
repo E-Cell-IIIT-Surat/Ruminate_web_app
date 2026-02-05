@@ -14,7 +14,7 @@ const facultyData: Faculty[] = [
   {
     name: "Dr. Rajeev Shorey",
     title: "Director, IIIT Surat",
-    img: "/some2.jpg",
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/RajeevShoreySir.jpg",
     message:
       "At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution...",
   },
@@ -28,7 +28,7 @@ const facultyData: Faculty[] = [
   {
     name: "Dr. Nishad G. Deshpandey",
     title: "Faculty Advisor, Ruminate Club",
-    img: "/some2.jpg",
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/NishadDeshpandeSir.jpg",
     message: "Working with the Ruminate team has been a rewarding experience...",
   },
 ];
