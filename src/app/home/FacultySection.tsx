@@ -14,7 +14,7 @@ const facultyData: Faculty[] = [
   {
     name: "Dr. Rajeev Shorey",
     title: "Director, IIIT Surat",
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/RajeevShoreySir.jpg",
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/rajeevsir.png",
     message:
       "At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution...",
   },
