@@ -147,6 +147,11 @@
   background: linear-gradient(135deg, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
 }
 
+.currentEventsSection {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+}
+
 .sectionContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -186,8 +191,7 @@
 }
 
 .eventItem {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 3rem;
   align-items: center;
   background: var(--gradient-card);
@@ -219,18 +223,6 @@
 
 .eventItem:hover::before {
   opacity: 1;
-}
-
-.eventItem:nth-child(even) {
-  grid-template-columns: 1fr 1fr;
-}
-
-.eventItem:nth-child(even) .eventContent {
-  order: 2;
-}
-
-.eventItem:nth-child(even) .eventImage {
-  order: 1;
 }
 
 .eventContent {
@@ -411,6 +403,25 @@
 .textBlock {
   flex: 1;
   min-width: 250px;
+}
+
+.textBlock h4 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-family: var(--font-display);
+}
+
+.textBlock p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.eventDate {
+  color: var(--primary-orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .imageBlock {
