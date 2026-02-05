@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
   },
+   icons: {
+    icon: '/favicon.ico',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Ruminate - E-Cell IIIT Surat',
