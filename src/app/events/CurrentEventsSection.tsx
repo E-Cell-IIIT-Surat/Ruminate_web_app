@@ -37,7 +37,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 13, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/speakersessiondisp.png",
-  link: "https://corporate-crime-jund.vercel.app/login",
+  link: "#",
 },
 {
   title: "BRANDATHON",
@@ -64,7 +64,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 14, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/youthparliamentdisp.png",
-  link: "https://corporate-crime-jund.vercel.app/login",
+  link: "https://forms.gle/meWChQf9TT8RwXc68",
 },
 {
   title: "BUZZIFY",
