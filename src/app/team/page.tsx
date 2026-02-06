@@ -95,7 +95,7 @@ export default function TeamPage() {
             <div className="back-layer"></div>
             <img
               className="front-image"
-              src="/some2.jpg"
+              src="https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/IMG_3866.JPG"
               alt="Team Photo"
             />
           </div>

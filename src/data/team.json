@@ -1,25 +1,12 @@
 {
   "Faculties": [
+    
     {
-      "name": "Dr. A. Kumar",
-      "role": "Faculty Advisor",
-      "img": "some2.jpg"
-    },
-    {
-      "name": "Dr. A. Kumar",
-      "role": "Faculty Advisor",
-      "img": "some2.jpg"
-    },
-    {
-      "name": "Dr. A. Kumar",
-      "role": "Faculty Advisor",
-      "img": "some2.jpg"
-    },
-    {
-      "name": "Dr. A. Kumar",
-      "role": "Faculty Advisor",
-      "img": "some2.jpg"
+      "name": "Dr. Nishad G Deshpande",
+      "role": "Faculty Advisor, Ruminate Club",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/NishadDeshpandeSir.jpg"
     }
+
   ],
   "Alumni": [
     {
@@ -91,13 +78,13 @@
     },
     {
       "name": "Jagat",
-      "role": "Frontend Developer",
+      "role": "Full Stack Developer",
       "img": "/developers/Yogesh.jpg"
     },
     {
       "name": "Himanshu Shekhar",
-      "role": "Frontend Developer",
-      "img": "/contactUs/Copy of Sanket.JPG"
+      "role": "Senior Developer",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/SmartSelect_20250709_154618_Photos.jpg"
     }
   ],
   "Core Team 2025-2026": [

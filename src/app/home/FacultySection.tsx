@@ -19,7 +19,7 @@ const facultyData: Faculty[] = [
       "At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution...",
   },
   {
-    name: "Dr. Nishad G. Deshpandey",
+    name: "Dr. Nishad G. Deshpande",
     title: "Faculty Advisor, Ruminate Club",
     img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Faculties/NishadDeshpandeSir.jpg",
     message:
