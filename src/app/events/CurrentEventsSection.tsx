@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styles from './events.module.css';
+import React from "react";
+import styles from "./events.module.css";
 
 interface CurrentEvent {
   title: string;
@@ -14,17 +14,47 @@ interface CurrentEvent {
 const currentEvents: CurrentEvent[] = [
   {
     title: "CORPORATE CRIME",
-    description: "Join us for the flagship event of Ruminate, featuring speaker sessions, workshops, and networking opportunities.",
+    description:
+      "Join us for the flagship event of Ruminate, featuring speaker sessions, workshops, and networking opportunities.",
     date: "March 15-17, 2025",
     image: "/some2.jpg",
-    link:"https://corporate-crime-jund.vercel.app/login"
+    link: "https://corporate-crime-jund.vercel.app/login",
   },
   {
     title: "IPL AUCTION",
-    description: "Learn the basics of starting a business with hands-on workshops and expert guidance.",
+    description:
+      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
     date: "April 5, 2025",
-    image: "/some2.jpg"
-  }
+    image: "/some2.jpg",
+  },
+  {
+    title: "IPL AUCTION",
+    description:
+      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
+    date: "April 5, 2025",
+    image: "/some2.jpg",
+  },
+  {
+    title: "IPL AUCTION",
+    description:
+      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
+    date: "April 5, 2025",
+    image: "/some2.jpg",
+  },
+  {
+    title: "IPL AUCTION",
+    description:
+      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
+    date: "April 5, 2025",
+    image: "/some2.jpg",
+  },
+  {
+    title: "IPL AUCTION",
+    description:
+      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
+    date: "April 5, 2025",
+    image: "/some2.jpg",
+  },
 ];
 
 export default function CurrentEvents() {
@@ -38,18 +68,17 @@ export default function CurrentEvents() {
         {currentEvents.map((event, index) => (
           <div
             key={index}
-            className={`${styles.eventItem} ${index % 2 !== 0 ? styles.reverse : ''}`}
+            className={`${styles.eventItem} ${index % 2 !== 0 ? styles.reverse : ""}`}
           >
             <div className={styles.textBlock}>
               <h4>{event.title}</h4>
+              <div className={styles.imageBlock}>
+                <img src={event.image} alt={event.title} />
+              </div>
               <p className={styles.eventDate}>{event.date}</p>
-              <a href={event.link} className={styles.eventButton}>Register Now</a>
-            </div>
-            <div className={styles.imageBlock}>
-              <img
-                src={event.image}
-                alt={event.title}
-              />
+              <a href={event.link} className={styles.eventButton}>
+                Register Now
+              </a>
             </div>
           </div>
         ))}
