@@ -21,28 +21,30 @@ export default function PastEvents() {
 
   return (
     <section className={styles.pastEventsSection}>
-      <h2 className={styles.sectionHeading}>
-        <span className={styles.orange}>Past</span> Events
-      </h2>
+      <div className={styles.sectionContainer}>
+        <h2 className={styles.sectionHeading}>
+          <span className={styles.orange}>Past</span> Events
+        </h2>
 
-      <div className={styles.eventsGrid}>
-        {pastEvents.map((event, index) => (
-          <div
-            key={index}
-            className={`${styles.eventItem} ${index % 2 !== 0 ? styles.reverse : ''}`}
-          >
-            <div className={styles.textBlock}>
-              <h4>{event.title}</h4>
-              <p>{event.description}</p>
+        <div className={styles.pastEventsGrid}>
+          {pastEvents.map((event, index) => (
+            <div
+              key={index}
+              className={`${styles.pastEventItem} ${index % 2 !== 0 ? styles.reverse : ''}`}
+            >
+              <div className={styles.textBlock}>
+                <h4>{event.title}</h4>
+                <p>{event.description}</p>
+              </div>
+              <div className={styles.imageBlock}>
+                <img
+                  src={event.image}
+                  alt={event.title}
+                />
+              </div>
             </div>
-            <div className={styles.imageBlock}>
-              <img
-                src={event.image}
-                alt={event.title}
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

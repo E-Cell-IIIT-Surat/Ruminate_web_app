@@ -60,28 +60,28 @@ const currentEvents: CurrentEvent[] = [
 export default function CurrentEvents() {
   return (
     <section className={styles.currentEventsSection}>
-      <h2 className={styles.sectionHeading}>
-        <span className={styles.orange}>Current</span> Events
-      </h2>
+      <div className={styles.sectionContainer}>
+        <h2 className={styles.sectionHeading}>
+          <span className={styles.orange}>Current</span> Events
+        </h2>
 
-      <div className={styles.eventsGrid}>
-        {currentEvents.map((event, index) => (
-          <div
-            key={index}
-            className={`${styles.eventItem} ${index % 2 !== 0 ? styles.reverse : ""}`}
-          >
-            <div className={styles.textBlock}>
-              <h4>{event.title}</h4>
-              <div className={styles.imageBlock}>
+        <div className={styles.currentEventsGrid}>
+          {currentEvents.map((event, index) => (
+            <div key={index} className={styles.currentEventCard}>
+              <div className={styles.currentEventImageWrapper}>
                 <img src={event.image} alt={event.title} />
               </div>
-              <p className={styles.eventDate}>{event.date}</p>
-              <a href={event.link} className={styles.eventButton}>
-                Register Now
-              </a>
+
+              <div className={styles.currentEventContent}>
+                <h4>{event.title}</h4>
+                <p className={styles.eventDate}>{event.date}</p>
+                <a href={event.link} className={styles.eventButton}>
+                  Register Now
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
