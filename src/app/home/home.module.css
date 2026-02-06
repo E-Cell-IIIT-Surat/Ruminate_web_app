@@ -120,6 +120,9 @@
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .speakerCard::before {
@@ -143,8 +146,14 @@
   border-color: var(--primary-color);
 }
 
+.speakerLink {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .speakerImage {
-  width: clamp(80px, 15vw, 120px);  /* auto scale with screen */
+  width: clamp(120px, 20vw, 180px);  /* increased size from 80-120px to 120-180px */
   aspect-ratio: 1/1;                 
   border-radius: 50%;
   object-fit: cover;
@@ -152,9 +161,20 @@
   transition: all 0.3s ease;
 }
 
+.speakerLink:hover .speakerImage {
+  transform: scale(1.1);
+}
 
 .speakerCard:hover .speakerImage {
   transform: scale(1.1);
+}
+
+.speakerName {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .testimonyBlock {
@@ -1499,10 +1519,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--primary-color), #ff6b35);
-  border-radius: 2px;
+  width: 0;
+  height: 0;
 }
 
 .aboutMission {
