@@ -28,6 +28,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 11-13, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/stockmaniadisp.png",
+  link: "https://unstop.com/p/stock-mania-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1636178?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
   title: "SPEAKER’S SESSION",
@@ -36,6 +37,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 13, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/speakersessiondisp.png",
+  link: "https://corporate-crime-jund.vercel.app/login",
 },
 {
   title: "BRANDATHON",
@@ -44,6 +46,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 9, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/brandathondisp.png",
+  link: "https://unstop.com/competitions/brandathon-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1633686?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
   title: "IPL AUCTION",
@@ -52,6 +55,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 13, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/iplauctiondisp.png",
+  link: "https://unstop.com/competitions/ipl-auction-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1634476?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
   title: "YOUTH PARLIAMENT",
@@ -60,6 +64,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 14, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/youthparliamentdisp.png",
+  link: "https://corporate-crime-jund.vercel.app/login",
 },
 {
   title: "BUZZIFY",
@@ -68,6 +73,7 @@ const currentEvents: CurrentEvent[] = [
   date: "February 11, 2026",
   image:
     "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/buzzifydisp.png",
+  link: "https://unstop.com/competitions/buzzify-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1634359?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 
 
