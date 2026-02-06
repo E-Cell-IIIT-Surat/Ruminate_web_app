@@ -31,6 +31,41 @@
       "name": "Harvardhan Tripathi",
       "role": "Alumnus - Batch 2022",
       "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2021",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2019",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2019",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2019",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2020",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2020",
+      "img": "/allumni/HarvardhanTripathi.jpg"
+    },
+    {
+      "name": "Harvardhan Tripathi",
+      "role": "Alumnus - Batch 2023",
+      "img": "/allumni/HarvardhanTripathi.jpg"
     }
   ],
   "Developers": [
@@ -46,6 +81,21 @@
     },
     {
       "name": "Aakash Singh",
+      "role": "Frontend Developer",
+      "img": "/contactUs/Copy of Sanket.JPG"
+    },
+    {
+      "name": "Bhavik Songara",
+      "role": "Full Stack Developer",
+      "img": "/developers/Copy of Ronit.JPG"
+    },
+    {
+      "name": "Jagat",
+      "role": "Frontend Developer",
+      "img": "/developers/Yogesh.jpg"
+    },
+    {
+      "name": "Himanshu Shekhar",
       "role": "Frontend Developer",
       "img": "/contactUs/Copy of Sanket.JPG"
     }
@@ -112,9 +162,9 @@
       "img": "/coreTeam/Copy of Ganesh.JPG"
     },
     {
-      "name": "Aman Kumar",
-      "role": "Content Head",
-      "img": "/coreTeam/Copy of Aman.JPG"
+      "name": "Bhavik Songara",
+      "role": "Coordinator",
+      "img": "/coreTeam/Copy of Bhavik.JPG"
     }
   ]
 }

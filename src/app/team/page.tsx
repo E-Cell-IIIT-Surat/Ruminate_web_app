@@ -20,6 +20,12 @@ export default function TeamPage() {
   const [team, setTeam] = useState<Member[]>([]);
   const [activeCategory, setActiveCategory] = useState("Faculties");
   const [loading, setLoading] = useState(true);
+  const [alumniYear, setAlumniYear] = useState<string>("All");
+
+  const extractYearFromRole = (role: string): string | null => {
+    const match = role.match(/(20\d{2})/);
+    return match ? match[1] : null;
+  };
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -41,6 +47,29 @@ export default function TeamPage() {
 
     fetchTeam();
   }, [activeCategory]);
+
+  useEffect(() => {
+    if (activeCategory !== "Alumni") {
+      setAlumniYear("All");
+    }
+  }, [activeCategory]);
+
+  const isAlumni = activeCategory === "Alumni";
+  const alumniYears =
+    isAlumni && team.length > 0
+      ? Array.from(
+          new Set(
+            team
+              .map((member) => extractYearFromRole(member.role))
+              .filter((year): year is string => Boolean(year))
+          )
+        ).sort()
+      : [];
+
+  const displayedTeam =
+    isAlumni && alumniYear !== "All"
+      ? team.filter((member) => extractYearFromRole(member.role) === alumniYear)
+      : team;
 
   return (
     <main className="team-main">
@@ -100,20 +129,37 @@ export default function TeamPage() {
             <p>We&apos;re currently updating this section. Check back soon!</p>
           </div>
         ) : (
-          <div className="team-grid">
-            {team.map((member, index) => (
-              <div className="card" key={index}>
-                <img
-                  src="/some2.jpg"
-                  alt={member.name}
-                />
-                <div className="info">
-                  <p className="name">{member.name}</p>
-                  <p className="role">{member.role}</p>
-                </div>
+          <>
+            {isAlumni && alumniYears.length > 0 && (
+              <div className="alumni-filter">
+                <label htmlFor="alumniYear">Filter by batch year:</label>
+                <select
+                  id="alumniYear"
+                  value={alumniYear}
+                  onChange={(e) => setAlumniYear(e.target.value)}
+                >
+                  <option value="All">All</option>
+                  {alumniYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  ))}
+                </select>
               </div>
-            ))}
-          </div>
+            )}
+
+            <div className="team-grid">
+              {displayedTeam.map((member, index) => (
+                <div className="card" key={index}>
+                  <img src={member.img} alt={member.name} />
+                  <div className="info">
+                    <p className="name">{member.name}</p>
+                    <p className="role">{member.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </section>
     </main>
