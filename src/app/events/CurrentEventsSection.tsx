@@ -12,49 +12,73 @@ interface CurrentEvent {
 }
 
 const currentEvents: CurrentEvent[] = [
-  {
-    title: "CORPORATE CRIME",
-    description:
-      "Join us for the flagship event of Ruminate, featuring speaker sessions, workshops, and networking opportunities.",
-    date: "March 15-17, 2025",
-    image: "/some2.jpg",
-    link: "https://corporate-crime-jund.vercel.app/login",
-  },
-  {
-    title: "IPL AUCTION",
-    description:
-      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
-    date: "April 5, 2025",
-    image: "/some2.jpg",
-  },
-  {
-    title: "IPL AUCTION",
-    description:
-      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
-    date: "April 5, 2025",
-    image: "/some2.jpg",
-  },
-  {
-    title: "IPL AUCTION",
-    description:
-      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
-    date: "April 5, 2025",
-    image: "/some2.jpg",
-  },
-  {
-    title: "IPL AUCTION",
-    description:
-      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
-    date: "April 5, 2025",
-    image: "/some2.jpg",
-  },
-  {
-    title: "IPL AUCTION",
-    description:
-      "Learn the basics of starting a business with hands-on workshops and expert guidance.",
-    date: "April 5, 2025",
-    image: "/some2.jpg",
-  },
+{
+  title: "CORPORATE CRIME",
+  description:
+    "Join us for the flagship event of Ruminate, featuring speaker sessions, workshops, and networking opportunities.",
+  date: "March 15-17, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/corporatecrimedisp.png",
+  link: "https://corporate-crime-jund.vercel.app/login",
+},
+{
+  title: "STOCKMANIA",
+  description:
+    "A real-time stock market simulation that builds financial literacy and investment mindset—core skills E-Cell promotes for startup founders and future investors.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/stockmaniadisp.png",
+},
+{
+  title: "SPEAKER’S SESSION",
+  description:
+    "Interactive talks by entrepreneurs and industry leaders, aligned with E-Cell’s mission to inspire, mentor, and expose students to real startup journeys.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/speakersessiondisp.png",
+},
+{
+  title: "CORPORATE CRIME",
+  description:
+    "A case-based challenge focusing on ethical dilemmas and corporate governance, reinforcing E-Cell’s emphasis on responsible and sustainable entrepreneurship.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/corporatecrimedisp.png",
+},
+{
+  title: "BRANDATHON",
+  description:
+    "A fast-paced branding challenge where participants create and pitch brand strategies, reflecting E-Cell’s focus on marketing, storytelling, and market positioning.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/brandathondisp.png",
+},
+{
+  title: "IPL AUCTION",
+  description:
+    "A strategic bidding and team-building simulation that enhances decision-making, valuation, and risk analysis—key entrepreneurial competencies nurtured by E-Cell.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/iplauctiondisp.png",
+},
+{
+  title: "YOUTH PARLIAMENT",
+  description:
+    "A structured debate platform encouraging leadership, policy awareness, and articulation, supporting E-Cell’s aim to develop confident, socially aware leaders.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/youthparliamentdisp.png",
+},
+{
+  title: "BUZZIFY",
+  description:
+    "A digital marketing and virality-focused challenge that highlights content creation and audience engagement, aligning with E-Cell’s focus on modern growth strategies.",
+  date: "April 5, 2025",
+  image:
+    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/buzzifydisp.png",
+},
+
+
 ];
 
 export default function CurrentEvents() {
