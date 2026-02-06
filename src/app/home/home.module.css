@@ -102,12 +102,36 @@
 /* Guest Speakers Section */
 .speakerGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto 4rem;
   justify-items: center;
   align-items: center;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1024px) {
+  .speakerGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .speakerGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .speakerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+  }
 }
 
 
@@ -123,6 +147,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .speakerCard::before {
@@ -153,12 +179,28 @@
 }
 
 .speakerImage {
-  width: clamp(120px, 20vw, 180px);  /* increased size from 80-120px to 120-180px */
+  width: clamp(100px, 18vw, 160px);
   aspect-ratio: 1/1;                 
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--primary-color);
   transition: all 0.3s ease;
+}
+
+.speakerLink:hover .speakerImage {
+  transform: scale(1.1);
+}
+
+.speakerCard:hover .speakerImage {
+  transform: scale(1.1);
+}
+
+.speakerName {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .speakerLink:hover .speakerImage {
