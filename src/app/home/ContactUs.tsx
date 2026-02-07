@@ -24,9 +24,13 @@ const members = [
 export default function ContactUs() {
   return (
     <section className={styles.contactSection}>
-      <h2 className={styles.heading}>
-        <span className={styles.orange}>Contact</span> Us
-      </h2>
+      <div className={styles.eventsTitleBlock}>
+        <div className={styles.eventsLine}></div>
+        <h2 className={styles.eventsHeading}>
+          Contact <span className={styles.orangeText}>Us</span>
+        </h2>
+        <div className={styles.eventsLine}></div>
+      </div>
 
       <div className={styles.contactGrid}>
         {members.map((member, idx) => (
