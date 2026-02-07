@@ -124,6 +124,19 @@
     gap: 1.5rem;
     padding: 0 1rem;
   }
+
+  .section {
+    text-align: center;
+  }
+
+  .eventsTitleBlock {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .eventsHeading {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -131,6 +144,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 0 1rem;
+  }
+
+  .section {
+    text-align: center;
+  }
+
+  .speakerCard {
+    text-align: center;
+    align-items: center;
+  }
+
+  .speakerName {
+    text-align: center;
   }
 }
 
@@ -201,6 +227,8 @@
   font-weight: 600;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  text-align: center;
+  width: 100%;
 }
 
 .speakerLink:hover .speakerImage {
@@ -209,14 +237,6 @@
 
 .speakerCard:hover .speakerImage {
   transform: scale(1.1);
-}
-
-.speakerName {
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
 }
 
 .testimonyBlock {
@@ -279,8 +299,7 @@
 }
 
 .alumniSection {
-  padding: 6rem 2rem;
-  /*background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--surface-color) 100%);*/
+  padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -300,7 +319,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .alumniLine {
@@ -332,16 +351,16 @@
 
 .alumniGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .alumniCard {
   background: var(--card-bg);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
@@ -378,20 +397,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .alumniLogo {
-  width: 80px;
-  height: 80px;
-  /*border-radius: 50%;*/
-  border-radius:16px;
-  width: clamp(80px, 12vw, 160px); /* responsive sizing */
-  height: clamp(80px, 12vw, 160px);
+  border-radius: 16px;
+  width: clamp(140px, 22vw, 260px);
+  height: clamp(140px, 22vw, 260px);
   object-fit: contain;
-  /*object-fit: cover;*/
   background-color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border: 2px solid var(--primary-color);
   transition: all 0.3s ease;
 }
@@ -415,6 +430,48 @@
   text-align: center;
   max-width: 90%;
   margin: auto;
+}
+
+/* Shared events-style title (Event Highlights + Guest Speakers) */
+.eventsTitleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.eventsLine {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+}
+
+.eventsHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  margin: 0;
+}
+
+.eventsHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.orangeText {
+  color: var(--primary-orange);
+  font-weight: 700;
 }
 
 .eventsGrid {
@@ -517,17 +574,29 @@
   border-radius: 2px;
 }
 
+.collabScrollWrapper {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
 .collabScroll {
   display: flex;
   gap: clamp(1rem, 5vw, 3rem);
   padding: 2rem 0;
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   align-items: center;
   justify-content: flex-start;
-  max-width: 80vw;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  scroll-behavior: auto;
 }
 
 
@@ -537,9 +606,10 @@
 }
 
 .collabScroll img {
-  height: clamp(100px, 15vw, 180px); /* bigger on large screens */
-  min-width: clamp(180px, 20vw, 300px); /* scales too */
+  height: clamp(100px, 15vw, 180px);
+  min-width: clamp(180px, 20vw, 300px);
   width: auto;
+  flex-shrink: 0;
   object-fit: contain;
   transition: all 0.3s ease;
   filter: opacity(1);
@@ -734,7 +804,7 @@
 
 @media (max-width: 768px) {
   .alumniSection {
-    padding: 4rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
    .formBox {
@@ -756,7 +826,8 @@
   }
   
   .alumniGrid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 100%;
   }
   
   .eventsGrid {
@@ -771,10 +842,20 @@
     padding: 0 1rem;
   }
   
+  .collabScrollWrapper {
+    padding: 0 0.75rem;
+  }
+
+  .collabScroll {
+    padding: 1.5rem 0;
+    gap: clamp(0.75rem, 3vw, 1.5rem);
+  }
+
   .collabScroll img {
     height: clamp(80px, 25vw, 120px);
+    min-width: clamp(140px, 35vw, 200px);
   }
-  
+
   .footerContent {
     grid-template-columns: 1fr;
     text-align: center;
@@ -809,11 +890,12 @@
 
 @media (max-width: 480px) {
   .alumniCard {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   
   .alumniLogo {
-    height: 80px;
+    width: clamp(120px, 40vw, 180px);
+    height: clamp(120px, 40vw, 180px);
   }
 
   

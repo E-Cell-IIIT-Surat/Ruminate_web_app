@@ -70,9 +70,13 @@ const speakers = [
 export default function GuestSpeakers() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.heading}>
-        Guest and <span className={styles.orange}>Speakers</span>
-      </h2>
+      <div className={styles.eventsTitleBlock}>
+        <div className={styles.eventsLine}></div>
+        <h2 className={styles.eventsHeading}>
+          Guest and <span className={styles.orangeText}>Speakers</span>
+        </h2>
+        <div className={styles.eventsLine}></div>
+      </div>
 
       <div className={styles.speakerGrid}>
         {speakers.map((speaker, idx) => (
