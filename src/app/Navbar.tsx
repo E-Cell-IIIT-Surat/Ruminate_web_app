@@ -56,11 +56,24 @@ export default function Navbar() {
     <header className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <span className={styles.brand}>Ruminate</span>
-          <span className={styles.tagline}>E-CELL IIIT SURAT</span>
+          <img
+            src="/RUMINATEFRONT.png"
+            alt="Ruminate"
+            className={styles.logoImage}
+          />
+          <span className={styles.logoText}>
+            <span className={styles.brand}>Ruminate</span>
+            <span className={styles.tagline}>E-CELL IIIT SURAT</span>
+          </span>
         </Link>
 
         <nav className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
+          <div className={styles.mobileMenuHeader}>
+            <Link href="/" className={styles.mobileMenuLogoLink} onClick={closeMenu}>
+              <img src="/RUMINATEFRONT.png" alt="Ruminate" className={styles.mobileMenuLogo} />
+              <span className={styles.mobileMenuBrand}>Ruminate</span>
+            </Link>
+          </div>
           {navItems.map((item) => (
             <Link
               key={item.href}
