@@ -10,50 +10,208 @@
   ],
   "Alumni": [
     {
-      "name": "Arya Trivedi",
-      "role": "Alumnus - Batch 2022",
-      "img": "/allumni/Arya_Trivedi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2022",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2021",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2019",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2019",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2019",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2020",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2020",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    },
-    {
-      "name": "Harvardhan Tripathi",
-      "role": "Alumnus - Batch 2023",
-      "img": "/allumni/HarvardhanTripathi.jpg"
-    }
+  "name": "Harshvardhan Mani Tripathi",
+  "role": "Secretary - YR 24-25",
+  "img": "/allumni/Harshvardhan_Mani_Tripathi.jpg"
+},
+{
+  "name": "Arya Trivedi",
+  "role": "Joint Secretary - YR 24-25",
+  "img": "/allumni/Arya_Trivedi.jpg"
+},
+{
+  "name": "Shreyas Gogdani",
+  "role": "Finance Head - YR 24-25",
+  "img": "/allumni/Shreyas_Gogdani.jpg"
+},
+{
+  "name": "Pratham Sachan",
+  "role": "Event Head - YR 24-25",
+  "img": "/allumni/Pratham_Sachan.jpg"
+},
+{
+  "name": "Vedic Chawla",
+  "role": "Tech Head - YR 24-25",
+  "img": "/allumni/Vedic_Chawla.jpg"
+},
+{
+  "name": "Preksha Upadhyay",
+  "role": "Marketing Head - YR 24-25",
+  "img": "/allumni/Preksha_Upadhyay.jpg"
+},
+{
+  "name": "Aditya Kumar",
+  "role": "Research Head - YR 24-25",
+  "img": "/allumni/Aditya_Kumar.jpg"
+},
+{
+  "name": "Ruchita Agrawal",
+  "role": "Content Head - YR 24-25",
+  "img": "/allumni/Ruchita_Agrawal.jpg"
+},
+{
+  "name": "Yash Sojitra",
+  "role": "Design Head - YR 24-25",
+  "img": "/allumni/Yash_Sojitra.jpg"
+},
+{
+  "name": "Bhumil Rangholiya",
+  "role": "Design Head - YR 24-25",
+  "img": "/allumni/Bhumil_Rangholiya.jpg"
+},
+{
+  "name": "Abhisek Tiwari",
+  "role": "Media Head - YR 24-25",
+  "img": "/allumni/Abhisek_Tiwari.jpg"
+},
+{
+  "name": "Purv Patel",
+  "role": "Secretary - YR 23-24",
+  "img": "/allumni/Purv_Patel.jpg"
+},
+{
+  "name": "Yogesh Kumawat",
+  "role": "Joint Secretary - YR 23-24",
+  "img": "/allumni/Yogesh_Kumawat.jpg"
+},
+{
+  "name": "Heet Goyani",
+  "role": "Finance Team - YR 23-24",
+  "img": "/allumni/Heet_Goyani.jpg"
+},
+{
+  "name": "Himanshu Kabra",
+  "role": "Finance Team - YR 23-24",
+  "img": "/allumni/Himanshu_Kabra.jpg"
+},
+{
+  "name": "Kuldip Padole",
+  "role": "Corporate Team - YR 23-24",
+  "img": "/allumni/Kuldip_Padole.jpg"
+},
+{
+  "name": "Rakesh Jain",
+  "role": "Corporate Team - YR 23-24",
+  "img": "/allumni/Rakesh_Jain.jpg"
+},
+{
+  "name": "Kalpan Bariya",
+  "role": "Marketing Team - YR 23-24",
+  "img": "/allumni/Kalpan_Bariya.jpg"
+},
+{
+  "name": "Sajal Mahajan",
+  "role": "Marketing Team - YR 23-24",
+  "img": "/allumni/Sajal_Mahajan.jpg"
+},
+{
+  "name": "Harsh Sharma",
+  "role": "Tech Team - YR 23-24",
+  "img": "/allumni/Harsh_Sharma.jpg"
+},
+{
+  "name": "Aerin Patel",
+  "role": "Tech Team - YR 23-24",
+  "img": "/allumni/Aerin_Patel.jpg"
+},
+{
+  "name": "Aditya Kanojiya",
+  "role": "Design Team - YR 23-24",
+  "img": "/allumni/Aditya_Kanojiya.jpg"
+},
+{
+  "name": "Swayam Behra",
+  "role": "Design Team - YR 23-24",
+  "img": "/allumni/Swayam_Behra.jpg"
+},
+{
+  "name": "Nakul Mantri",
+  "role": "Content Team - YR 23-24",
+  "img": "/allumni/Nakul_Mantri.jpg"
+},
+{
+  "name": "Jeet Soni",
+  "role": "Content Team - YR 23-24",
+  "img": "/allumni/Jeet_Soni.jpg"
+},
+{
+  "name": "Ashmit Gupta",
+  "role": "Event Team - YR 23-24",
+  "img": "/allumni/Ashmit_Gupta.jpg"
+},
+{
+  "name": "Ankit Singh",
+  "role": "Event Team - YR 23-24",
+  "img": "/allumni/Ankit_Singh.jpg"
+},
+{
+  "name": "Kushagra Chauhan",
+  "role": "Secretary - YR 22-23",
+  "img": "/allumni/Kushagra_Chauhan.jpg"
+},
+{
+  "name": "Manish Goyal",
+  "role": "Joint Secretary - YR 22-23",
+  "img": "/allumni/Manish_Goyal.jpg"
+},
+{
+  "name": "Prakhar Ojha",
+  "role": "Tech Team - YR 22-23",
+  "img": "/allumni/Prakhar_Ojha.jpg"
+},
+{
+  "name": "Aman Yadav",
+  "role": "Design Team - YR 22-23",
+  "img": "/allumni/Aman_Yadav.jpg"
+},
+{
+  "name": "Dhruvil Thummar",
+  "role": "Editor - YR 22-23",
+  "img": "/allumni/Dhruvil_Thummar.jpg"
+},
+{
+  "name": "Ambikesh Mishra",
+  "role": "Event Team - YR 22-23",
+  "img": "/allumni/Ambikesh_Mishra.jpg"
+},
+{
+  "name": "Vishal Verma",
+  "role": "Event Team - YR 22-23",
+  "img": "/allumni/Vishal_Verma.jpg"
+},
+{
+  "name": "Diksha Singla",
+  "role": "PR Team - YR 22-23",
+  "img": "/allumni/Diksha_Singla.jpg"
+},
+{
+  "name": "Rajwardhan Rana",
+  "role": "Corporate Team - YR 22-23",
+  "img": "/allumni/Rajwardhan_Rana.jpg"
+},
+{
+  "name": "Aryaman Gurjar",
+  "role": "Finance Team - YR 22-23",
+  "img": "/allumni/Aryaman_Gurjar.jpg"
+},
+{
+  "name": "Ayush Kumar",
+  "role": "Finance Team - YR 22-23",
+  "img": "/allumni/Ayush_Kumar.jpg"
+},
+{
+  "name": "Ishitva Agrawal",
+  "role": "Marketing Team - YR 22-23",
+  "img": "/allumni/Ishitva_Agrawal.jpg"
+},
+{
+  "name": "Richard Tirkey",
+  "role": "Marketing Team - YR 22-23",
+  "img": "/allumni/Richard_Tirkey.jpg"
+}
+
+
+
   ],
   "Developers": [
     {

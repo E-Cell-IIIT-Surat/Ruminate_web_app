@@ -24,7 +24,7 @@ export default function TeamPage() {
   const [alumniYear, setAlumniYear] = useState<string>("All");
 
   const extractYearFromRole = (role: string): string | null => {
-    const match = role.match(/(20\d{2})/);
+    const match = role.match(/\b(?:YR\s*)?(\d{2}-\d{2})\b/i);
     return match ? match[1] : null;
   };
 
