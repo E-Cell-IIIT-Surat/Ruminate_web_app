@@ -352,32 +352,38 @@
 {
   "name": "Krishna Ojha",
   "role": "Secretary - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/krishnaojha.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/krishnaojha.jpg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Ekta Arora",
   "role": "Web Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/ektaarora.jpeg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/ektaarora.jpeg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Himanshu Kumar",
   "role": "Event Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/himanshukumar.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/himanshukumar.jpg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Sonakshi",
   "role": "Design Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/sonakshijhalawar.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/sonakshijhalawar.jpg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Dhairya",
   "role": "Social Media Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/dhairyapatel.jpeg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/dhairyapatel.jpeg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Akash Gavle",
   "role": "Finance Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/akashgavle.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/akashgavle.jpg",
+  "imgPositionY": "6%"
 },
 {
   "name": "Vikas Choudhary",
@@ -387,12 +393,14 @@
 {
   "name": "Shravya",
   "role": "Corporate Team - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/shravyaajila.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/shravyaajila.jpg",
+  "imgPositionY": "20%"
 },
 {
   "name": "Puneet",
   "role": "Marketing Head - YR 19-20",
-  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/puneetgangwal.jpg"
+  "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Alumni/19-20/puneetgangwal.jpg",
+  "imgPositionY": "6%"
 }
 
 
