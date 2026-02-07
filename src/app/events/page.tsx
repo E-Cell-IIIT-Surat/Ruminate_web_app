@@ -8,8 +8,8 @@ export default function EventsPage() {
   return (
     <div className={styles.eventsPage}>
       <ImageCarousel />
-      <CurrentEvents />
-      <PastEvents />
+      <CurrentEvents /><br/>
+      {/* <PastEvents /> */}
       <Footer />
     </div>
   );

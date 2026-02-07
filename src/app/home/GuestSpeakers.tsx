@@ -53,19 +53,19 @@ const speakers = [
   //   linkedin: "https://linkedin.com/in/neha-sharma-456"
   // }
 ];
-// replace with real images
-const testimonies = [
-  {
-    text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
-    image: "/some2.jpg", // replace with actual
-    reverse: false,
-  },
-  {
-    text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
-    image: "/some2.jpg",
-    reverse: true,
-  },
-];
+// replace with real images //Testimoies here
+// const testimonies = [
+//   {
+//     text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
+//     image: "/some2.jpg", // replace with actual
+//     reverse: false,
+//   },
+//   {
+//     text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
+//     image: "/some2.jpg",
+//     reverse: true,
+//   },
+// ];
 
 export default function GuestSpeakers() {
   return (
@@ -93,7 +93,7 @@ export default function GuestSpeakers() {
           </div>
         ))}
       </div>
-      {testimonies.map((item, index) => (
+      {/* {testimonies.map((item, index) => ( //uncomment this to show testimoniew
         <div
           key={index}
           className={`${styles.testimonyBlock} ${item.reverse ? styles.reverse : ""}`}
@@ -106,7 +106,7 @@ export default function GuestSpeakers() {
             <img src={item.image} alt="Testimony" />
           </div>
         </div>
-      ))}
+      ))} */}
     </section>
   );
 }

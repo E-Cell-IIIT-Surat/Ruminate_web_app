@@ -5,6 +5,7 @@ type Member = {
   name: string;
   role: string;
   img: string;
+  imgPositionY?: string;
 };
 
 type TeamData = Record<string, Member[]>;

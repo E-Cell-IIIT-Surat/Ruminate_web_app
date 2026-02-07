@@ -7,10 +7,11 @@ interface Member {
   name: string;
   role: string;
   img: string;
+  imgPositionY?: string;
 }
 
 const categories = [
-  "Faculties",
+  "Mentors",
   "Alumni",
   "Core Team 2025-2026",
   "Developers",
@@ -18,7 +19,7 @@ const categories = [
 
 export default function TeamPage() {
   const [team, setTeam] = useState<Member[]>([]);
-  const [activeCategory, setActiveCategory] = useState("Faculties");
+  const [activeCategory, setActiveCategory] = useState("Mentors");
   const [loading, setLoading] = useState(true);
   const [alumniYear, setAlumniYear] = useState<string>("All");
 
@@ -151,7 +152,11 @@ export default function TeamPage() {
             <div className="team-grid">
               {displayedTeam.map((member, index) => (
                 <div className="card" key={index}>
-                  <img src={member.img} alt={member.name} />
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    style={{ objectPosition: `50% ${member.imgPositionY ?? "50%"}` }}
+                  />
                   <div className="info">
                     <p className="name">{member.name}</p>
                     <p className="role">{member.role}</p>

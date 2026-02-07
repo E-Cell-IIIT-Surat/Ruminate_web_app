@@ -1,5 +1,5 @@
 {
-  "Faculties": [
+  "Mentors": [
     
     {
       "name": "Dr. Nishad G Deshpande",
@@ -96,62 +96,80 @@
     {
       "name": "Pratik Avhad",
       "role": "Joint Secretary",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Pratik.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Pratik.JPG",
+      "imgPositionY": "13%"
     },
     {
       "name": "Vasu",
       "role": "Finance Head , Design Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Vasu.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Vasu.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Mitul",
       "role": "Finance Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Mitul.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Mitul.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Sumit",
       "role": "Event Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Sumit.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Sumit.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Saquib",
       "role": "Event Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20saquib.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20saquib.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Vivek Baya",
       "role": "Corporate Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Copy%20of%20Vivek.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Copy%20of%20Vivek.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Meetiksha",
       "role": "Design Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Meetiksha.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Meetiksha.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Ronit Choudhary",
       "role": "Tech Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ronit.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ronit.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Uday Dhakar",
       "role": "Marketing Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Uday.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Uday.JPG",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Aman Kumar",
+      "role": "Content Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Aman.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Aryan Kumar",
       "role": "Media Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Aryan.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Aryan.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Ganesh Tilekar",
       "role": "Research Head",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ganesh.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ganesh.JPG",
+      "imgPositionY": "12%"
     },
     {
       "name": "Bhavik Songara",
       "role": "Coordinator",
-      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Bhavik.JPG"
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Bhavik.JPG",
+      "imgPositionY": "12%"
     }
   ]
 }
