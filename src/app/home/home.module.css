@@ -124,6 +124,38 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .heroBackground {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    overflow: visible;
+  }
+
+  .heroBackgroundTrack {
+    height: auto;
+  }
+
+  .heroBackgroundSlide {
+    height: auto;
+  }
+
+  .heroBackgroundImage {
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transform: none;
+  }
+}
+
 /* Guest Speakers Section */
 .speakerGrid {
   display: grid;
