@@ -24,12 +24,29 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/some2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  filter: brightness(0.7);
+  overflow: hidden;
   z-index: 1;
+}
+
+.heroBackgroundTrack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.heroBackgroundSlide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  transform: scale(1.02);
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .heroOverlay {
@@ -38,12 +55,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.8) 0%,
-    rgba(26, 26, 26, 0.6) 50%,
-    rgba(45, 10, 10, 0.8) 100%
-  );
+  background: transparent;
   z-index: 2;
 }
 
@@ -54,6 +66,7 @@
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
+  transform: translateY(20vh);
 }
 
 .heroText {
@@ -97,6 +110,18 @@
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   margin-bottom: 1.5rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    transform: translateY(-12vh);
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContent {
+    transform: translateY(-8vh);
+  }
 }
 
 /* Guest Speakers Section */
