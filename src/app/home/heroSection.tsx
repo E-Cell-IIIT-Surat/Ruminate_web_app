@@ -8,6 +8,25 @@ const heroSlides = [
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/iprsession.png",
 ];
 
+const heroBoxes = [
+  {
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/coreeventsblock.svg",
+    href: "/coreevents",
+  },
+  {
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/esummitblock.svg",
+    href: "/esummit",
+  },
+  {
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/ktbblock.svg",
+    href: "/ktb",
+  },
+  {
+    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/ssipblock.svg",
+    href: "/ssip",
+  },
+];
+
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -62,6 +81,19 @@ export default function HeroSection() {
             We foster a culture of innovation, creativity, and entrepreneurial thinking &mdash; empowering students to explore, build, and lead.
           </p>
         </div>
+
+        <div className={styles.heroBoxes}>
+          {heroBoxes.map((item, index) => (
+            <a
+              className={styles.heroBox}
+              href={item.href}
+              key={`${item.image}-${index}`}
+            >
+              <img src={item.image} alt={`Hero box ${index + 1}`} />
+            </a>
+          ))}
+        </div>
+
       </div>
 
       <div className={styles.heroScroll}>
