@@ -205,7 +205,7 @@
     width: 100%;
     max-width: none;
     margin: 0;
-    transform: translateY(80px);
+    transform: translateY(100px);
   }
 
   .heroTitle {
@@ -229,7 +229,7 @@
     gap: 0.9rem;
     width: 100%;
     max-width: 380px;
-    transform: translateY(100px);
+    transform: translateY(110px);
     margin: 0 auto;
   }
 
