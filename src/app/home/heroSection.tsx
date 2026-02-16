@@ -9,7 +9,12 @@ const heroSlides = [
 ];
 
 export default function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +32,11 @@ export default function HeroSection() {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {heroSlides.map((image, index) => (
-            <div className={styles.heroBackgroundSlide} key={index}>
+            <div
+              className={styles.heroBackgroundSlide}
+              key={index}
+              style={{ backgroundImage: `url(${image})` }}
+            >
               <img
                 src={image}
                 alt=""
@@ -37,6 +46,22 @@ export default function HeroSection() {
           ))}
         </div>
         <div className={styles.heroOverlay}></div>
+      </div>
+
+      <div className={styles.heroContent}>
+        <div className={`${styles.heroText} ${isVisible ? styles.fadeInUp : ""}`}>
+          <h1 className={styles.heroTitle}>
+            Foster The <span className={styles.heroSpark}>Spark</span>
+          </h1>
+
+          <p className={styles.heroSubtitle}>
+            Welcome to Ruminate &ndash; The E-Cell of IIIT Surat
+          </p>
+
+          <p className={styles.heroDescription}>
+            We foster a culture of innovation, creativity, and entrepreneurial thinking &mdash; empowering students to explore, build, and lead.
+          </p>
+        </div>
       </div>
 
       <div className={styles.heroScroll}>
