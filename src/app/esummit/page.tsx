@@ -534,10 +534,9 @@ export default function ESummitPage() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Photograph Gallery (Placeholders)</h2>
+        <h2 className={styles.sectionTitle}>Photograph Gallery</h2>
         <p className={styles.sectionText}>
-          Add photographs to these boxes. The background includes a logo watermark which
-          you can replace with the official E-Summit logo file.
+          
         </p>
         <div className={styles.photoGrid}>
           {photoBoxes.map((label) => (
