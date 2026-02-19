@@ -44,63 +44,78 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className={styles.hero}>
-      <div className={styles.heroBackground}>
-        <div
-          className={styles.heroBackgroundTrack}
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {heroSlides.map((image, index) => (
-            <div
-              className={styles.heroBackgroundSlide}
-              key={index}
-              style={{ backgroundImage: `url(${image})` }}
-            >
-              <img
-                src={image}
-                alt=""
-                className={styles.heroBackgroundImage}
-              />
-            </div>
-          ))}
-        </div>
-        <div className={styles.heroOverlay}></div>
-      </div>
-
-      <div className={styles.heroContent}>
-        <div className={`${styles.heroText} ${isVisible ? styles.fadeInUp : ""}`}>
-          <h1 className={styles.heroTitle}>
-            Foster The <span className={styles.heroSpark}>Spark</span>
-          </h1>
-
-          <p className={styles.heroSubtitle}>
-            Welcome to Ruminate &ndash; The E-Cell of IIIT Surat
-          </p>
-
-          <p className={styles.heroDescription}>
-            We foster a culture of innovation, creativity, and entrepreneurial thinking &mdash; empowering students to explore, build, and lead.
-          </p>
+    <>
+      <section className={styles.hero}>
+        <div className={styles.heroBackground}>
+          <div
+            className={styles.heroBackgroundTrack}
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {heroSlides.map((image, index) => (
+              <div
+                className={styles.heroBackgroundSlide}
+                key={index}
+                style={{ backgroundImage: `url(${image})` }}
+              >
+                <img
+                  src={image}
+                  alt=""
+                  className={styles.heroBackgroundImage}
+                />
+              </div>
+            ))}
+          </div>
+          <div className={styles.heroOverlay}></div>
         </div>
 
-        <div className={styles.heroBoxes}>
+        <div className={styles.heroContent}>
+          <div className={`${styles.heroText} ${isVisible ? styles.fadeInUp : ""}`}>
+            <h1 className={styles.heroTitle}>
+              Foster The <span className={styles.heroSpark}>Spark</span>
+            </h1>
+
+            <p className={styles.heroSubtitle}>
+              Welcome to Ruminate &ndash; The E-Cell of IIIT Surat
+            </p>
+
+            <p className={styles.heroDescription}>
+              We foster a culture of innovation, creativity, and entrepreneurial thinking &mdash; empowering students to explore, build, and lead.
+            </p>
+          </div>
+
+          <div className={styles.heroBoxes}>
+            {heroBoxes.map((item, index) => (
+              <a
+                className={styles.heroBox}
+                href={item.href}
+                key={`${item.image}-${index}`}
+              >
+                <img src={item.image} alt={`Hero box ${index + 1}`} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.heroScroll}>
+          <div className={styles.scrollIndicator}>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.heroBoxesStrip} aria-label="Featured events">
+        <div className={styles.heroBoxesStripInner}>
           {heroBoxes.map((item, index) => (
             <a
               className={styles.heroBox}
               href={item.href}
-              key={`${item.image}-${index}`}
+              key={`strip-${item.image}-${index}`}
             >
-              <img src={item.image} alt={`Hero box ${index + 1}`} />
+              <img src={item.image} alt={`Featured event ${index + 1}`} />
             </a>
           ))}
         </div>
-
-      </div>
-
-      <div className={styles.heroScroll}>
-        <div className={styles.scrollIndicator}>
-          <span></span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

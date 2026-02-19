@@ -118,7 +118,7 @@ export default function Navbar() {
 
         <div className={`${styles.socialIcons} ${styles.desktopSocialIcons}`}>
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/ecell_iiits/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -127,7 +127,7 @@ export default function Navbar() {
             <FaInstagram />
           </a>
           <a 
-            href="https://facebook.com" 
+            href="https://www.facebook.com/ecell.iiits/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.socialIcon}
@@ -136,7 +136,7 @@ export default function Navbar() {
             <FaFacebookF />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/company/e-cell-iiit-surat/?originalSubdomain=in" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.socialIcon}

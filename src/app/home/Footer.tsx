@@ -65,9 +65,39 @@ export default function Footer() {
       <div className={styles.column}>
         <h3 className={styles.socialHeading}>Social</h3>
         <ul className={styles.socialList}>
-          <li><FaInstagram className={styles.icon} /><span>Instagram</span></li>
-          <li><FaFacebookF className={styles.icon} /><span>Facebook</span></li>
-          <li><FaLinkedinIn className={styles.icon} /><span>LinkedIn</span></li>
+          <li>
+            <a
+              href="https://www.instagram.com/ecell_iiits/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FaInstagram className={styles.icon} />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/ecell.iiits/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FaFacebookF className={styles.icon} />
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/company/e-cell-iiit-surat/?originalSubdomain=in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FaLinkedinIn className={styles.icon} />
+              <span>LinkedIn</span>
+            </a>
+          </li>
         </ul>
       </div>
 
