@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./events.module.css";
 
 const slides = [
@@ -37,14 +36,6 @@ export default function ImageCarousel() {
     setCurrent(index);
   };
 
-  const handlePrevClick = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const handleNextClick = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
   return (
     <div className={styles.carouselWrapper}>
       <div
@@ -65,23 +56,6 @@ export default function ImageCarousel() {
           </div>
         ))}
       </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={handlePrevClick}
-        className={`${styles.carouselNav} ${styles.carouselNavPrev}`}
-        aria-label="Previous slide"
-      >
-        <FaChevronLeft />
-      </button>
-
-      <button
-        onClick={handleNextClick}
-        className={`${styles.carouselNav} ${styles.carouselNavNext}`}
-        aria-label="Next slide"
-      >
-        <FaChevronRight />
-      </button>
 
       {/* Dots Navigation */}
       <div className={styles.dotsContainer}>

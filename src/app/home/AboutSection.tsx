@@ -1,47 +1,7 @@
 "use client";
-import { useEffect, useRef } from 'react';
 import styles from './home.module.css';
 
 export default function AboutSection() {
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const stats = entry.target.querySelectorAll('.stat-number');
-            stats.forEach((stat) => {
-              const target = parseInt(stat.getAttribute('data-target') || '0');
-              animateNumber(stat as HTMLElement, target);
-            });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const animateNumber = (element: HTMLElement, target: number) => {
-    let current = 0;
-    const increment = target / 100;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        element.textContent = target.toString();
-        clearInterval(timer);
-      } else {
-        element.textContent = Math.floor(current).toString();
-      }
-    }, 20);
-  };
-
   return (
     <section className={styles.about}>
       <div className={styles.aboutContainer}>
@@ -55,23 +15,12 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div className={`${styles.aboutStats} ${styles.aboutStatsHidden}`} ref={statsRef} aria-hidden="true">
-            <div className={styles.statCard}>
-              <div className="stat-number" data-target="200">0</div>
-              <div className={styles.statLabel}>Networks</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className="stat-number" data-target="50">0</div>
-              <div className={styles.statLabel}>Projects</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className="stat-number" data-target="25">0</div>
-              <div className={styles.statLabel}>Events</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className="stat-number" data-target="10">0</div>
-              <div className={styles.statLabel}>Startups</div>
-            </div>
+          <div className={styles.aboutMedia}>
+            <img
+              src="/RUMINATEFRONT.png"
+              alt="Ruminate community"
+              className={styles.aboutMediaImage}
+            />
           </div>
         </div>
 
