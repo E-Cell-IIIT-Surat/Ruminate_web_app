@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import styles from "./events.module.css";
 
 interface CurrentEvent {
@@ -83,8 +84,15 @@ export default function CurrentEvents() {
   return (
     <section className={styles.currentEventsSection}>
       <div className={styles.sectionContainer}>
+        <div className={styles.currentEventsNotice}>
+          <h2 className={styles.sectionHeading}>
+            <span className={styles.orange}>Current</span> Events
+          </h2>
+          <p className={styles.currentEventsText}>No live events for now.</p>
+        </div>
+
         <h2 className={styles.sectionHeading}>
-          <span className={styles.orange}>Current</span> Events
+          <span className={styles.orange}>Past</span> Events
         </h2>
 
         <div className={styles.currentEventsGrid}>
@@ -97,9 +105,9 @@ export default function CurrentEvents() {
               <div className={styles.currentEventContent}>
                 <h4>{event.title}</h4>
                 <p className={styles.eventDate}>{event.date}</p>
-                <a href={event.link} className={styles.eventButton}>
-                  Register Now
-                </a>
+                <Link href="/esummit" className={styles.eventButton}>
+                  View Report
+                </Link>
               </div>
             </div>
           ))}

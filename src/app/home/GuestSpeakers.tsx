@@ -3,55 +3,77 @@ import styles from "./home.module.css";
 
 const speakers = [
   {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Ekta%20mam.webp",
-    name: "Ekta Arora",
-    linkedin: "https://www.linkedin.com/in/ektaarora3501/"
-  },
-  {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/IMG_4208.JPG",
-    name: "Sunny Kabrawala",
-    linkedin: "https://www.linkedin.com/in/sunny-kabrawala-238194132/"
-  },
-  {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Krishna%20Sir.webp",
-    name: "Krishna Ojha",
-    linkedin: "https://www.linkedin.com/in/krishnaojha02/"
-  },
-  {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Pranjal%20Kamra.jpg",
-    name: "Pranjal Kamra",
-    linkedin: "https://www.linkedin.com/in/pranjal-kamra-365355a0"
-  },
-  {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/oshi.webp",
-    name: "Oshi Kumari",
-    linkedin: "https://www.linkedin.com/in/oshi-kumari/"
-  },
-  {
-    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Testimonials/NikhilVyas.jpeg",
-    name: "Nikhil Vyas",
-    linkedin: "https://www.linkedin.com/in/nikhil-vyas-4a1a81148/"
-  },
-  {
     img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/striver.png",
     name: "Raj Vikramaditya",
-    linkedin: "https://www.linkedin.com/in/rajstriver/"
+    linkedin: "https://www.linkedin.com/in/rajstriver/",
+    position: "Founder-TUF (Take you Forward)"
   },
   {
     img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/isverdholakiya.png",
     name: "Ishver Dholakiya",
-    linkedin: "https://www.linkedin.com/in/capt-ishver-dholakiya/"
+    linkedin: "https://www.linkedin.com/in/capt-ishver-dholakiya/",
+    position: "Founder-Goldi Solar"
   },
-  // {
-  //   img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-  //   name: "Arjun Desai",
-  //   linkedin: "https://linkedin.com/in/arjun-desai-890"
-  // },
-  // {
-  //   img: "https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=400&h=400&fit=crop",
-  //   name: "Neha Sharma",
-  //   linkedin: "https://linkedin.com/in/neha-sharma-456"
-  // }
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/alpeshsir.jpg",
+    name: "Alpesh Vaghasiya",
+    linkedin: "https://www.linkedin.com/in/alpeshvaghasiya/",
+    position: "Founder & CEO, Superworks"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/adityakarnik.jpg",
+    name: "Dr Aditya Karnik",
+    linkedin: "https://www.linkedin.com/in/aditya-karnik-167734/",
+    position: "Advisor/Consultant - AI/ML/DS"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/ANISHGANDHISIR.png",
+    name: "Dr Anish Gandhi",
+    linkedin: "https://www.linkedin.com/in/dr-anish-gandhi-b3529316/",
+    position: "Registered Patent Agent & IPR Consultant"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Pranjal%20Kamra.jpg",
+    name: "Pranjal Kamra",
+    linkedin: "https://www.linkedin.com/in/pranjal-kamra-365355a0",
+    position: "Finance Coach"
+  },
+    {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/drsudesh.jpg",
+    name: "Dr. Thakur Sudesh",
+    linkedin: "https://www.linkedin.com/in/dr-thakur-skr-1399744a/",
+    position: "Public Speaker and Author"
+  },
+    {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/oshi.webp",
+    name: "Oshi Kumari",
+    linkedin: "https://www.linkedin.com/in/oshi-kumari/",
+    position: "Founder-Inside FPV"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Ekta%20mam.webp",
+    name: "Ekta Arora",
+    linkedin: "https://www.linkedin.com/in/ektaarora3501/",
+    position: "Founder-KasperTech"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/IMG_4208.JPG",
+    name: "Sunny Kabrawala",
+    linkedin: "https://www.linkedin.com/in/sunny-kabrawala-238194132/",
+    position: "Founder-Star Labs"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/Krishna%20Sir.webp",
+    name: "Krishna Ojha",
+    linkedin: "https://www.linkedin.com/in/krishnaojha02/",
+    position: "Founder-KasperTech"
+  },
+  {
+    img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Testimonials/NikhilVyas.jpeg",
+    name: "Nikhil Vyas",
+    linkedin: "https://www.linkedin.com/in/nikhil-vyas-4a1a81148/",
+    position: "Founder-Vysion Technologies"
+  },
 ];
 // replace with real images //Testimoies here
 // const testimonies = [
@@ -87,13 +109,18 @@ export default function GuestSpeakers() {
               rel="noopener noreferrer"
               className={styles.speakerLink}
             >
-              <img
-                src={speaker.img}
-                alt={speaker.name}
-                className={styles.speakerImage}
-              />
+              <div className={styles.speakerImageWrapper}>
+                <img
+                  src={speaker.img}
+                  alt={speaker.name}
+                  className={styles.speakerImage}
+                />
+              </div>
             </a>
             <p className={styles.speakerName}>{speaker.name}</p>
+            {speaker.position ? (
+              <p className={styles.speakerRole}>{speaker.position}</p>
+            ) : null}
           </div>
         ))}
       </div>

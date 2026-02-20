@@ -4,11 +4,20 @@ import styles from "./home.module.css"; // make sure the path is correct
 interface Startup {
   name: string;
   logo: string;
+  link: string;
 }
 
 const startups: Startup[] = [
-  { name: "Kaspertech", logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/KasperTech.png" },
-  { name: "Vysion Tech", logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/VysionTech.png" }
+  {
+    name: "Kaspertech",
+    logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/KasperTech.png",
+    link: "https://www.thekaspertech.com/"
+  },
+  {
+    name: "Vysion Tech",
+    logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/VysionTech.png",
+    link: "https://www.linkedin.com/company/vysion-tech/?originalSubdomain=in"
+  }
 ];
 
 export default function AlumniSection() {
@@ -22,7 +31,13 @@ export default function AlumniSection() {
 
       <div className={styles.alumniGrid}>
         {startups.map((startup, idx) => (
-          <div key={idx} className={styles.alumniCard}>
+          <a
+            key={idx}
+            className={`${styles.alumniCard} ${styles.alumniCardLink}`}
+            href={startup.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className={styles.alumniLogoBox}>
               <img
                 src={startup.logo}
@@ -31,7 +46,7 @@ export default function AlumniSection() {
               />
               <p className={styles.alumniName}>{startup.name}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

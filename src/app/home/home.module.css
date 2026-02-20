@@ -437,12 +437,24 @@
   transition: all 0.3s ease;
 }
 
-.speakerImage {
-  width: clamp(100px, 18vw, 160px);
-  aspect-ratio: 1/1;                 
+.speakerImageWrapper {
+  width: clamp(110px, 18vw, 160px);
+  height: clamp(110px, 18vw, 160px);
   border-radius: 50%;
-  object-fit: cover;
+  overflow: hidden;
   border: 3px solid var(--primary-color);
+  background: rgba(10, 8, 18, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speakerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
   transition: all 0.3s ease;
 }
 
@@ -460,6 +472,14 @@
   font-weight: 600;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.speakerRole {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
   text-align: center;
   width: 100%;
 }
@@ -584,22 +604,28 @@
 
 .alumniGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  max-width: 700px;
+  max-width: 620px;
   margin: 0 auto;
 }
 
 .alumniCard {
   background: var(--card-bg);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+}
+
+.alumniCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .alumniCard::before {
@@ -635,8 +661,8 @@
 
 .alumniLogo {
   border-radius: 16px;
-  width: clamp(140px, 22vw, 260px);
-  height: clamp(140px, 22vw, 260px);
+  width: clamp(120px, 20vw, 220px);
+  height: clamp(120px, 20vw, 220px);
   object-fit: contain;
   background-color: #000;
   margin-bottom: 0.75rem;
