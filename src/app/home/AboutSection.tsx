@@ -75,15 +75,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className={styles.aboutMissionWrapper}>
-          <div className={styles.aboutMission}>
-            <h3>Our Mission</h3>
-            <p>
-              To foster entrepreneurial thinking, drive innovation, and create a platform where students can
-              transform their ideas into impactful solutions that shape the future.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

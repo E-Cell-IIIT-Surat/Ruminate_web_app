@@ -210,6 +210,24 @@ export default function ESummitPage() {
               <span className={styles.metaValue}>Punjab Kings — Risers</span>
             </div>
           </div>
+
+          <div className={styles.winnerCard}>
+            <h3 className={styles.cardTitle}>Buzzify</h3>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>1st</span>
+              <span className={styles.metaValue}>Yuvraj Dhingra</span>
+            </div>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>2nd</span>
+              <span className={styles.metaValue}>Rohan kaushik </span>
+            </div>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>2nd</span>
+              <span className={styles.metaValue}>Hanish</span>
+            </div>
+          </div>
+
+
           <div className={styles.winnerCard}>
             <h3 className={styles.cardTitle}>Corporate Crime</h3>
             <div className={styles.metaRow}>
@@ -518,16 +536,16 @@ export default function ESummitPage() {
               </div>
               <div className={styles.metaRow}>
                 <span className={styles.metaLabel}>Date</span>
-                <span className={styles.metaValue}>TBA</span>
+                <span className={styles.metaValue}>11–15 February 2026</span>
               </div>
               <div className={styles.metaRow}>
                 <span className={styles.metaLabel}>Participants</span>
-                <span className={styles.metaValue}>TBA</span>
+                <span className={styles.metaValue}>15 Participants</span>
               </div>
             </div>
             <p className={styles.sectionText}>
-              Event guidelines, flow, and key takeaways will be updated as per the official
-              report details.
+              Buzzify was an online reel-creation event focused on digital marketing of
+              products and brands.
             </p>
           </article>
         </div>
