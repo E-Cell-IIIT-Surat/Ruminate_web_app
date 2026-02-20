@@ -244,8 +244,9 @@
   }
 
   .heroText {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(12, 8, 24, 0.92), rgba(20, 12, 36, 0.88));
+    border: 1px solid rgba(148, 132, 255, 0.35);
+    backdrop-filter: blur(10px);
     padding: 0.75rem 1rem;
     border-radius: 18px;
     width: 100%;
@@ -319,11 +320,11 @@
     content: "";
     position: absolute;
     inset: 20% -10% 0;
-    background-image: inherit;
+    background-image: linear-gradient(160deg, #0b0617 0%, #0f0b20 45%, #140c2a 100%);
     background-size: cover;
     background-position: center top;
-    filter: blur(22px) brightness(0.85);
-    transform: scale(1.1);
+    filter: none;
+    transform: none;
     z-index: 0;
   }
 
