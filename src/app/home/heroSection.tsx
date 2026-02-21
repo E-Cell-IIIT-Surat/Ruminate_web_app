@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import styles from "./home.module.css";
 
 const heroSlides = [
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/amulvisit.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/iprsession.png",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/voteofthanks.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/IPLAUCTION.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/alpeshsirsession.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/certificatedistribution.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/corporatecrime.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/youthparliament.png",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/amulvisit.png",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/iprsession.png",
 ];
 
 const heroBoxes = [
