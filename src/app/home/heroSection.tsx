@@ -9,6 +9,7 @@ const heroSlides = [
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/alpeshsirsession.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/certificatedistribution.png",
   "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/corporatecrime.png",
+  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/youthparliament.png",
 ];
 
 const heroBoxes = [
