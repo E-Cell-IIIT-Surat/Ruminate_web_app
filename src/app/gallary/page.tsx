@@ -11,14 +11,14 @@ interface GalleryImage {
 
 export default function Gallery() {
   const [photos, setPhotos] = useState<GalleryImage[]>([]);
-  const [year, setYear] = useState("2024");
+  const [year, setYear] = useState("2026");
   const [eventType, setEventType] = useState("All");
   const [activeImg, setActiveImg] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [loading, setLoading] = useState(true);
 
-  const years = ["2024", "2023", "2022", "2021"];
-  const events = ["All", "TechFest", "Cultural", "Workshop", "Sports"];
+  const years = ["2026", "2025"];
+  const events = ["All", "Amul Visit", "KTB", "E-Summit"];
 
   useEffect(() => {
     setLoading(true);

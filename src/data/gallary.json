@@ -1,29 +1,17 @@
 {
-  "2024": [
-    { "img": "some2.jpg", "event": "TechFest" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Workshop" }
+  "2026": [
+    { "img": "some2.jpg", "event": "Amul Visit" },
+    { "img": "some2.jpg", "event": "Amul Visit" },
+    { "img": "some2.jpg", "event": "KTB" },
+    { "img": "some2.jpg", "event": "KTB" },
+    { "img": "some2.jpg", "event": "E-Summit" },
+    { "img": "some2.jpg", "event": "E-Summit" },
+    { "img": "some2.jpg", "event": "E-Summit" }
   ],
-  "2023": [
-    { "img": "some2.jpg", "event": "TechFest" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Workshop" }
-  ],
-  "2022": [
-    { "img": "some2.jpg", "event": "TechFest" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Workshop" }
-  ],
-  "2021": [
-    { "img": "some2.jpg", "event": "TechFest" },
-    { "img": "some2.jpg", "event": "Cultural" },
-    { "img": "some2.jpg", "event": "Workshop" }
+  "2025": [
+    { "img": "some2.jpg", "event": "Amul Visit" },
+    { "img": "some2.jpg", "event": "KTB" },
+    { "img": "some2.jpg", "event": "E-Summit" },
+    { "img": "some2.jpg", "event": "E-Summit" }
   ]
 }
