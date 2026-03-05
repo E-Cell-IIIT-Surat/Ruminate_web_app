@@ -74,7 +74,7 @@ const categoryA = [
   },
   {
     id: 12,
-    student: "Dhananjay Singh (3rd Year, ECE)",
+    student: "Dhananjay Kumar (3rd Year, ECE)",
     title: "Voice assisted drone systems",
     remark: "Provisionally selected after verification of documents.",
   },
