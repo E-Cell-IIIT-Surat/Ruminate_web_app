@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://esummit.ecelliiitsurat.in/*"
+  to = "/esummit/"
+  status = 200
+  force = true
