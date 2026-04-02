@@ -37,7 +37,7 @@ export default function EventHighlights() {
 
     if (!el1 || !el2) return;
 
-    let speed = 0.5;
+    const speed = 0.5;
     let animationId;
 
     const animate = () => {
