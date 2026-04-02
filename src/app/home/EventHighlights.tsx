@@ -38,7 +38,7 @@ export default function EventHighlights() {
     if (!el1 || !el2) return;
 
     const speed = 0.5;
-    let animationId;
+    let animationId: number;
 
     const animate = () => {
       if (!isTouching) {
