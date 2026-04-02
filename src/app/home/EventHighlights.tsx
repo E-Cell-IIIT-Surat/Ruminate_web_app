@@ -18,8 +18,8 @@ const events = [
 ];
 
 export default function EventHighlights() {
-  const row1Ref = useRef(null);
-  const row2Ref = useRef(null);
+  const row1Ref = useRef<HTMLDivElement | null>(null);
+  const row2Ref = useRef<HTMLDivElement | null>(null);
   const [isTouching, setIsTouching] = useState(false);
 
   // Split events into two halves
