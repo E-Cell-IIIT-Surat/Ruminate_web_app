@@ -1,6 +1,5 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react"; // <-- ADD THIS
+import { useState } from "react";
 import styles from "./home.module.css";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
