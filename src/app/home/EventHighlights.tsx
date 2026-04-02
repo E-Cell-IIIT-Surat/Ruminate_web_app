@@ -65,21 +65,21 @@ export default function EventHighlights() {
 
   // Touch support
   useEffect(() => {
-    const enableTouch = (el) => {
+    const enableTouch = (el: HTMLDivElement | null) => {
       if (!el) return;
 
       let isDown = false;
       let startX = 0;
       let scrollLeft = 0;
 
-      const handleTouchStart = (e) => {
+      const handleTouchStart = (e: TouchEvent) => {
         isDown = true;
         setIsTouching(true);
         startX = e.touches[0].pageX;
         scrollLeft = el.scrollLeft;
       };
 
-      const handleTouchMove = (e) => {
+      const handleTouchMove = (e: TouchEvent) => {
         if (!isDown) return;
         const x = e.touches[0].pageX;
         const walk = (x - startX) * 1.5;
@@ -91,14 +91,14 @@ export default function EventHighlights() {
         setIsTouching(false);
       };
 
-      el.addEventListener("touchstart", handleTouchStart);
-      el.addEventListener("touchmove", handleTouchMove);
-      el.addEventListener("touchend", handleTouchEnd);
+      el.addEventListener("touchstart", handleTouchStart as EventListener);
+      el.addEventListener("touchmove", handleTouchMove as EventListener);
+      el.addEventListener("touchend", handleTouchEnd as EventListener);
 
       return () => {
-        el.removeEventListener("touchstart", handleTouchStart);
-        el.removeEventListener("touchmove", handleTouchMove);
-        el.removeEventListener("touchend", handleTouchEnd);
+        el.removeEventListener("touchstart", handleTouchStart as EventListener);
+        el.removeEventListener("touchmove", handleTouchMove as EventListener);
+        el.removeEventListener("touchend", handleTouchEnd as EventListener);
       };
     };
 
