@@ -113,7 +113,7 @@ export default function GuestSpeakers() {
     const el = row1Ref.current;
     if (!el) return;
 
-    let speed = 0.5;
+    const speed = 0.5;
     let isScrolling = true;
     const totalWidth = el.scrollWidth / 2;
 
@@ -157,7 +157,7 @@ export default function GuestSpeakers() {
     const el = row2Ref.current;
     if (!el) return;
 
-    let speed = 0.5;
+    const speed = 0.5;
     let isScrolling = true;
     const totalWidth = el.scrollWidth / 2;
 
