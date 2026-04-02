@@ -90,14 +90,6 @@ export default function HeroSection() {
               <h1 className={styles.heroTitle}>
                 Foster The <span className={styles.heroSpark}>Spark</span>
               </h1>
-
-              <p className={styles.heroSubtitle}>
-                Welcome to Ruminate — The Entrepreneurship Cell of IIIT Surat
-              </p>
-
-              <p className={styles.heroDescription}>
-                Empowering the next generation of innovators, entrepreneurs, and leaders. Join us in transforming ideas into impact through mentorship, events, and community.
-              </p>
             </div>
 
             <div className={styles.heroBoxes}>
@@ -150,14 +142,6 @@ export default function HeroSection() {
               <h1 className={styles.heroMobileTitle}>
                 Foster The <span className={styles.heroMobileSpark}>Spark</span>
               </h1>
-
-              <p className={styles.heroMobileSubtitle}>
-                Welcome to Ruminate
-              </p>
-
-              <p className={styles.heroMobileDescription}>
-                Empowering innovators and leaders through mentorship, events, and community.
-              </p>
             </div>
           </div>
 

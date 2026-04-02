@@ -85,7 +85,14 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.3) 55%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
   z-index: 2;
 }
 
@@ -95,18 +102,17 @@
   z-index: 3;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
 }
 
 .heroText {
   opacity: 0;
   transition: all 0.8s ease;
-  max-width: 900px;
   animation: fadeInUp 0.8s ease forwards;
   transform: translateY(0);
 }
@@ -119,20 +125,19 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  font-weight: 900;
+  margin-bottom: 0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
 }
 
 .heroSpark {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ff6b35;
   display: inline-block;
-  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes glow {
@@ -146,17 +151,19 @@
 
 .heroSubtitle {
   font-size: clamp(1.1rem, 3vw, 1.4rem);
-  color: var(--text-secondary);
+  color: #e5e7eb;
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .heroDescription {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-  color: var(--text-muted);
+  color: #d1d5db;
   line-height: 1.8;
   margin-bottom: 2.5rem;
   max-width: 700px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .heroBoxes {
@@ -175,14 +182,14 @@
 .heroBoxesStripInner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
+  gap: 1rem;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .heroBox {
   aspect-ratio: 1;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -192,6 +199,9 @@
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
+  min-height: 120px;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
 .heroBox img {
@@ -201,14 +211,14 @@
 }
 
 .heroBox:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px) scale(1.03);
   border-color: var(--primary-orange);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
 }
 
 @media (max-width: 1024px) {
   .heroBoxesStripInner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -222,12 +232,12 @@
   }
 
   .heroBoxesStripInner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
   }
 
   .heroBoxesStrip {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -287,7 +297,14 @@
 .heroMobileOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.3) 55%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
   z-index: 2;
 }
 
@@ -308,33 +325,34 @@
 }
 
 .heroMobileTitle {
-  font-size: clamp(1.8rem, 7vw, 2.5rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
 }
 
 .heroMobileSpark {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ff6b35;
   display: inline-block;
-  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .heroMobileSubtitle {
   font-size: clamp(1rem, 3vw, 1.2rem);
-  color: var(--text-secondary);
+  color: #e5e7eb;
   margin-bottom: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .heroMobileDescription {
   font-size: clamp(0.9rem, 2.5vw, 1rem);
-  color: var(--text-muted);
+  color: #d1d5db;
   line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .heroMobileBoxesStrip {
@@ -350,8 +368,8 @@
 
 .heroMobileBoxesStripInner {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -369,6 +387,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
+  min-height: 80px;
 }
 
 .heroMobileBox img {
@@ -417,8 +436,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
   transition: left 0.5s ease;
+  pointer-events: none;
 }
 
 .card:hover::before {
@@ -674,6 +694,7 @@
 
 .eventsSection {
   padding: 5rem 2rem;
+  overflow: hidden;
 }
 
 .eventsTitleBlock {
@@ -772,6 +793,101 @@
 
   .eventsLine {
     width: 50px;
+  }
+}
+
+/* ============================================
+   EVENT HIGHLIGHTS - AUTO SCROLL ROWS
+   ============================================ */
+
+.highlightsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.highlightsRow {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.highlightsRow::-webkit-scrollbar,
+.highlightsRow::-webkit-scrollbar-track,
+.highlightsRow::-webkit-scrollbar-thumb {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.highlightsTrack {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding: 0;
+}
+
+.highlightCard {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  cursor: grab;
+}
+
+.highlightCard:active {
+  cursor: grabbing;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--primary-orange);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
+}
+
+.highlightImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .highlightsWrapper {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .highlightCard {
+    width: 140px;
+    height: 140px;
+  }
+
+  .highlightsTrack {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlightCard {
+    width: 110px;
+    height: 110px;
+  }
+
+  .highlightsTrack {
+    gap: 0.5rem;
   }
 }
 

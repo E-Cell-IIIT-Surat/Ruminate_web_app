@@ -79,13 +79,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide scrollbars globally */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   font-family: var(--font-primary);
   background: var(--gradient-primary);
   color: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   min-height: 100vh;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 /* Improved Typography */
@@ -212,6 +226,17 @@ a:hover {
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* App wrapper and main content */
+.app-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Responsive Design */

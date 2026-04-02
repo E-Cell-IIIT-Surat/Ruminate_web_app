@@ -105,11 +105,33 @@ export default function Footer() {
       <div className={styles.column}>
         <h3 className={styles.heading}>Useful links</h3>
         <ul className={styles.linkList}>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/home#about">About Us</Link></li>
-          <li><Link href="/blogs">Blogs</Link></li>
-          <li><Link href="/gallary">Gallery</Link></li>
-          <li><Link href="/contact">Contact Us</Link></li>
+          <li>
+            <a
+              href="https://iiitsurat.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IIIT Surat
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://esummit.ecelliiitsurat.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              E-summit
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://teams.ecelliiitsurat.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ruminate Network
+            </a>
+          </li>
         </ul>
       </div>
 
