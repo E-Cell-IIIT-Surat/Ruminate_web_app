@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef } from "react";
 import styles from "./home.module.css";
 
 const speakers = [
@@ -38,13 +39,13 @@ const speakers = [
     linkedin: "https://www.linkedin.com/in/pranjal-kamra-365355a0",
     position: "Finance Coach"
   },
-    {
+  {
     img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/drsudesh.jpg",
     name: "Dr. Thakur Sudesh",
     linkedin: "https://www.linkedin.com/in/dr-thakur-skr-1399744a/",
     position: "Public Speaker and Author"
   },
-    {
+  {
     img: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Speakers%20till%20now/oshi.webp",
     name: "Oshi Kumari",
     linkedin: "https://www.linkedin.com/in/oshi-kumari/",
@@ -75,21 +76,126 @@ const speakers = [
     position: "Founder-Vysion Technologies"
   },
 ];
-// replace with real images //Testimoies here
-// const testimonies = [
-//   {
-//     text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
-//     image: "/some2.jpg", // replace with actual
-//     reverse: false,
-//   },
-//   {
-//     text: `At IIIT Surat’s Ruminate Club, we believe that every idea holds the potential to spark a revolution. We’re a community of passionate thinkers and fearless doers who thrive on curiosity, collaboration, and creativity.`,
-//     image: "/some2.jpg",
-//     reverse: true,
-//   },
-// ];
 
 export default function GuestSpeakers() {
+  const mid = Math.ceil(speakers.length / 2);
+  const row1 = speakers.slice(0, mid);
+  const row2 = speakers.slice(mid);
+
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
+
+  const SpeakerCard = ({ speaker }: { speaker: typeof speakers[0] }) => (
+    <div className={styles.speakerCardMobile}>
+      <a
+        href={speaker.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.speakerLink}
+      >
+        <div className={styles.speakerImageWrapper}>
+          <img
+            src={speaker.img}
+            alt={speaker.name}
+            className={styles.speakerImage}
+          />
+        </div>
+      </a>
+      <p className={styles.speakerName}>{speaker.name}</p>
+      {speaker.position ? (
+        <p className={styles.speakerRole}>{speaker.position}</p>
+      ) : null}
+    </div>
+  );
+
+  // Auto-scroll Row 1 (right)
+  useEffect(() => {
+    const el = row1Ref.current;
+    if (!el) return;
+
+    let speed = 0.5;
+    let isScrolling = true;
+    const totalWidth = el.scrollWidth / 2;
+
+    const scroll = () => {
+      if (!isScrolling) {
+        requestAnimationFrame(scroll);
+        return;
+      }
+
+      el.scrollLeft += speed;
+
+      if (el.scrollLeft >= totalWidth) {
+        el.scrollLeft -= totalWidth;
+      }
+
+      requestAnimationFrame(scroll);
+    };
+
+    // Pause on touch
+    const handleTouchStart = () => {
+      isScrolling = false;
+    };
+
+    const handleTouchEnd = () => {
+      isScrolling = true;
+    };
+
+    el.addEventListener("touchstart", handleTouchStart);
+    el.addEventListener("touchend", handleTouchEnd);
+
+    scroll();
+
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
+
+  // Auto-scroll Row 2 (left)
+  useEffect(() => {
+    const el = row2Ref.current;
+    if (!el) return;
+
+    let speed = 0.5;
+    let isScrolling = true;
+    const totalWidth = el.scrollWidth / 2;
+
+    const scroll = () => {
+      if (!isScrolling) {
+        requestAnimationFrame(scroll);
+        return;
+      }
+
+      el.scrollLeft -= speed;
+
+      if (el.scrollLeft <= 0) {
+        el.scrollLeft += totalWidth;
+      }
+
+      requestAnimationFrame(scroll);
+    };
+
+    // Pause on touch
+    const handleTouchStart = () => {
+      isScrolling = false;
+    };
+
+    const handleTouchEnd = () => {
+      isScrolling = true;
+    };
+
+    el.addEventListener("touchstart", handleTouchStart);
+    el.addEventListener("touchend", handleTouchEnd);
+
+    scroll();
+
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.eventsTitleBlock}>
@@ -100,6 +206,7 @@ export default function GuestSpeakers() {
         <div className={styles.eventsLine}></div>
       </div>
 
+      {/* Desktop Grid */}
       <div className={styles.speakerGrid}>
         {speakers.map((speaker, idx) => (
           <div key={idx} className={styles.speakerCard}>
@@ -124,20 +231,31 @@ export default function GuestSpeakers() {
           </div>
         ))}
       </div>
-      {/* {testimonies.map((item, index) => ( //uncomment this to show testimoniew
-        <div
-          key={index}
-          className={`${styles.testimonyBlock} ${item.reverse ? styles.reverse : ""}`}
-        >
-          <div className={styles.textBlock}>
-            <h4>Testimonies</h4>
-            <p>{item.text}</p>
-          </div>
-          <div className={styles.imageBlock}>
-            <img src={item.image} alt="Testimony" />
+
+      {/* Mobile Auto-Sliding Rows */}
+      <div className={styles.speakerMobileContainer}>
+        {/* Row 1 - Slides Right */}
+        <div className={styles.sliderWrapper} ref={row1Ref}>
+          <div className={styles.track}>
+            {[...row1, ...row1].map((speaker, idx) => (
+              <div key={idx} className={styles.cardWrapper}>
+                <SpeakerCard speaker={speaker} />
+              </div>
+            ))}
           </div>
         </div>
-      ))} */}
+
+        {/* Row 2 - Slides Left */}
+        <div className={styles.sliderWrapper} ref={row2Ref}>
+          <div className={styles.track}>
+            {[...row2, ...row2].map((speaker, idx) => (
+              <div key={idx} className={styles.cardWrapper}>
+                <SpeakerCard speaker={speaker} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

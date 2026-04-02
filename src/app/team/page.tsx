@@ -12,9 +12,7 @@ interface Member {
 
 const categories = [
   "Mentors",
-  "Alumni",
   "Core Team 2025-2026",
-  "Developers",
 ];
 
 export default function TeamPage() {

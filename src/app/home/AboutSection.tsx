@@ -7,11 +7,17 @@ export default function AboutSection() {
       <div className={styles.aboutContainer}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
-            <h2 className={styles.aboutTitle}>
+            <h2>
               About <span className={styles.orangeText}>Ruminate</span>
             </h2>
             <p className={styles.aboutDescription}>
-              A club driven by many young business minded students to foster a culture of entrepreneurship at campus of IIIT Surat, Not only promoting the entrepreneurship culture, the club also encourages the youth to develop the interpersonal and leadership skills which help them to ace in any field or department they are interested in, helps in fostering the curiosity, collaboration and creativity.
+              Ruminate is the entrepreneurship cell of IIIT Surat, dedicated to fostering a vibrant culture of innovation and business thinking among students. We believe in empowering the next generation of entrepreneurs and leaders.
+            </p>
+            <p className={styles.aboutDescription}>
+              Our mission is to inspire, educate, and support students in their entrepreneurial journey. Through workshops, mentorship, networking events, and real-world projects, we help students develop critical business acumen, leadership skills, and the confidence to turn their ideas into reality.
+            </p>
+            <p className={styles.aboutDescription}>
+              We foster curiosity, collaboration, and creativity—creating an ecosystem where innovation thrives and dreams become ventures.
             </p>
           </div>
 

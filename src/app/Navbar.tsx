@@ -48,6 +48,7 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Our Team' },
+    { href: '/ssip', label: 'SSIP' },
     { href: '/blogs', label: 'Blogs' },
     { href: '/gallary', label: 'Gallery' },
   ];
