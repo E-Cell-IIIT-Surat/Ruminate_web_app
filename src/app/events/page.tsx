@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import ImageCarousel from "./ImageCarousel";
 import styles from "./events.module.css";
@@ -71,7 +72,22 @@ const events: Array<{
   host: string;
   status: string;
   action: string;
+  href?: string;
 }> = [
+  {
+    id: "industrial-2",
+    track: "industrial",
+    title: "Vibrant Gujarat Summit 2026 Visit",
+    summary:
+      "A cohort visit covering the inauguration, international addresses, startup exhibitions, and seminars on the startup ecosystem, energy, and GIFT City.",
+    date: "1st of May, 2026",
+    sortDate: "2026-05-01",
+    location: "Gandhinagar, Gujarat",
+    host: "Ruminate",
+    status: "28 Students",
+    action: "View report",
+    href: "/events/vibrantgujarat2026",
+  },
   {
     id: "industrial-1",
     track: "industrial",
@@ -129,8 +145,8 @@ const totalLocations = new Set(events.map((event) => event.location)).size;
 const spotlightEvents = events.slice(0, 3);
 const updates = spotlightEvents.map((event) => ({
   ...event,
-  link: "#",
-  updateDate: "",
+  link: event.href,
+  updateDate: event.sortDate,
 }));
 
 const getSortableDate = (value?: string) => {
@@ -207,24 +223,34 @@ export default function EventsPage() {
                 <span className={styles.heroPanelCount}>{updatesSorted.length} new</span>
               </div>
               <div className={styles.heroPanelList}>
-                {updatesSorted.map((event) => (
-                  <a
-                    key={event.id}
-                    className={styles.heroMiniCard}
-                    href={event.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className={styles.trackBadge} data-track={event.track}>
-                      {trackLabels[event.track]}
-                    </span>
-                    <p className={styles.heroMiniTitle}>{event.title}</p>
-                    <p className={styles.heroMiniMeta}>{event.summary}</p>
-                    <p className={styles.heroMiniMeta}>
-                      {event.date} · {event.location}
-                    </p>
-                  </a>
-                ))}
+                {updatesSorted.map((event) => {
+                  const cardContent = (
+                    <>
+                      <span className={styles.trackBadge} data-track={event.track}>
+                        {trackLabels[event.track]}
+                      </span>
+                      <p className={styles.heroMiniTitle}>{event.title}</p>
+                      <p className={styles.heroMiniMeta}>{event.summary}</p>
+                      <p className={styles.heroMiniMeta}>
+                        {event.date} · {event.location}
+                      </p>
+                    </>
+                  );
+
+                  if (event.link) {
+                    return (
+                      <Link key={event.id} className={styles.heroMiniCard} href={event.link}>
+                        {cardContent}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <article key={event.id} className={styles.heroMiniCard}>
+                      {cardContent}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -300,7 +326,13 @@ export default function EventsPage() {
                   </div>
                   <div className={styles.eventFooter}>
                     <span className={styles.eventHost}>{event.host}</span>
-                    <span className={styles.eventAction}>{event.action}</span>
+                    {event.href ? (
+                      <Link href={event.href} className={styles.eventActionLink}>
+                        {event.action}
+                      </Link>
+                    ) : (
+                      <span className={styles.eventAction}>{event.action}</span>
+                    )}
                   </div>
                 </article>
               ))}

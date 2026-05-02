@@ -2023,6 +2023,20 @@
   font-style: italic;
 }
 
+.eventActionLink {
+  font-size: 0.85rem;
+  color: var(--primary-orange);
+  font-style: italic;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.eventActionLink:hover {
+  color: var(--white);
+  border-color: rgba(255, 107, 53, 0.45);
+}
+
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
