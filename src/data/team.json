@@ -14,6 +14,89 @@
 
   ],
 "Alumni": [
+ {
+      "name": "Himanshu Shekhar",
+      "role": "Secretary - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/SmartSelect_20250709_154618_Photos.jpg"
+    },
+    {
+      "name": "Pratik Avhad",
+      "role": "Joint Secretary - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Pratik.JPG"
+      
+    },
+    {
+      "name": "Vasu",
+      "role": "Finance Head & Design Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Vasu.JPG"
+     
+    },
+    {
+      "name": "Mitul",
+      "role": "Finance Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Mitul.JPG"
+     
+    },
+    {
+      "name": "Sumit",
+      "role": "Event Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Sumit.JPG"
+    
+    },
+    {
+      "name": "Saquib",
+      "role": "Event Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20saquib.JPG"
+      
+    },
+    {
+      "name": "Vivek Baya",
+      "role": "Corporate Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Copy%20of%20Vivek.JPG"
+      
+    },
+    {
+      "name": "Meetiksha",
+      "role": "Design Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Meetiksha.JPG"
+    
+    },
+    {
+      "name": "Ronit Choudhary",
+      "role": "Tech Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ronit.JPG"
+      
+    },
+    {
+      "name": "Uday Dhakar",
+      "role": "Marketing Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Uday.JPG"
+     
+    },
+    {
+      "name": "Aman Kumar",
+      "role": "Content Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Aman.JPG"
+     
+    },
+    {
+      "name": "Aryan Kumar",
+      "role": "Media Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Aryan.JPG"
+     
+    },
+    {
+      "name": "Ganesh Tilekar",
+      "role": "Research Head - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Ganesh.JPG"
+      
+    },
+    {
+      "name": "Bhavik Songara",
+      "role": "Coordinator - YR 25-26",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Bhavik.JPG"
+    },
+
 {
   "name": "Harshvardhan Mani Tripathi",
   "role": "Secretary - YR 24-25",
@@ -524,6 +607,61 @@
       "name": "Bhavik Songara",
       "role": "Coordinator",
       "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Copy%20of%20Bhavik.JPG",
+      "imgPositionY": "12%"
+    }
+  ],
+   "Core Team 2026-2027": [
+    {
+      "name": "Nityan Dave",
+      "role": "Secretary",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Nityam%20Dave%20%201.png"
+    },
+    {
+      "name": "Sunny Kumar",
+      "role": "Joint Secretary",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/sunny.png",
+      "imgPositionY": "13%"
+    },
+    {
+      "name": "Divya Patel",
+      "role": "Finance Head & Design Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/divya.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Jeels Hapani",
+      "role": "Event Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/jeels.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Nikhil Pandey",
+      "role": "Corporate Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Nikhil%201.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Yogesh Khinchi",
+      "role": "Tech Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/yogesh%20khinchi%201.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Maitreya Chauhan",
+      "role": "Marketing Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Maitreya%201.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Abhinay Gunda",
+      "role": "Content Head & Research Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/Abhinay%201.png",
+      "imgPositionY": "12%"
+    },
+    {
+      "name": "Parth Gupta",
+      "role": "Media Head",
+      "img": "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/parth%20gupta%201.png",
       "imgPositionY": "12%"
     }
   ]

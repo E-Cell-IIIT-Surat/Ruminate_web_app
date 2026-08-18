@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+// The stylesheet is loaded by Next.js; TypeScript does not type-check CSS side-effect imports.
+// @ts-expect-error CSS files are handled by the Next.js bundler.
 import "./global.css";
 
 interface Member {
@@ -12,7 +15,7 @@ interface Member {
 
 const categories = [
   "Mentors",
-  "Core Team 2025-2026",
+  "Core Team 2026-2027",
 ];
 
 export default function TeamPage() {
@@ -92,10 +95,13 @@ export default function TeamPage() {
         <div className="hero-right">
           <div className="image-layer">
             <div className="back-layer"></div>
-            <img
+            <Image
               className="front-image"
               src="https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/IMG_3866.JPG"
               alt="Team Photo"
+              width={800}
+              height={600}
+              priority
             />
           </div>
         </div>
@@ -150,9 +156,11 @@ export default function TeamPage() {
             <div className="team-grid">
               {displayedTeam.map((member, index) => (
                 <div className="card" key={index}>
-                  <img
+                  <Image
                     src={member.img}
                     alt={member.name}
+                    width={500}
+                    height={500}
                     style={{ objectPosition: `50% ${member.imgPositionY ?? "50%"}` }}
                   />
                   <div className="info">
