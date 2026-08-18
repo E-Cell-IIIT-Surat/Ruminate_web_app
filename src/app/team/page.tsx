@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-// The stylesheet is loaded by Next.js; TypeScript does not type-check CSS side-effect imports.
-// @ts-expect-error CSS files are handled by the Next.js bundler.
 import "./global.css";
 
 interface Member {
