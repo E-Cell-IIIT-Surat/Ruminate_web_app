@@ -17,6 +17,11 @@ const startups: Startup[] = [
     name: "Vysion Tech",
     logo: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/VysionTech.png",
     link: "https://www.linkedin.com/company/vysion-tech/?originalSubdomain=in"
+  },
+  {
+    name : "DarexAI",
+    logo : "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Alumni%20Startups/dare_xai_logo.jpg",
+    link : "https://www.linkedin.com/company/dare-xai/"
   }
 ];
 
