@@ -1,7 +1,7 @@
 "use client";
 import { FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
 import { useEffect, useRef } from 'react';
-import styles from "./home.module.css";
+import styles from "./CardsSection.module.css";
 
 export default function CardsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -39,7 +39,7 @@ export default function CardsSection() {
           </h2>
           <div className={styles.sectionUnderline}></div>
         </div>
-        
+
         <div className={styles.cards}>
           <div className={styles.card}>
             <div className={styles.cardIconWrapper}>
@@ -56,7 +56,7 @@ export default function CardsSection() {
               <span className={styles.cardNumber}>01</span>
             </div>
           </div>
-          
+
           <div className={styles.card}>
             <div className={styles.cardIconWrapper}>
               <div className={styles.cardIcon}>
@@ -72,7 +72,7 @@ export default function CardsSection() {
               <span className={styles.cardNumber}>02</span>
             </div>
           </div>
-          
+
           <div className={styles.card}>
             <div className={styles.cardIconWrapper}>
               <div className={styles.cardIcon}>

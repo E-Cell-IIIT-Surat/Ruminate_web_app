@@ -1,0 +1,432 @@
+/* ================================================================
+   RUMINATE — HERO
+   ----------------------------------------------------------------
+   The photography carries the section. No graph-paper grid, no
+   glow blob, no dark wash burying the frame — one restrained
+   bottom scrim so the headline reads, and that's the only
+   synthetic effect in play. No filled buttons anywhere: the two
+   calls to action are plain text with an underline, same language
+   as the rest of the site.
+
+   Scoped to its own module so it can't collide with other
+   homepage sections in home.module.css.
+   ================================================================ */
+
+.heroDesktop {
+  --ink: #0b0908;
+  --ink-line: rgba(242, 231, 214, 0.1);
+  --ink-line-strong: rgba(242, 231, 214, 0.22);
+  --parchment: #f2e7d6;
+  --ash: #c9bfb3;
+  --ash-dim: #8f8177;
+  --ember: #ff6a2b;
+  --gold: #d9a862;
+
+  position: relative;
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--ink);
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.heroDesktop *,
+.heroDesktop *::before,
+.heroDesktop *::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroDesktop * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Background: the photo does the work ---- */
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBackgroundSlide {
+  position: absolute;
+  inset: 0;
+  animation: heroFadeIn 1.1s ease both;
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.heroBackgroundImage {
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(0.14) saturate(0.85) contrast(1.08) brightness(0.66);
+}
+
+/* One scrim doing the legibility work — strongest at the very
+   bottom where the text sits, almost nothing across the top two
+   thirds of the frame. */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(11, 9, 8, 0) 30%, rgba(11, 9, 8, 0.58) 68%, var(--ink) 100%),
+    linear-gradient(90deg, rgba(11, 9, 8, 0.5) 0%, rgba(11, 9, 8, 0) 52%);
+}
+
+/* The old grid-line texture and glow blob were the two most
+   generic pieces of the previous hero — the photo doesn't need
+   either, so they're switched off rather than reworked. */
+.heroGrid,
+.heroGlow {
+  display: none;
+}
+
+/* ---- Content ---- */
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-width, 1180px);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.heroText {
+  max-width: 640px;
+}
+
+.heroKicker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1.5rem;
+  font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+.heroKicker span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ember);
+  flex: none;
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--parchment);
+}
+.heroSpark {
+  color: var(--ember);
+}
+
+.heroDescription {
+  margin: 1.5rem 0 0;
+  max-width: 46ch;
+  color: var(--ash);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ---- Actions — text links, never buttons ---- */
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.25rem;
+}
+
+.heroPrimary,
+.heroSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 3px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.heroPrimary {
+  color: var(--parchment);
+  border-bottom-color: var(--ember);
+}
+.heroPrimary svg {
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+}
+.heroPrimary:hover {
+  color: var(--ember);
+}
+.heroPrimary:hover svg {
+  transform: translateX(3px);
+}
+
+.heroSecondary {
+  color: var(--ash);
+  border-bottom-color: var(--ink-line-strong);
+}
+.heroSecondary:hover {
+  color: var(--parchment);
+}
+
+/* ---- Signature line — the tagline gets real weight here ---- */
+
+.heroSignature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1.1rem;
+  margin-top: 2.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-line);
+}
+.heroSignature span:first-child {
+  font-family: var(--font-display, Georgia, serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+.heroSignature span:not(:first-child) {
+  font-size: 0.8rem;
+  color: var(--ash-dim);
+  position: relative;
+  padding-left: 1.25rem;
+}
+.heroSignature span:not(:first-child)::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--ink-line-strong);
+}
+
+/* ---- Rail: slide label, ticks, counter — one horizontal line ---- */
+
+.heroRail {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.heroRailLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ash-dim);
+  white-space: nowrap;
+}
+
+.heroDots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+}
+.heroDots button {
+  width: 22px;
+  height: 2px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: rgba(242, 231, 214, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+.heroDots button:hover {
+  background: rgba(242, 231, 214, 0.55);
+}
+.heroDotActive {
+  width: 34px !important;
+  background: var(--ember) !important;
+}
+
+.heroCounter {
+  font-size: 0.78rem;
+  color: var(--ash-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.heroDesktop a:focus-visible,
+.heroDesktop button:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .heroRail {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroRailLabel {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 560px) {
+  .heroDesktop {
+    min-height: 92svh;
+  }
+  .heroSignature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+
+/* ================================================================
+   Featured-programs strip
+   ================================================================ */
+
+.heroBoxesStrip {
+  --ink: #0b0908;
+  --ink-line: rgba(242, 231, 214, 0.09);
+  --ink-line-strong: rgba(242, 231, 214, 0.2);
+  --parchment: #f2e7d6;
+  --ash-dim: #8f8177;
+  --ember: #ff6a2b;
+  --gold: #d9a862;
+  --sage: #8fa07a;
+  --clay: #c97b63;
+  --slate: #7291a8;
+
+  background: var(--ink);
+  border-top: 1px solid var(--ink-line);
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.heroBoxesStripInner {
+  width: min(var(--content-width, 1180px), 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.heroBox {
+  flex: 1 1 190px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.6rem 1.4rem;
+  border-right: 1px dashed var(--ink-line-strong);
+  border-top: 2px solid transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.25s ease, border-top-color 0.25s ease;
+}
+.heroBoxesStripInner > a:last-child {
+  border-right: none;
+}
+.heroBoxesStripInner > a:nth-child(1) { border-top-color: var(--ember); }
+.heroBoxesStripInner > a:nth-child(2) { border-top-color: var(--gold); }
+.heroBoxesStripInner > a:nth-child(3) { border-top-color: var(--sage); }
+.heroBoxesStripInner > a:nth-child(4) { border-top-color: var(--clay); }
+.heroBoxesStripInner > a:nth-child(5) { border-top-color: var(--slate); }
+
+.heroBox:hover {
+  background: rgba(242, 231, 214, 0.03);
+}
+
+.heroBoxIconWrap {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+}
+.heroBoxIcon {
+  font-size: 1.35rem;
+  color: var(--ink-line-strong);
+  transition: transform 0.25s ease;
+}
+
+/* Full-strength colour at rest — the strip should read as five
+   distinct programs at a glance, not one that lights up on hover. */
+.heroBoxesStripInner > a:nth-child(1) .heroBoxIcon { color: var(--ember); }
+.heroBoxesStripInner > a:nth-child(2) .heroBoxIcon { color: var(--gold); }
+.heroBoxesStripInner > a:nth-child(3) .heroBoxIcon { color: var(--sage); }
+.heroBoxesStripInner > a:nth-child(4) .heroBoxIcon { color: var(--clay); }
+.heroBoxesStripInner > a:nth-child(5) .heroBoxIcon { color: var(--slate); }
+.heroBox:hover .heroBoxIcon {
+  transform: scale(1.1);
+}
+
+.heroBoxLabel {
+  display: block;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1rem;
+  color: var(--parchment);
+}
+.heroBox small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--ash-dim);
+}
+
+.heroBoxArrow {
+  margin-left: auto;
+  flex: none;
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+.heroBoxesStripInner > a:nth-child(1) .heroBoxArrow { color: var(--ember); }
+.heroBoxesStripInner > a:nth-child(2) .heroBoxArrow { color: var(--gold); }
+.heroBoxesStripInner > a:nth-child(3) .heroBoxArrow { color: var(--sage); }
+.heroBoxesStripInner > a:nth-child(4) .heroBoxArrow { color: var(--clay); }
+.heroBoxesStripInner > a:nth-child(5) .heroBoxArrow { color: var(--slate); }
+.heroBox:hover .heroBoxArrow {
+  transform: translateX(3px);
+}
+
+
+
+@media (max-width: 700px) {
+  .heroBox {
+    flex: 1 1 100%;
+    border-right: none;
+    border-bottom: 1px dashed var(--ink-line-strong);
+  }
+  .heroBoxesStripInner > a:last-child {
+    border-bottom: none;
+  }
+}

@@ -7,6 +7,58 @@
   padding-top: 80px; /* Account for fixed navbar */
 }
 
+/* Premium team page */
+.team-main { min-height: 100vh; padding-top: 80px; background: #070706; }
+.team-main .hero-section { position: relative; width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); min-height: min(780px, calc(100svh - 80px)); margin: auto; padding: clamp(4rem, 8vw, 8rem) 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); overflow: visible; }
+.team-main .hero-section::before { content: "TEAM"; position: absolute; z-index: 0; left: -0.05em; bottom: -0.04em; color: rgba(255,255,255,0.025); font-family: var(--font-display); font-size: clamp(9rem, 24vw, 23rem); font-weight: 800; line-height: 0.8; letter-spacing: -0.09em; pointer-events: none; }
+.team-main .hero-left, .team-main .hero-right { position: relative; z-index: 1; }
+.team-main .page-eyebrow { margin: 0 0 1.2rem; color: var(--flame-400); font-size: 0.66rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; }
+.team-main .hero-text { margin: 0; color: var(--paper-100); font-family: var(--font-display); font-size: clamp(3.4rem, 6.7vw, 7rem); font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; }
+.team-main .highlight-orange, .team-main .highlight-gradient { color: transparent; background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; }
+.team-main .hero-description { max-width: 660px; margin: 1.7rem 0 0; color: #aaa097; font-size: clamp(0.96rem, 1.18vw, 1.12rem); line-height: 1.72; }
+.team-main .image-layer { position: relative; aspect-ratio: 4 / 5; padding: 0.65rem; border: 1px solid rgba(255,180,109,0.18); border-radius: 48% 48% 1.8rem 1.8rem; background: rgba(255,255,255,0.025); box-shadow: 0 34px 90px rgba(0,0,0,0.45); }
+.team-main .back-layer { position: absolute; inset: -1.2rem 1.2rem 1.2rem -1.2rem; border: 1px solid rgba(255,100,39,0.16); border-radius: inherit; background: radial-gradient(circle at 50% 22%, rgba(255,100,39,0.14), transparent 62%); }
+.team-main .front-image { position: relative; width: 100%; height: 100%; border-radius: calc(48% - 0.3rem) calc(48% - 0.3rem) 1.25rem 1.25rem; object-fit: cover; object-position: center; filter: saturate(0.78) contrast(1.04); }
+.team-main .category-nav { position: sticky; z-index: 20; top: 70px; width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; padding: 0.55rem; display: flex; justify-content: center; gap: 0.5rem; border: 1px solid rgba(255,255,255,0.09); border-radius: 999px; background: rgba(10,9,8,0.86); backdrop-filter: blur(18px); }
+.team-main .category-button { min-height: 44px; padding: 0.65rem 1.15rem; border: 1px solid transparent; border-radius: 999px; color: #9f958c; background: transparent; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; }
+.team-main .category-button:hover { color: #fff; background: rgba(255,255,255,0.04); }
+.team-main .category-button.active { color: #1a0902; background: var(--gradient-accent); box-shadow: 0 10px 28px rgba(255,91,24,0.22); }
+.team-main .team { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: auto; padding: var(--space-section) 0; }
+.team-main .team > h2 { margin: 0 0 clamp(2.5rem, 5vw, 4rem); font-size: clamp(2.8rem, 6vw, 5.6rem); text-align: left; }
+.team-main .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.team-main .card { position: relative; min-width: 0; border: 1px solid rgba(255,255,255,0.085); border-radius: var(--radius-xl); background: #0d0c0b; overflow: hidden; box-shadow: none; }
+.team-main .card::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 0 1px transparent; transition: box-shadow var(--transition-normal); }
+.team-main .card:hover { border-color: rgba(255,130,67,0.38); transform: translateY(-7px); box-shadow: var(--shadow-card); }
+.team-main .card:hover::after { box-shadow: inset 0 0 45px rgba(255,100,39,0.08); }
+.team-main .card img { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; filter: saturate(0.74); transition: transform 700ms var(--ease-out), filter var(--transition-normal); }
+.team-main .card:hover img { transform: scale(1.04); filter: saturate(1); }
+.team-main .info { position: absolute; inset: auto 0 0; padding: 4rem 1.15rem 1.1rem; background: linear-gradient(transparent, rgba(0,0,0,0.94)); }
+.team-main .name { margin: 0; color: #fff8f0; font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.team-main .role { margin: 0.35rem 0 0; color: var(--flame-300); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.team-main .team-skeleton { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.team-main .team-skeleton span { aspect-ratio: 4 / 5; border-radius: var(--radius-xl); background: linear-gradient(100deg, #0c0b0a 20%, #1b1713 35%, #0c0b0a 50%); background-size: 200% 100%; animation: teamShimmer 1.4s linear infinite; }
+.team-main .empty { padding: 4rem 1.5rem; border: 1px dashed rgba(255,180,109,0.2); border-radius: var(--radius-xl); text-align: center; background: rgba(255,255,255,0.02); }
+@keyframes teamShimmer { to { background-position: -200% 0; } }
+
+@media (max-width: 1000px) {
+  .team-main .hero-section { grid-template-columns: 1.1fr 0.9fr; }
+  .team-main .team-grid, .team-main .team-skeleton { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .team-main { padding-top: 70px; }
+  .team-main .hero-section { min-height: auto; padding: 4rem 0 5rem; grid-template-columns: 1fr; gap: 3rem; }
+  .team-main .hero-text { font-size: clamp(3rem, 15vw, 5rem); }
+  .team-main .image-layer { width: min(100%, 420px); margin: auto; }
+  .team-main .category-nav { top: 70px; width: calc(100% - 1rem); justify-content: stretch; border-radius: 1rem; }
+  .team-main .category-button { flex: 1; padding-inline: 0.6rem; font-size: 0.62rem; }
+  .team-main .team-grid, .team-main .team-skeleton { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .team-main .name { font-size: 1rem; }
+  .team-main .role { font-size: 0.53rem; }
+}
+@media (max-width: 390px) {
+  .team-main .team-grid, .team-main .team-skeleton { grid-template-columns: 1fr; }
+}
+
 /* Hero Section */
 .hero-section {
   display: grid;

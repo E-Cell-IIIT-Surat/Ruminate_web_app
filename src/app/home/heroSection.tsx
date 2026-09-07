@@ -1,182 +1,239 @@
+// "use client";
+
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useEffect, useState } from "react";
+// import { FaArrowRight, FaCalendarAlt, FaChartLine, FaFire, FaLightbulb, FaRocket } from "react-icons/fa";
+// import styles from "./home.module.css";
+// import EcosystemTicker from "./EcosystemTicker";
+
+// const heroSlides = [
+//   { src: "/home/hero-lcp.webp", alt: "Ruminate community celebrating an event" },
+//   { src: "/home/IPLAUCTION.webp", alt: "IPL Auction entrepreneurship event" },
+//   { src: "/home/alpeshsirsession.webp", alt: "Ruminate expert speaker session" },
+//   { src: "/home/certificatedistribution.webp", alt: "Certificate distribution at Ruminate" },
+//   { src: "/home/corporatecrime.webp", alt: "Corporate Crime competition" },
+//   { src: "/home/youthparliament.webp", alt: "Youth Parliament event" },
+//   { src: "/home/amulvisit.webp", alt: "Student industry visit" },
+//   { src: "/home/iprsession.webp", alt: "Intellectual property rights session" },
+// ];
+
+// const heroBoxes = [
+//   { icon: FaCalendarAlt, href: "/events", label: "Core events", note: "Learn in the room" },
+//   { icon: FaRocket, href: "/esummit", label: "E-Summit", note: "Meet the ecosystem" },
+//   { icon: FaLightbulb, href: "/ktb", label: "Know the Business", note: "Think like a builder" },
+//   { icon: FaChartLine, href: "/ssip", label: "SSIP", note: "Move ideas forward" },
+//   { icon: FaFire, href: "/events/abhyudaya", label: "UDHBHAV", note: "Turn ideas into impact" },
+// ];
+
+// export default function HeroSection() {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   useEffect(() => {
+//     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+//     const interval = window.setInterval(
+//       () => setCurrentSlide((current) => (current + 1) % heroSlides.length),
+//       7000,
+//     );
+//     return () => window.clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <>
+//       <section className={styles.heroDesktop} aria-labelledby="home-hero-title">
+//         <div className={styles.heroBackground}>
+//           <div className={styles.heroBackgroundSlide} key={heroSlides[currentSlide].src}>
+//             <Image
+//               src={heroSlides[currentSlide].src}
+//               alt={heroSlides[currentSlide].alt}
+//               fill
+//               className={styles.heroBackgroundImage}
+//               sizes="100vw"
+//               priority={currentSlide === 0}
+//               loading={currentSlide === 0 ? "eager" : "lazy"}
+//               quality={76}
+//             />
+//           </div>
+//           <div className={styles.heroOverlay} />
+//           <div className={styles.heroGrid} aria-hidden="true" />
+//           <div className={styles.heroGlow} aria-hidden="true" />
+//         </div>
+
+//         <div className={styles.heroContent}>
+//           <div className={styles.heroText}>
+//             <p className={styles.heroKicker}><span /> Ruminate · E-Cell IIIT Surat</p>
+//             <h1 id="home-hero-title" className={styles.heroTitle}>
+//               Where ideas ignite.<br /><span className={styles.heroSpark}>Where founders begin.</span>
+//             </h1>
+//             <p className={styles.heroDescription}>
+//               A student-led entrepreneurship ecosystem for people ready to question,
+//               build, collaborate and turn ambition into action.
+//             </p>
+//             <div className={styles.heroActions}>
+//               <Link href="/events" className={styles.heroPrimary}>Explore the ecosystem <FaArrowRight aria-hidden="true" /></Link>
+//               <a href="https://portal.ecelliiitsurat.in/udbhav" target="_blank" rel="noopener noreferrer" className={styles.heroSecondary}>Visit the portal</a>
+//             </div>
+//             <div className={styles.heroSignature}>
+//               <span>Foster the spark.</span>
+//               <span>IIIT Surat · Gujarat</span>
+//             </div>
+//           </div>
+
+//           <div className={styles.heroRail}>
+//             <span className={styles.heroRailLabel}>Ruminate in action</span>
+//             <div className={styles.heroDots} aria-label="Choose a hero slide">
+//               {heroSlides.map((slide, index) => (
+//                 <button
+//                   type="button"
+//                   key={slide.src}
+//                   className={index === currentSlide ? styles.heroDotActive : ""}
+//                   onClick={() => setCurrentSlide(index)}
+//                   aria-label={`Show highlight ${index + 1}`}
+//                   aria-current={index === currentSlide ? "true" : undefined}
+//                 />
+//               ))}
+//             </div>
+//             <span className={styles.heroCounter}>{String(currentSlide + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}</span>
+//           </div>
+//         </div>
+//       </section>
+
+//       <EcosystemTicker />
+
+//       <section className={styles.heroBoxesStrip} aria-label="Featured programs">
+//         <div className={styles.heroBoxesStripInner}>
+//           {heroBoxes.map((item) => (
+//             <Link className={styles.heroBox} href={item.href} key={item.href}>
+//               <span className={styles.heroBoxIconWrap}><item.icon className={styles.heroBoxIcon} aria-hidden="true" /></span>
+//               <span><span className={styles.heroBoxLabel}>{item.label}</span><small>{item.note}</small></span>
+//               <FaArrowRight className={styles.heroBoxArrow} aria-hidden="true" />
+//             </Link>
+//           ))}
+//         </div>
+//       </section>
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
 "use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "./home.module.css";
+import { FaArrowRight, FaCalendarAlt, FaChartLine, FaFire, FaLightbulb, FaRocket } from "react-icons/fa";
+import styles from "./HeroSection.module.css";
+import EcosystemTicker from "./EcosystemTicker";
 
 const heroSlides = [
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/voteofthanks.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/IPLAUCTION.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/alpeshsirsession.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/certificatedistribution.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/corporatecrime.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/youthparliament.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/amulvisit.png",
-  "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageslider/iprsession.png",
+  { src: "/home/hero-lcp.webp", alt: "Ruminate community celebrating an event" },
+  { src: "/home/IPLAUCTION.webp", alt: "IPL Auction entrepreneurship event" },
+  { src: "/home/alpeshsirsession.webp", alt: "Ruminate expert speaker session" },
+  { src: "/home/certificatedistribution.webp", alt: "Certificate distribution at Ruminate" },
+  { src: "/home/corporatecrime.webp", alt: "Corporate Crime competition" },
+  { src: "/home/youthparliament.webp", alt: "Youth Parliament event" },
+  { src: "/home/amulvisit.webp", alt: "Student industry visit" },
+  { src: "/home/iprsession.webp", alt: "Intellectual property rights session" },
 ];
 
 const heroBoxes = [
-  {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/coreeventsblock.svg",
-    href: "/events",
-  },
-  {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/esummitblock.svg",
-    href: "/esummit",
-  },
-  {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/ktbblock.svg",
-    href: "/ktb",
-  },
-  {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/homepageeventsinbanner/ssipblock.svg",
-    href: "/ssip",
-  },
+  { icon: FaCalendarAlt, href: "/events", label: "Core events", note: "Learn in the room" },
+  { icon: FaRocket, href: "/esummit", label: "E-Summit", note: "Meet the ecosystem" },
+  { icon: FaLightbulb, href: "/ktb", label: "Know the Business", note: "Think like a builder" },
+  { icon: FaChartLine, href: "/ssip", label: "SSIP", note: "Move ideas forward" },
+  { icon: FaFire, href: "/events/abhyudaya", label: "UDHBHAV", note: "Turn ideas into impact" },
 ];
 
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-    
-    // Check if mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const interval = window.setInterval(
+      () => setCurrentSlide((current) => (current + 1) % heroSlides.length),
+      7000,
+    );
+    return () => window.clearInterval(interval);
   }, []);
 
   return (
     <>
-      {/* DESKTOP VIEW */}
-      {!isMobile && (
-        <section className={styles.heroDesktop}>
-          <div className={styles.heroBackground}>
-            <div
-              className={styles.heroBackgroundTrack}
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {heroSlides.map((image, index) => (
-                <div
-                  className={styles.heroBackgroundSlide}
-                  key={index}
-                  style={{ backgroundImage: `url(${image})` }}
-                >
-                  <img
-                    src={image}
-                    alt=""
-                    className={styles.heroBackgroundImage}
-                  />
-                </div>
+      <section className={styles.heroDesktop} aria-labelledby="home-hero-title">
+        <div className={styles.heroBackground}>
+          <div className={styles.heroBackgroundSlide} key={heroSlides[currentSlide].src}>
+            <Image
+              src={heroSlides[currentSlide].src}
+              alt={heroSlides[currentSlide].alt}
+              fill
+              className={styles.heroBackgroundImage}
+              sizes="100vw"
+              priority={currentSlide === 0}
+              loading={currentSlide === 0 ? "eager" : "lazy"}
+              quality={76}
+            />
+          </div>
+          <div className={styles.heroOverlay} />
+          <div className={styles.heroGrid} aria-hidden="true" />
+          <div className={styles.heroGlow} aria-hidden="true" />
+        </div>
+
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <p className={styles.heroKicker}><span /> Ruminate · E-Cell IIIT Surat</p>
+            <h1 id="home-hero-title" className={styles.heroTitle}>
+              Where ideas ignite.<br /><span className={styles.heroSpark}>Where founders begin.</span>
+            </h1>
+            <p className={styles.heroDescription}>
+              A student-led entrepreneurship ecosystem for people ready to question,
+              build, collaborate and turn ambition into action.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/events" className={styles.heroPrimary}>Explore the Events <FaArrowRight aria-hidden="true" /></Link>
+              <a href="https://portal.ecelliiitsurat.in" target="_blank" rel="noopener noreferrer" className={styles.heroSecondary}>Visit the portal</a>
+            </div>
+            <div className={styles.heroSignature}>
+              <span>#fosterthespark</span>
+              <span>IIIT Surat · Gujarat</span>
+            </div>
+          </div>
+
+          <div className={styles.heroRail}>
+            <span className={styles.heroRailLabel}>Ruminate in action</span>
+            <div className={styles.heroDots} aria-label="Choose a hero slide">
+              {heroSlides.map((slide, index) => (
+                <button
+                  type="button"
+                  key={slide.src}
+                  className={index === currentSlide ? styles.heroDotActive : ""}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Show highlight ${index + 1}`}
+                  aria-current={index === currentSlide ? "true" : undefined}
+                />
               ))}
             </div>
-            <div className={styles.heroOverlay}></div>
+            <span className={styles.heroCounter}>{String(currentSlide + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}</span>
           </div>
+        </div>
+      </section>
 
-          <div className={styles.heroContent}>
-            <div className={`${styles.heroText} ${isVisible ? styles.fadeInUp : ""}`}>
-              <h1 className={styles.heroTitle}>
-                Foster The <span className={styles.heroSpark}>Spark</span>
-              </h1>
-            </div>
+      <EcosystemTicker />
 
-            <div className={styles.heroBoxes}>
-              {heroBoxes.map((item, index) => (
-                <a
-                  className={styles.heroBox}
-                  href={item.href}
-                  key={`${item.image}-${index}`}
-                >
-                  <img src={item.image} alt={`Hero box ${index + 1}`} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.heroScroll}>
-            <div className={styles.scrollIndicator}>
-              <span></span>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* MOBILE VIEW */}
-      {isMobile && (
-        <section className={styles.heroMobile}>
-          <div className={styles.heroMobileBackground}>
-            <div
-              className={styles.heroMobileBackgroundTrack}
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {heroSlides.map((image, index) => (
-                <div
-                  className={styles.heroMobileBackgroundSlide}
-                  key={index}
-                >
-                  <img
-                    src={image}
-                    alt=""
-                    className={styles.heroMobileBackgroundImage}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className={styles.heroMobileOverlay}></div>
-          </div>
-
-          <div className={styles.heroMobileContent}>
-            <div className={`${styles.heroMobileText} ${isVisible ? styles.fadeInUp : ""}`}>
-              <h1 className={styles.heroMobileTitle}>
-                Foster The <span className={styles.heroMobileSpark}>Spark</span>
-              </h1>
-            </div>
-          </div>
-
-          <section className={styles.heroMobileBoxesStrip} aria-label="Featured events">
-            <div className={styles.heroMobileBoxesStripInner}>
-              {heroBoxes.map((item, index) => (
-                <a
-                  className={styles.heroMobileBox}
-                  href={item.href}
-                  key={`strip-${item.image}-${index}`}
-                >
-                  <img src={item.image} alt={`Featured event ${index + 1}`} />
-                </a>
-              ))}
-            </div>
-          </section>
-        </section>
-      )}
-
-      {/* DESKTOP BOXES STRIP */}
-      {!isMobile && (
-        <section className={styles.heroBoxesStrip} aria-label="Featured events">
-          <div className={styles.heroBoxesStripInner}>
-            {heroBoxes.map((item, index) => (
-              <a
-                className={styles.heroBox}
-                href={item.href}
-                key={`strip-${item.image}-${index}`}
-              >
-                <img src={item.image} alt={`Featured event ${index + 1}`} />
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
+      <section className={styles.heroBoxesStrip} aria-label="Featured programs">
+        <div className={styles.heroBoxesStripInner}>
+          {heroBoxes.map((item) => (
+            <Link className={styles.heroBox} href={item.href} key={item.href}>
+              <span className={styles.heroBoxIconWrap}><item.icon className={styles.heroBoxIcon} aria-hidden="true" /></span>
+              <span><span className={styles.heroBoxLabel}>{item.label}</span><small>{item.note}</small></span>
+              <FaArrowRight className={styles.heroBoxArrow} aria-hidden="true" />
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

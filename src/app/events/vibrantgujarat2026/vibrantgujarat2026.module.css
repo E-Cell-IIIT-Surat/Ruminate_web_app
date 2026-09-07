@@ -205,6 +205,11 @@
   font-weight: 700;
 }
 
+.insightCard { max-width:900px; margin:2.5rem 0 0; padding:clamp(1.5rem,4vw,2.5rem); border:1px solid rgba(255,180,109,.18); border-radius:var(--radius-xl); background:linear-gradient(145deg,rgba(255,100,39,.07),rgba(255,255,255,.018)); }
+.insightLabel { display:block; margin-bottom:2rem; color:var(--flame-400); font-family:var(--font-mono); font-size:.6rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+.insightCard strong { display:block; color:#fff8f0; font-family:var(--font-display); font-size:clamp(1.8rem,4vw,3.6rem); line-height:1.05; letter-spacing:-.04em; }
+.insightCard p { max-width:700px; margin:1rem 0 0; color:#9f958c; }
+
 .chipRow {
   display: flex;
   flex-wrap: wrap;
@@ -261,3 +266,10 @@
     min-height: 180px;
   }
 }
+
+/* Final event-report editorial layer */
+.page{padding-top:80px;background:#070706;color:var(--paper-100)}.hero{padding:clamp(4rem,9vw,8rem) var(--content-gutter);background:radial-gradient(circle at 78% 12%,rgba(255,92,28,.1),transparent 28rem),#070706}.heroInner,.section,.sectionAlt{width:min(var(--content-width),100%);margin-inline:auto}
+.eyebrow,.sectionKicker{color:var(--flame-400)}.title{font-size:clamp(3.5rem,7.6vw,7.4rem);line-height:.89;letter-spacing:-.06em}.subtitle,.sectionText{color:#aaa097}
+.heroCopy,.heroCard,.metaCard,.topicCard{border-color:rgba(255,255,255,.085);border-radius:var(--radius-xl);background:#0d0c0b}.heroCopy{background:radial-gradient(circle at 15% 10%,rgba(255,100,39,.09),transparent 24rem),#0d0c0b}.metaLabel{color:var(--flame-400)}.metaValue{color:#eee6de}
+.section,.sectionAlt{padding:clamp(4rem,8vw,7rem) var(--content-gutter);border-top:1px solid rgba(255,180,109,.1);background:#070706}.sectionAlt{background:#0a0908}.sectionTitle{font-size:clamp(2.5rem,5.5vw,5rem)}.chip{border-color:rgba(255,180,109,.18);color:#d9d0c7;background:rgba(255,100,39,.05)}.topicCard:hover{border-color:rgba(255,130,67,.36);transform:translateY(-3px)}
+@media(max-width:700px){.page{padding-top:70px}.hero{padding-inline:1rem}.section,.sectionAlt{padding-inline:1rem}}

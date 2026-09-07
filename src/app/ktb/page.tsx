@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./ktb.module.css";
+import Image from "next/image";
 
 const objectives = [
   "To provide real-world exposure to students by connecting them with local entrepreneurs",
@@ -165,7 +166,11 @@ export default function KtbPage() {
     <div className={styles.page}>
       <div className={styles.container}>
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>KTB 2026</p>
+          <div className={styles.caseStamp}>
+            <span>KTB · 2026</span>
+            <strong>Case File</strong>
+          </div>
+          <p className={styles.eyebrow}>Know The Business</p>
           <h1 className={styles.heroTitle}>Know The Business</h1>
           <p className={styles.heroSubtitle}>
             A practical learning initiative where students interact directly with local
@@ -199,21 +204,30 @@ export default function KtbPage() {
             how real businesses operate. During this activity, students visit businesses,
             learn about their operations, revenue models, marketing strategies, and
             challenges, and gain first-hand exposure to real-world entrepreneurship. After
-            collecting insights, students analyze and present the entrepreneur’s business
+            collecting insights, students analyze and present the entrepreneur&apos;s business
             model in front of a jury panel, where they are evaluated on their
             understanding, analysis, and presentation skills. KTB aims to develop business
             awareness, practical knowledge, and entrepreneurial thinking among students.
           </p>
 
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}>Image Placeholder</div>
-            <div className={styles.imagePlaceholder}>Image Placeholder</div>
+            <figure className={styles.eventImage}>
+              <Image
+                src="/home/hero-lcp.webp"
+                alt="Students presenting their business analysis during Know The Business"
+                width={1600}
+                height={900}
+                sizes="(max-width: 768px) 94vw, 1100px"
+                quality={76}
+              />
+              <figcaption>Learning beyond the classroom through observation, analysis and presentation.</figcaption>
+            </figure>
           </div>
         </section>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Objectives of the Event</h2>
-          <ul className={styles.list}>
+          <ul className={styles.checklist}>
             {objectives.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -249,7 +263,7 @@ export default function KtbPage() {
               The jury appreciated the practical insights and structured approach shown by
               participants.
             </p>
-            <div className={styles.teamGrid}>
+            <div className={styles.teamGrid} data-day="1">
               {day1Teams.map((team) => (
                 <div key={team.name} className={styles.teamCard}>
                   <h4 className={styles.teamTitle}>{team.name}</h4>
@@ -263,11 +277,6 @@ export default function KtbPage() {
             </div>
           </div>
 
-          <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}>Image Placeholder</div>
-            <div className={styles.imagePlaceholder}>Image Placeholder</div>
-          </div>
-
           <div className={styles.subSection}>
             <h3 className={styles.subTitle}>Day 2 Highlights</h3>
             <p className={styles.sectionText}>
@@ -276,7 +285,7 @@ export default function KtbPage() {
               business understanding and presentation quality, with an added emphasis on
               student academic diversity and cross-year collaboration.
             </p>
-            <div className={styles.teamGrid}>
+            <div className={styles.teamGrid} data-day="2">
               {day2Teams.map((team) => (
                 <div key={team.name} className={styles.teamCard}>
                   <h4 className={styles.teamTitle}>{team.name}</h4>
@@ -293,7 +302,7 @@ export default function KtbPage() {
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Judging Criteria</h2>
-          <ul className={styles.list}>
+          <ul className={styles.rubricList}>
             {judgingCriteria.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -302,7 +311,7 @@ export default function KtbPage() {
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Key Takeaways</h2>
-          <ul className={styles.list}>
+          <ul className={styles.takeawayList}>
             {keyTakeaways.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -313,7 +322,11 @@ export default function KtbPage() {
           <h2 className={styles.sectionTitle}>Winners</h2>
           <div className={styles.winnerGrid}>
             {winners.map((winner) => (
-              <div key={`${winner.team}-${winner.rank}`} className={styles.winnerCard}>
+              <div
+                key={`${winner.team}-${winner.rank}`}
+                className={styles.winnerCard}
+                data-tier={winner.rank === "1st" ? "1" : "2"}
+              >
                 <div className={styles.winnerHeader}>
                   <span className={styles.winnerRank}>{winner.rank}</span>
                   <span className={styles.winnerTeam}>{winner.team}</span>

@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import "./blognew.css";
+import "./blognew-premium.css";
 
 interface BlogPost {
   id: string;
@@ -33,22 +35,28 @@ export default function BlogClient() {
       });
   }, [id]);
 
-  if (error) return <p className="loading-text">Blog not found.</p>;
-  if (!blog) return null;
+  const image = id ? ({ "1": "/home/certificatedistribution.webp", "2": "/home/hero-lcp.webp", "3": "/home/youthparliament.webp", "4": "/home/amulvisit.webp", "5": "/home/alpeshsirsession.webp" } as Record<string, string>)[id] : undefined;
+
+  if (error) return <div className="blog-detail-state"><h1>This story could not be found.</h1><p>It may have moved or is temporarily unavailable.</p></div>;
+  if (!blog) return <div className="blog-detail-skeleton" aria-label="Loading article"><span /><span /><span /></div>;
 
   return (
     <div className="blog-detail-wrapper">
       <div className="blog-heading-block">
-        <h1 className="blog-top-title">Blogs</h1>
+        <p className="blog-detail-eyebrow">Ruminate journal</p>
       </div>
 
       <h1 className="blog-main-title">{blog.title}</h1>
 
       <div className="blog-image-wrapper">
-        <img
-          src="/some2.jpg"
+        <Image
+          src={image || "/placeholder-event.webp"}
           alt={blog.title}
           className="blog-image"
+          width={5760}
+          height={3240}
+          sizes="(max-width: 900px) 94vw, 900px"
+          quality={78}
         />
       </div>
 

@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./home.module.css";
+import Image from "next/image";
 
 interface Faculty {
   name: string;
@@ -42,7 +43,7 @@ export default function FacultySection() {
         <div className={styles.facultyGrid}>
           {facultyData.map((fac, idx) => (
             <div key={idx} className={styles.facultyCardMini} onClick={() => setSelectedFaculty(fac)}>
-              <img src={fac.img} alt={fac.name} className={styles.facultyImageMini} />
+              <Image src={fac.img} alt={fac.name} className={styles.facultyImageMini} width={320} height={360} sizes="220px" unoptimized />
               <p className={styles.facultyNameMini}>{fac.name}</p>
               <p className={styles.facultyTitleMini}>{fac.title}</p>
             </div>
@@ -52,7 +53,7 @@ export default function FacultySection() {
         <div className={styles.facultyExpanded}>
           <div className={styles.facultyMainCard}>
             <div className={styles.imageBlock}>
-              <img src={selectedFaculty.img} alt={selectedFaculty.name} className={styles.mainImage} />
+              <Image src={selectedFaculty.img} alt={selectedFaculty.name} className={styles.mainImage} width={520} height={600} sizes="(max-width: 768px) 80vw, 420px" unoptimized />
               <div className={styles.imageCaption}>
                 <p className={styles.facultyName}>{selectedFaculty.name}</p>
                 <p className={styles.facultyTitle}>{selectedFaculty.title}</p>
@@ -64,11 +65,15 @@ export default function FacultySection() {
           </div>
           <div className={styles.thumbnailSidebar}>
             {facultyData.map((fac, idx) => (
-              <img
+              <Image
                 key={idx}
                 src={fac.img}
                 alt={fac.name}
                 className={styles.thumbnail}
+                width={120}
+                height={120}
+                sizes="80px"
+                unoptimized
                 onClick={() => setSelectedFaculty(fac)}
               />
             ))}

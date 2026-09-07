@@ -1,5 +1,6 @@
 "use client";
 import styles from './home.module.css';
+import Image from 'next/image';
 
 export default function AboutSection() {
   return (
@@ -22,10 +23,13 @@ export default function AboutSection() {
           </div>
 
           <div className={styles.aboutMedia}>
-            <img
-              src="/RUMINATEFRONT.png"
+            <Image
+              src="/RUMINATEFRONT.svg"
               alt="Ruminate community"
               className={styles.aboutMediaImage}
+              width={110}
+              height={245}
+              sizes="(max-width: 768px) 70vw, 360px"
             />
           </div>
         </div>

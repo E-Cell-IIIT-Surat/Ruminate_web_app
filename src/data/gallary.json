@@ -1,17 +1,18 @@
 {
   "2026": [
-    { "img": "some2.jpg", "event": "Amul Visit" },
-    { "img": "some2.jpg", "event": "Amul Visit" },
-    { "img": "some2.jpg", "event": "KTB" },
-    { "img": "some2.jpg", "event": "KTB" },
-    { "img": "some2.jpg", "event": "E-Summit" },
-    { "img": "some2.jpg", "event": "E-Summit" },
-    { "img": "some2.jpg", "event": "E-Summit" }
+    { "img": "/home/amulvisit.webp", "event": "Amul Visit" },
+    { "img": "/home/hero-lcp.webp", "event": "KTB" },
+    { "img": "/home/IPLAUCTION.webp", "event": "E-Summit" },
+    { "img": "/home/alpeshsirsession.webp", "event": "E-Summit" },
+    { "img": "/home/certificatedistribution.webp", "event": "E-Summit" },
+    { "img": "/home/corporatecrime.webp", "event": "E-Summit" },
+    { "img": "/home/youthparliament.webp", "event": "E-Summit" },
+    { "img": "/home/iprsession.webp", "event": "E-Summit" }
   ],
   "2025": [
-    { "img": "some2.jpg", "event": "Amul Visit" },
-    { "img": "some2.jpg", "event": "KTB" },
-    { "img": "some2.jpg", "event": "E-Summit" },
-    { "img": "some2.jpg", "event": "E-Summit" }
+    { "img": "/home/amulvisit.webp", "event": "Amul Visit" },
+    { "img": "/home/hero-lcp.webp", "event": "KTB" },
+    { "img": "/home/corporatecrime.webp", "event": "E-Summit" },
+    { "img": "/home/youthparliament.webp", "event": "E-Summit" }
   ]
 }

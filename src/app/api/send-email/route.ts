@@ -1,76 +1,50 @@
-import { NextResponse } from 'next/server';
+import nodemailer from "nodemailer";
+import { NextRequest, NextResponse } from "next/server";
 
-// ============================================================
-// EMAIL SENDING FUNCTIONALITY - CURRENTLY DISABLED
-// ============================================================
-// This endpoint is simplified to prevent build errors.
-// Email sending is disabled in the frontend (Footer.tsx).
-// 
-// To re-enable full email functionality:
-// 1. Uncomment the code in Footer.tsx (see instructions there)
-// 2. Restore the original email sending logic below
-// 3. Set up required environment variables:
-//    - EMAIL_ID
-//    - EMAIL_PASS
-//    - EMAIL_SUBJECT
-//    - EMAIL_TEXT
-//    - EMAIL_ATTACHMENT (optional)
-//    - FILE_NAME (optional)
-// ============================================================
+export const runtime = "nodejs";
 
-export async function POST(req: Request) {
-  const body = await req.json();
-  const { email } = body;
+const attempts = new Map<string, number[]>();
 
-  // Validate email format
-  if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-    return NextResponse.json({ message: 'Invalid email address' }, { status: 400 });
+export async function POST(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const now = Date.now();
+  const recent = (attempts.get(ip) ?? []).filter((time) => now - time < 60 * 60 * 1000);
+  if (recent.length >= 5) return NextResponse.json({ message: "Too many attempts. Try again later." }, { status: 429 });
+  recent.push(now);
+  attempts.set(ip, recent);
+
+  let email = "";
+  try {
+    const body = (await request.json()) as { email?: unknown };
+    email = typeof body.email === "string" ? body.email.trim().toLowerCase().slice(0, 254) : "";
+  } catch {
+    return NextResponse.json({ message: "Invalid request." }, { status: 400 });
   }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return NextResponse.json({ message: "Enter a valid email address." }, { status: 400 });
 
-  console.log("Subscription request received for email:", email);
-
-  // TEMPORARY: Just return success without sending email
-  // This prevents build errors from missing environment variables
-  return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
-
-  /* UNCOMMENT TO RE-ENABLE EMAIL SENDING:
-  
-  import nodemailer from "nodemailer";
-  import path from 'path';
-  
-  const attachmentPath = path.join(process.cwd(), "public", process.env.EMAIL_ATTACHMENT!);
-  const emailId = process.env.EMAIL_ID!;
-  const pass = process.env.EMAIL_PASS!;
-  const subject = process.env.EMAIL_SUBJECT!;
-  const text = process.env.EMAIL_TEXT!;
-  const fileName = process.env.FILE_NAME!;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+    return NextResponse.json({ message: "Subscriptions are being configured. Please email us directly." }, { status: 503 });
+  }
 
   try {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: emailId,
-        pass: pass
-      },
+      host: SMTP_HOST,
+      port: Number(SMTP_PORT ?? 587),
+      secure: Number(SMTP_PORT ?? 587) === 465,
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
-
-    const mailOptions = {
-      from: emailId,
-      to: email,
-      subject: subject,
-      text: text,
-      attachments: [{
-        filename: fileName,
-        path: attachmentPath
-      }]
-    };
-
-    await transporter.sendMail(mailOptions);
-    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
-
-  } catch (err) {
-    console.log("Error sending email: ", err);
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM ?? SMTP_USER,
+      to: process.env.NEWSLETTER_SUBMISSION_EMAIL ?? "ruminate.ecell@iiitsurat.ac.in",
+      replyTo: email,
+      subject: "Ruminate newsletter subscription",
+      text: `Please add ${email} to the Ruminate update list.`,
+      html: `<p>Please add <strong>${email.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</strong> to the Ruminate update list.</p>`,
+    });
+    return NextResponse.json({ message: "Subscription received." });
+  } catch (error) {
+    console.error("Newsletter delivery failed", error instanceof Error ? error.message : "Unknown error");
+    return NextResponse.json({ message: "We could not subscribe you right now." }, { status: 502 });
   }
-  */
 }

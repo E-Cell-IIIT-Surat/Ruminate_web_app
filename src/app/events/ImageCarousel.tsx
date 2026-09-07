@@ -1,20 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./events.module.css";
 
 const slides = [
   {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/e-summitban.png",
+    image: "/home/certificatedistribution.webp",
     title: "E-Summit 2026",
     description: "Bringing together young entrepreneurs and industry experts through various workshops, empowering young innovators.",
   },
   {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Events/SSIP.jpg",
+    image: "/home/iprsession.webp",
     title: "SSIP",
     description: "SSIP (Student Startup and Innovation Policy) Gujarat is a state-wide initiative promoting student-led innovation, entrepreneurship, and problem-solving across educational institutions.",
   },
   {
-    image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/KTBBAN.png",
+    image: "/home/hero-lcp.webp",
     title: "KTB",
     description: "An opportunity to learn and analyze about the multiple businesses in the city, and learn about the business directly from the entrepreneurs.",
   }
@@ -44,10 +45,16 @@ export default function ImageCarousel() {
       >
         {slides.map((slide, index) => (
           <div className={styles.carouselSlide} key={index}>
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
               className={styles.slideImage}
+              width={1600}
+              height={900}
+              sizes="100vw"
+              priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+              quality={76}
             />
             <div className={styles.caption}>
               <h2>{slide.title}</h2>
@@ -60,7 +67,8 @@ export default function ImageCarousel() {
       {/* Dots Navigation */}
       <div className={styles.dotsContainer}>
         {slides.map((_, index) => (
-          <span
+          <button
+            type="button"
             key={index}
             onClick={() => handleDotClick(index)}
             className={`${styles.dot} ${current === index ? styles.active : ""

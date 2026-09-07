@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./events.module.css";
 
 interface CurrentEvent {
@@ -19,7 +20,7 @@ const currentEvents: CurrentEvent[] = [
     "Join us for the flagship event of Ruminate, featuring speaker sessions, workshops, and networking opportunities.",
   date: "February 12, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/corporatecrimedisp.png",
+    "/home/corporatecrime.webp",
   link: "https://corporate-crime-jund.vercel.app/login",
 },
 {
@@ -28,7 +29,7 @@ const currentEvents: CurrentEvent[] = [
     "A real-time stock market simulation that builds financial literacy and investment mindset—core skills E-Cell promotes for startup founders and future investors.",
   date: "February 11-13, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/stockmaniadisp.png",
+    "/home/IPLAUCTION.webp",
   link: "https://unstop.com/p/stock-mania-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1636178?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
@@ -37,7 +38,7 @@ const currentEvents: CurrentEvent[] = [
     "Interactive talks by entrepreneurs and industry leaders, aligned with E-Cell’s mission to inspire, mentor, and expose students to real startup journeys.",
   date: "February 13, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/speakersessiondisp.png",
+    "/home/alpeshsirsession.webp",
   link: "#",
 },
 {
@@ -46,7 +47,7 @@ const currentEvents: CurrentEvent[] = [
     "A fast-paced branding challenge where participants create and pitch brand strategies, reflecting E-Cell’s focus on marketing, storytelling, and market positioning.",
   date: "February 9, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/brandathondisp.png",
+    "/home/certificatedistribution.webp",
   link: "https://unstop.com/competitions/brandathon-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1633686?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
@@ -55,7 +56,7 @@ const currentEvents: CurrentEvent[] = [
     "A strategic bidding and team-building simulation that enhances decision-making, valuation, and risk analysis—key entrepreneurial competencies nurtured by E-Cell.",
   date: "February 13, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/iplauctiondisp.png",
+    "/home/IPLAUCTION.webp",
   link: "https://unstop.com/competitions/ipl-auction-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1634476?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 {
@@ -64,7 +65,7 @@ const currentEvents: CurrentEvent[] = [
     "A structured debate platform encouraging leadership, policy awareness, and articulation, supporting E-Cell’s aim to develop confident, socially aware leaders.",
   date: "February 14, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/youthparliamentdisp.png",
+    "/home/youthparliament.webp",
   link: "https://forms.gle/meWChQf9TT8RwXc68",
 },
 {
@@ -73,7 +74,7 @@ const currentEvents: CurrentEvent[] = [
     "A digital marketing and virality-focused challenge that highlights content creation and audience engagement, aligning with E-Cell’s focus on modern growth strategies.",
   date: "February 11, 2026",
   image:
-    "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/live%20events%20banner/buzzifydisp.png",
+    "/home/amulvisit.webp",
   link: "https://unstop.com/competitions/buzzify-spring-fiesta-indian-institute-of-information-technology-iiit-surat-1634359?lb=OXTB9nom&utm_medium=Share&utm_source=WhatsApp",
 },
 
@@ -99,7 +100,7 @@ export default function CurrentEvents() {
           {currentEvents.map((event, index) => (
             <div key={index} className={styles.currentEventCard}>
               <div className={styles.currentEventImageWrapper}>
-                <img src={event.image} alt={event.title} />
+                <Image src={event.image} alt={event.title} width={800} height={450} sizes="(max-width: 768px) 92vw, 380px" quality={76} />
               </div>
 
               <div className={styles.currentEventContent}>

@@ -73,6 +73,7 @@ export default function ESummitPage() {
         <div className={styles.heroGrid}>
           <div>
             <p className={styles.eyebrow}>E-Summit 2026</p>
+            <h1 className={styles.heroTitle}>Ideas meet<br />execution.</h1>
             <p className={styles.heroSubtitle}>
               Organized by E-Cell Ruminate, IIIT Surat under Spring Fiesta 2026. A
               flagship summit that celebrates entrepreneurship, innovation, and leadership

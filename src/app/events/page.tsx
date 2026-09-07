@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import ImageCarousel from "./ImageCarousel";
 import styles from "./events.module.css";
-import Footer from "../home/Footer";
 
 type TrackId = "all" | "industrial" | "discussions" | "workshops" | "local" | "founder";
 type EventTrack = Exclude<TrackId, "all">;
@@ -341,7 +340,6 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

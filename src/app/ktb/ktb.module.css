@@ -1,250 +1,308 @@
 .page {
+  --rank-gold: #ffd23f;
+  --rank-silver: #c9c2ba;
+  --rank-bronze: #d38b5c;
+  --day1-accent: var(--primary-orange, #ff6b20);
+  --day2-accent: #ffb15c;
+  --rule: rgba(255, 180, 109, 0.14);
+
   min-height: 100vh;
-  padding-top: 80px;
-  background: var(--gradient-primary);
+  padding: 80px var(--content-gutter, 1.5rem) var(--space-section, 5rem);
+  background: radial-gradient(circle at 78% 8%, rgba(255, 92, 28, 0.09), transparent 28rem), var(--gradient-primary);
   color: var(--text-primary);
 }
 
 .container {
-  max-width: 1100px;
+  width: min(var(--content-width, 1100px), 100%);
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  counter-reset: section;
 }
 
+/* ---------- hero ---------- */
 .hero {
-  padding: clamp(3rem, 6vw, 4.5rem) 0 2rem;
-  text-align: center;
+  position: relative;
+  padding: clamp(4rem, 8vw, 6.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: left;
 }
+
+.caseStamp {
+  position: absolute;
+  top: clamp(0.5rem, 2vw, 1.5rem);
+  right: 0;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.55rem 1rem;
+  border: 1.5px double var(--primary-orange);
+  border-radius: 6px;
+  color: var(--flame-400, var(--primary-orange));
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: right;
+  transform: rotate(3deg);
+}
+.caseStamp strong { color: var(--text-primary); font-size: 0.9rem; letter-spacing: 0.02em; }
 
 .eyebrow {
+  color: var(--flame-400, var(--primary-orange));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: 0.95rem;
-  color: var(--primary-orange);
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+  margin-bottom: 0.6rem;
 }
 
 .heroTitle {
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  margin-bottom: 0.75rem;
+  max-width: 900px;
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 .heroSubtitle {
+  max-width: 680px;
   color: var(--text-muted);
-  max-width: 780px;
-  margin: 0 auto;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.7;
 }
 
+/* meta strip — one document band, not four KPI cards */
 .metaGrid {
-  margin-top: 2.5rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg, var(--radius-xl));
+  overflow: hidden;
+  background: var(--card-bg);
 }
 
 .metaCard {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 1rem 1.25rem;
-  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.3rem;
   display: grid;
   gap: 0.35rem;
+  border-right: 1px solid var(--rule);
 }
+.metaCard:last-child { border-right: none; }
 
 .metaLabel {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--primary-orange);
+  color: var(--flame-400, var(--primary-orange));
 }
 
 .metaValue {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: 1.35;
 }
 
+/* ---------- sections: numbered like report pages ---------- */
 .section {
-  margin-top: 3rem;
+  counter-increment: section;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--rule);
 }
 
 .sectionTitle {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  margin-bottom: 1rem;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+.sectionTitle::before {
+  content: "0" counter(section);
+  font-size: 0.4em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0;
 }
 
 .sectionText {
+  max-width: 800px;
   color: var(--text-muted);
+  line-height: 1.75;
   margin-bottom: 1.25rem;
 }
 
-.subSection {
-  margin-top: 2.5rem;
-}
-
+.subSection { margin-top: 2.6rem; }
 .subTitle {
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: var(--primary-orange);
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  color: var(--flame-400, var(--primary-orange));
   margin-bottom: 0.75rem;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.6rem;
+/* ---------- three distinct list treatments ---------- */
+
+/* objectives: checklist */
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 2rem; }
+.checklist li { position: relative; padding-left: 1.9rem; color: var(--text-secondary); line-height: 1.55; }
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 0.05em;
+  width: 1.2rem; height: 1.2rem;
+  display: grid; place-items: center;
+  font-size: 0.72rem;
+  border: 1.5px solid var(--primary-orange);
+  border-radius: 4px;
+  color: var(--flame-400, var(--primary-orange));
 }
 
-.list li {
-  position: relative;
-  padding-left: 1.2rem;
-  color: var(--text-secondary);
-}
-
-.list li::before {
-  content: "•";
+/* judging criteria: numbered rubric */
+.rubricList { list-style: none; margin: 0; padding: 0; counter-reset: rubric; display: grid; gap: 0.55rem; }
+.rubricList li { position: relative; padding-left: 2.4rem; color: var(--text-secondary); line-height: 1.5; }
+.rubricList li::before {
+  counter-increment: rubric;
+  content: counter(rubric, decimal-leading-zero);
   position: absolute;
   left: 0;
-  color: var(--primary-orange);
+  font-weight: 700;
+  color: var(--flame-400, var(--primary-orange));
+  font-variant-numeric: tabular-nums;
 }
 
+/* key takeaways: pull-quote stack */
+.takeawayList { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.takeawayList li {
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--primary-orange);
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* legacy .list kept for anything still referencing it */
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.list li { position: relative; padding-left: 1.2rem; color: var(--text-secondary); }
+.list li::before { content: "•"; position: absolute; left: 0; color: var(--primary-orange); }
+
+/* ---------- jury: roster, not chips ---------- */
 .chipGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  display: grid;
+  border-top: 1px solid var(--rule);
 }
-
 .chip {
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 107, 53, 0.12);
-  border: 1px solid rgba(255, 107, 53, 0.3);
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem 0.2rem;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  background: none;
+  font-size: 0.98rem;
   color: var(--text-secondary);
+  counter-increment: jury;
+}
+.chipGrid { counter-reset: jury; }
+.chip::before {
+  content: counter(jury, decimal-leading-zero);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--flame-400, var(--primary-orange));
+  width: 1.6rem;
 }
 
+/* ---------- team rosters ---------- */
 .teamGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+  gap: 1.1rem;
   margin-top: 1.5rem;
 }
 
 .teamCard {
-  background: var(--gradient-card);
+  padding: 1.1rem 1.25rem;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-md);
+  border-left: 3px solid var(--day1-accent);
+  border-radius: 10px;
+  background: var(--gradient-card);
 }
+.teamGrid[data-day="2"] .teamCard { border-left-color: var(--day2-accent); }
 
-.teamTitle {
-  font-size: 1.05rem;
-  margin-bottom: 0.75rem;
-  color: var(--primary-orange);
-}
+.teamTitle { font-size: 1rem; letter-spacing: 0.02em; margin-bottom: 0.65rem; color: var(--flame-400, var(--primary-orange)); }
+.teamMembers { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; color: var(--text-muted); font-size: 0.9rem; }
 
-.teamMembers {
-  list-style: none;
-  padding: 0;
+/* ---------- evidence image ---------- */
+.imageRow { margin-top: 2.2rem; }
+.eventImage {
+  position: relative;
   margin: 0;
-  display: grid;
-  gap: 0.4rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-.imageRow {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.imagePlaceholder {
-  border: 1px dashed rgba(255, 107, 53, 0.5);
+  border: 1px solid var(--rule);
   border-radius: var(--radius-xl);
-  background: rgba(20, 14, 30, 0.6);
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
+  overflow: hidden;
+  background: #100e0c;
+}
+.eventImage img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; filter: saturate(0.85); }
+.eventImage figcaption {
+  position: absolute; inset: auto 0 0;
+  padding: 3.5rem 1.2rem 1.1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  color: #f7efe7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
-.card {
-  background: var(--gradient-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-md);
-}
-
+/* ---------- winners: podium, not a grid of identical cards ---------- */
 .winnerGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .winnerCard {
-  background: var(--gradient-card);
+  padding: 1.4rem 1.4rem 1.2rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 1.25rem;
+  background: var(--gradient-card);
   box-shadow: var(--shadow-md);
   display: grid;
   gap: 0.6rem;
 }
 
-.winnerHeader {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-
-.winnerRank {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary-orange);
-  font-weight: 600;
-}
-
-.winnerTeam {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.winnerBusiness {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-.winnerMembers {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.winnerCard[data-tier="1"] {
+  grid-column: 1 / -1;
+  border-color: var(--rank-gold);
+  box-shadow: 0 0 0 1px rgba(255, 210, 63, 0.25), var(--shadow-card, var(--shadow-lg));
   display: grid;
-  gap: 0.35rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.6rem 1.8rem;
+}
+.winnerCard[data-tier="1"] .winnerHeader { grid-column: 1 / -1; }
+.winnerCard[data-tier="1"] .winnerRank { color: var(--rank-gold); font-size: 1.1rem; }
+.winnerCard[data-tier="1"] .winnerTeam { font-size: 1.4rem; }
+
+.winnerCard[data-tier="2"] .winnerRank { color: var(--rank-silver); }
+.winnerCard[data-tier="2"]:nth-of-type(3) .winnerRank { color: var(--rank-bronze); }
+
+.winnerHeader { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; }
+.winnerRank { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+.winnerTeam { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.winnerBusiness { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+.winnerMembers { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.3rem; color: var(--text-secondary); font-size: 0.9rem; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .metaGrid { grid-template-columns: repeat(2, 1fr); }
+  .metaCard:nth-child(2) { border-right: none; }
+  .caseStamp { position: static; display: inline-flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1rem; transform: none; }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    text-align: left;
-  }
-
-  .metaGrid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 700px) {
+  .page { padding-top: 70px; }
+  .metaGrid { grid-template-columns: 1fr; }
+  .metaCard { border-right: none; border-bottom: 1px solid var(--rule); }
+  .metaCard:last-child { border-bottom: none; }
+  .checklist { grid-template-columns: 1fr; }
+  .eventImage img { aspect-ratio: 4 / 3; }
+  .winnerCard[data-tier="1"] { grid-template-columns: 1fr; text-align: left; }
 }

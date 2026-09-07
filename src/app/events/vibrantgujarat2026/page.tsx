@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Footer from "../../home/Footer";
 import styles from "./vibrantgujarat2026.module.css";
 
 const highlights = [
@@ -93,10 +92,11 @@ export default function VibrantGujarat2026Page() {
           showed us how regional growth is tied to global confidence and long-term
           investment.
         </p>
-        <div className={styles.placeholderCard}>
-          <span className={styles.placeholderLabel}>Image Placeholder</span>
-          <span className={styles.placeholderTitle}>Inauguration</span>
-        </div>
+        <aside className={styles.insightCard}>
+          <span className={styles.insightLabel}>Observed at the summit</span>
+          <strong>Regional strength earns global confidence.</strong>
+          <p>Manufacturing, textiles, diamonds and international partnerships were presented as connected parts of Gujarat&apos;s growth story.</p>
+        </aside>
       </section>
 
       <section className={styles.section}>
@@ -122,10 +122,11 @@ export default function VibrantGujarat2026Page() {
             </span>
           ))}
         </div>
-        <div className={styles.placeholderCard}>
-          <span className={styles.placeholderLabel}>Image Placeholder</span>
-          <span className={styles.placeholderTitle}>Exhibition Halls</span>
-        </div>
+        <aside className={styles.insightCard}>
+          <span className={styles.insightLabel}>Founder takeaway</span>
+          <strong>Clarity makes innovation visible.</strong>
+          <p>The exhibition halls showed how effectively founders must communicate the problem, product and value of an idea at scale.</p>
+        </aside>
       </section>
 
       <section className={styles.sectionAlt}>
@@ -151,10 +152,11 @@ export default function VibrantGujarat2026Page() {
             </div>
           ))}
         </div>
-        <div className={styles.placeholderCard}>
-          <span className={styles.placeholderLabel}>Image Placeholder</span>
-          <span className={styles.placeholderTitle}>Seminars</span>
-        </div>
+        <aside className={styles.insightCard}>
+          <span className={styles.insightLabel}>Learning across systems</span>
+          <strong>Startups do not grow in isolation.</strong>
+          <p>The sessions connected entrepreneurship with infrastructure, policy, energy and access to capital.</p>
+        </aside>
       </section>
 
       <section className={styles.section}>
@@ -176,7 +178,6 @@ export default function VibrantGujarat2026Page() {
         </p>
       </section>
 
-      <Footer />
     </div>
   );
 }

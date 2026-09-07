@@ -1,75 +1,117 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { FaTimes } from "react-icons/fa";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 import "./gallery.css";
 
 interface GalleryImage {
   img: string;
   event?: string;
+  year?: string;
+}
+
+interface GalleryCatalog {
+  images: GalleryImage[];
+  years: string[];
+  events: string[];
+}
+
+function isR2DevUrl(source: string) {
+  return /^https?:\/\/[^/]+\.r2\.dev(?:\/|$)/i.test(source);
 }
 
 export default function Gallery() {
   const [photos, setPhotos] = useState<GalleryImage[]>([]);
-  const [year, setYear] = useState("2026");
-  const [eventType, setEventType] = useState("All");
+  const [year, setYear] = useState("All");
+  const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [activeImg, setActiveImg] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const years = ["2026", "2025"];
-  const events = ["All", "Amul Visit", "KTB", "E-Summit"];
+  const [years, setYears] = useState<string[]>(["All"]);
+  const [events, setEvents] = useState<string[]>(["All"]);
+
+  const visiblePhotos = useMemo(
+    () => selectedEvent
+      ? photos.filter((photo) => (photo.event || "Gallery") === selectedEvent)
+      : [],
+    [photos, selectedEvent],
+  );
+  const eventGroups = useMemo(
+    () => events
+      .filter((event) => event !== "All")
+      .map((event) => ({
+        event,
+        images: photos.filter((photo) => (photo.event || "Gallery") === event),
+      }))
+      .filter((group) => group.images.length > 0),
+    [events, photos],
+  );
+  const lightboxPhotos = useMemo(
+    () => selectedEvent ? visiblePhotos : photos,
+    [photos, selectedEvent, visiblePhotos],
+  );
 
   useEffect(() => {
     setLoading(true);
+    setError("");
+    const controller = new AbortController();
     const baseUrl = `/api/gallary`;
     const query: string[] = [];
 
-    if (year !== "All") query.push(`year=${year}`);
-    if (eventType !== "All") query.push(`event=${eventType}`);
-
+    query.push("catalog=1");
+    if (year !== "All") query.push(`year=${encodeURIComponent(year)}`);
     const url = query.length ? `${baseUrl}?${query.join("&")}` : baseUrl;
 
-    fetch(url)
+    fetch(url, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch gallery data');
         }
         return res.json();
       })
-      .then((data: GalleryImage[]) => {
-        setPhotos(Array.isArray(data) ? data : []);
+      .then((data: GalleryCatalog) => {
+        setPhotos(Array.isArray(data?.images) ? data.images : []);
+        setSelectedEvent(null);
+        if (Array.isArray(data?.years)) setYears(data.years);
+        if (Array.isArray(data?.events) && data.events.length > 0) setEvents(data.events);
         setLoading(false);
       })
       .catch((err) => {
+        if (err instanceof DOMException && err.name === "AbortError") return;
         console.error("Fetch error:", err);
         setPhotos([]);
+        setError("The gallery could not be loaded. Check your connection and try again.");
         setLoading(false);
       });
-  }, [year, eventType]);
+    return () => controller.abort();
+  }, [year]);
 
   const openImage = (img: string, index: number) => {
     setActiveImg(img);
     setActiveIndex(index);
   };
 
-  const closeImage = () => {
+  const closeImage = useCallback(() => {
     setActiveImg(null);
-  };
+  }, []);
 
-  const navigateImage = (direction: 'prev' | 'next') => {
-    if (photos.length === 0) return;
+  const navigateImage = useCallback((direction: 'prev' | 'next') => {
+    if (lightboxPhotos.length === 0) return;
 
     let newIndex = activeIndex;
     if (direction === 'prev') {
-      newIndex = activeIndex > 0 ? activeIndex - 1 : photos.length - 1;
+      newIndex = activeIndex > 0 ? activeIndex - 1 : lightboxPhotos.length - 1;
     } else {
-      newIndex = activeIndex < photos.length - 1 ? activeIndex + 1 : 0;
+      newIndex = activeIndex < lightboxPhotos.length - 1 ? activeIndex + 1 : 0;
     }
 
     setActiveIndex(newIndex);
-    setActiveImg(photos[newIndex].img);
-  };
+    setActiveImg(lightboxPhotos[newIndex].img);
+  }, [activeIndex, lightboxPhotos]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -86,13 +128,20 @@ export default function Gallery() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [activeImg, activeIndex, photos]);
+  }, [activeImg, closeImage, navigateImage]);
+
+  useEffect(() => {
+    if (!activeImg) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [activeImg]);
 
   return (
     <div className="gallery-container">
-      <main>
-        <h1>Photo Stream</h1>
-        <p>The moments we capture become memories we never forget.</p>
+      <section className="gallery-main" aria-labelledby="gallery-title">
+        <div className="gallery-heading"><span>Inside Ruminate</span><h1 id="gallery-title">Photo Stream</h1><p>The moments we capture become memories we never forget.</p></div>
 
         <div className="filters">
           <div className="dropdown-group">
@@ -105,35 +154,99 @@ export default function Gallery() {
               ))}
             </select>
           </div>
-
-          <div className="dropdown-group">
-            <label>Sort By Events</label>
-            <select value={eventType} onChange={(e) => setEventType(e.target.value)}>
-              {events.map((ev) => (
-                <option key={ev} value={ev}>
-                  {ev}
-                </option>
-              ))}
-            </select>
-          </div>
+          <p className="filter-hint">{eventGroups.length} event{eventGroups.length === 1 ? "" : "s"} available</p>
         </div>
 
         {/* Image grid */}
         {loading ? (
-          <p className="loading-text">Loading images...</p>
-        ) : photos.length > 0 ? (
-          <div className="photo-grid">
-            {photos.map((photo, idx) => (
-              <div
-                key={idx}
+          <div className="gallery-skeleton" aria-label="Loading gallery"><span /><span /><span /><span /></div>
+        ) : error ? (
+          <div className="no-images"><h3>Gallery unavailable</h3><p>{error}</p></div>
+        ) : !selectedEvent && eventGroups.length > 0 ? (
+          <div className="event-grid" aria-label="Gallery events">
+            {eventGroups.map((group) => (
+              <button
+                type="button"
+                key={group.event}
+                className="event-card"
+                onClick={() => {
+                  setSelectedEvent(group.event);
+                  setActiveImg(null);
+                  setActiveIndex(0);
+                }}
+                aria-label={`Open ${group.event} gallery with ${group.images.length} photos`}
+              >
+                <span className="event-card-image">
+                  <Image
+                    src={group.images[0].img}
+                    alt=""
+                    fill
+                    sizes="(max-width: 600px) 94vw, (max-width: 880px) 45vw, 360px"
+                    loading="lazy"
+                    unoptimized={isR2DevUrl(group.images[0].img)}
+                  />
+                </span>
+                <span className="event-card-content">
+                  <strong>{group.event}</strong>
+                  <span>{group.images.length} photo{group.images.length === 1 ? "" : "s"}</span>
+                  <span className="event-card-arrow" aria-hidden="true">View gallery →</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        ) : selectedEvent && visiblePhotos.length > 0 ? (
+          <>
+            <div className="gallery-subheading">
+              <button type="button" className="back-to-events" onClick={() => setSelectedEvent(null)}>
+                ← All events
+              </button>
+              <h2>{selectedEvent}</h2>
+              <p>{visiblePhotos.length} photo{visiblePhotos.length === 1 ? "" : "s"}</p>
+            </div>
+            <div className="photo-grid">
+            {visiblePhotos.map((photo, idx) => (
+              <button
+                type="button"
+                key={`${photo.img}-${idx}`}
                 className="photo-card"
                 onClick={() => openImage(photo.img, idx)}
+                aria-label={`Enlarge ${photo.event || "gallery"} photo ${idx + 1}`}
               >
-                <img
-                  src="/some2.jpg"
-                  alt={`Gallery ${idx + 1}`}
+                <Image
+                  src={photo.img}
+                  alt={`${photo.event || "Ruminate"} — photo ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 600px) 94vw, (max-width: 1000px) 45vw, 340px"
+                  quality={72}
+                  loading="lazy"
+                  unoptimized={isR2DevUrl(photo.img)}
                 />
-              </div>
+                <span className="photo-label">Enlarge image</span>
+              </button>
+            ))}
+            </div>
+          </>
+        ) : !selectedEvent && photos.length > 0 ? (
+          <div className="photo-grid">
+            {photos.map((photo, idx) => (
+              <button
+                type="button"
+                key={`${photo.img}-${idx}`}
+                className="photo-card"
+                onClick={() => openImage(photo.img, idx)}
+                aria-label={`Open ${photo.event || "gallery"} photo ${idx + 1}`}
+              >
+                <Image
+                  src={photo.img}
+                  alt={`${photo.event || "Ruminate"} — photo ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 600px) 94vw, (max-width: 1000px) 45vw, 340px"
+                  quality={72}
+                  loading="lazy"
+                  unoptimized={isR2DevUrl(photo.img)}
+                />
+                <span className="photo-label">{photo.event || "Ruminate"}</span>
+              </button>
             ))}
           </div>
         ) : (
@@ -145,8 +258,9 @@ export default function Gallery() {
 
         {/* Enlarged view modal */}
         {activeImg && (
-          <div className="overlay" onClick={closeImage}>
+          <div className="gallery-overlay" onClick={closeImage} role="dialog" aria-modal="true" aria-label="Gallery image viewer">
             <button
+              ref={closeButtonRef}
               className="close-button"
               onClick={closeImage}
               aria-label="Close image"
@@ -154,19 +268,26 @@ export default function Gallery() {
               <FaTimes />
             </button>
 
-            <img
+            <Image
               className="enlarged"
-              src="/some2.jpg"
+              src={activeImg}
               alt={`Gallery ${activeIndex + 1}`}
+              fill
+              sizes="90vw"
+              quality={82}
+              unoptimized={isR2DevUrl(activeImg)}
               onClick={(e) => e.stopPropagation()}
             />
 
+            <button className="gallery-arrow gallery-arrow--left" type="button" onClick={(event) => { event.stopPropagation(); navigateImage("prev"); }} aria-label="Previous image"><FaChevronLeft /></button>
+            <button className="gallery-arrow gallery-arrow--right" type="button" onClick={(event) => { event.stopPropagation(); navigateImage("next"); }} aria-label="Next image"><FaChevronRight /></button>
+
             <div className="image-counter">
-              {activeIndex + 1} of {photos.length}
+              {activeIndex + 1} of {lightboxPhotos.length}
             </div>
           </div>
         )}
-      </main>
+      </section>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import rawTeam from "@/data/team.json";
+import { resolveMediaSource } from "@/lib/media";
 
 type Member = {
   name: string;
@@ -20,5 +21,5 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Category not found" }, { status: 404 });
   }
 
-  return NextResponse.json(team[category]);
+  return NextResponse.json(team[category].map((member) => ({ ...member, img: resolveMediaSource(member.img) })));
 }

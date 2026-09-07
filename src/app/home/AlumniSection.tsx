@@ -1,5 +1,6 @@
 "use client";
 import styles from "./home.module.css"; // make sure the path is correct
+import Image from "next/image";
 
 interface Startup {
   name: string;
@@ -44,10 +45,13 @@ export default function AlumniSection() {
             rel="noopener noreferrer"
           >
             <div className={styles.alumniLogoBox}>
-              <img
+              <Image
                 src={startup.logo}
                 alt={`${startup.name} Logo`}
                 className={styles.alumniLogo}
+                width={320}
+                height={180}
+                sizes="(max-width: 768px) 180px, 220px"
               />
               <p className={styles.alumniName}>{startup.name}</p>
             </div>

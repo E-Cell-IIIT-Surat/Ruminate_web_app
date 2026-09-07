@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import "./global.css";
+import "./team-premium.css";
 
 interface Member {
   name: string;
@@ -76,11 +77,9 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-left">
+          <p className="page-eyebrow">The people behind the momentum</p>
           <h1 className="hero-text">
-            Together <span className="highlight-orange">as a team</span>, we{" "}
-            <span className="highlight-orange">dream bigger</span>,{" "}
-            <span className="highlight-orange">work harder</span>, and achieve{" "}
-            <span className="highlight-gradient">the impossible</span>.
+            Together as a <span className="highlight-gradient">team,</span> we dream <span className="highlight-gradient">bigger ,</span> work harder, and achieve the <span className="highlight-gradient">impossible</span>.
           </h1>
           <p className="hero-description">
             Meet the passionate individuals who make Ruminate&apos;s vision a reality.
@@ -90,19 +89,32 @@ export default function TeamPage() {
           </p>
         </div>
 
-        <div className="hero-right">
-          <div className="image-layer">
-            <div className="back-layer"></div>
-            <Image
-              className="front-image"
-              src="https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/teams.jpg"
-              alt="Team Photo"
-              width={800}
-              height={600}
-              priority
-            />
-          </div>
-        </div>
+       <div className="hero-right">
+  <div className="image-layer">
+    <div className="back-layer"></div>
+    <Image
+      className="front-image"
+      src="https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/teams.jpg"
+      alt="Team Photo"
+      width={1300}
+      height={900}
+      sizes="(max-width: 788px) 100vw, 66vw"
+      priority
+      quality={78}
+      unoptimized
+      onError={(event) => {
+        if (event.currentTarget.dataset.fallbackApplied) return;
+        event.currentTarget.dataset.fallbackApplied = "true";
+        event.currentTarget.removeAttribute("srcset");
+        event.currentTarget.src = "/home/hero-lcp.webp";
+      }}
+    />
+    <div className="hero-badge">
+      <strong>E-Cell</strong>
+      <span>IIIT Surat</span>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* Category Navigation */}
@@ -123,8 +135,8 @@ export default function TeamPage() {
         <h2>{activeCategory}</h2>
 
         {loading ? (
-          <div className="loading">
-            Loading team members...
+          <div className="team-skeleton" aria-label="Loading team members">
+            {Array.from({ length: 8 }, (_, index) => <span key={index} />)}
           </div>
         ) : team.length === 0 ? (
           <div className="empty">
@@ -153,19 +165,33 @@ export default function TeamPage() {
 
             <div className="team-grid">
               {displayedTeam.map((member, index) => (
-                <div className="card" key={index}>
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    width={500}
-                    height={500}
-                    style={{ objectPosition: `50% ${member.imgPositionY ?? "50%"}` }}
-                  />
-                  <div className="info">
-                    <p className="name">{member.name}</p>
-                    <p className="role">{member.role}</p>
-                  </div>
-                </div>
+               <div className="card" key={index}>
+  <div className="card-inner">
+    <div className="avatar-ring">
+      <Image
+        src={member.img}
+        alt={member.name}
+        width={200}
+        height={200}
+        sizes="160px"
+        quality={80}
+        unoptimized
+        className="avatar-img"
+        style={{ objectPosition: `50% ${member.imgPositionY ?? "50%"}` }}
+        onError={(event) => {
+          if (event.currentTarget.dataset.fallbackApplied) return;
+          event.currentTarget.dataset.fallbackApplied = "true";
+          event.currentTarget.removeAttribute("srcset");
+          event.currentTarget.src = "/placeholder-event.webp";
+        }}
+      />
+    </div>
+    <div className="info">
+      <p className="name">{member.name}</p>
+      <p className="role">{member.role}</p>
+    </div>
+  </div>
+</div>
               ))}
             </div>
           </>

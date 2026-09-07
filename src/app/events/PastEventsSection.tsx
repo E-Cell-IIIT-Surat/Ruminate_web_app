@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import styles from './events.module.css';
 
 interface PastEvent {
@@ -37,9 +38,13 @@ export default function PastEvents() {
                 <p>{event.description}</p>
               </div>
               <div className={styles.imageBlock}>
-                <img
-                  src={event.image}
+                <Image
+                  src={event.image.startsWith('http') || event.image.startsWith('/') ? event.image : `/${event.image}`}
                   alt={event.title}
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 768px) 92vw, 48vw"
+                  quality={76}
                 />
               </div>
             </div>

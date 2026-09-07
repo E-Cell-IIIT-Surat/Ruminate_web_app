@@ -1,166 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
+
+/* ================================================================
+   RUMINATE — SSIP
+   ----------------------------------------------------------------
+   24 real proposals is a registry, not a feature grid — so it's
+   set like one: a running ledger with each proposal's own
+   reference number, not a wall of identical bordered cards.
+   Category A / B are told apart by colour (ember vs gold), which
+   is meaningful here — it tracks actual selection status — not
+   decoration.
+
+   The hero's official mark is staged as a hand-stamped seal, not
+   a pasted logo: an imperfect hand-drawn ring, a recessed plate,
+   and a pinned paper tag, each rotated on its own so the group
+   never reads as one manufactured badge.
+
+   Self-contained tokens, same ink/ember/gold system used across
+   the rest of the site, so this page doesn't feel like a
+   different template.
+   ================================================================ */
+
 .page {
+  --ink: #0b0908;
+  --ink-line: rgba(242, 231, 214, 0.09);
+  --ink-line-strong: rgba(242, 231, 214, 0.18);
+  --parchment: #f2e7d6;
+  --ash: #ab9d8f;
+  --ash-dim: #776a5f;
+  --ember: #ff6a2b;
+  --gold: #d3a256;
+  --slate: #7291a8;
+  --font-hand: "Caveat", cursive;
+
   min-height: 100vh;
   padding-top: 80px;
-  background: var(--gradient-primary);
-  color: var(--text-primary);
+  background: var(--ink);
+  color: var(--parchment);
+  font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
 }
 
 .container {
-  max-width: 1100px;
+  width: min(var(--content-width, 1100px), 100%);
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 6rem;
 }
 
+
+/* ---- Hero ---- */
+
 .hero {
-  padding: clamp(3rem, 6vw, 4.5rem) 0 2rem;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4.5rem, 9vw, 7rem) 0 clamp(3rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--ink-line);
+}
+
+/* A quiet letterhead mark, not a loud decorative blob — the real
+   stamp below sits on top of it, like a seal pressed onto the
+   ghosted wordmark of the page it belongs to. */
+.hero::after {
+  content: "SSIP";
+  position: absolute;
+  z-index: 0;
+  right: -0.02em;
+  bottom: -0.14em;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 700;
+  font-size: clamp(6rem, 18vw, 15rem);
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  color: var(--ink-line);
+  pointer-events: none;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: 0.95rem;
-  color: var(--primary-orange);
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1rem;
+  font-family: var(--font-display, Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--gold);
 }
 
 .heroTitle {
-  font-size: clamp(2.3rem, 5vw, 3.6rem);
-  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 18ch;
+  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--parchment);
 }
 
 .heroSubtitle {
-  color: var(--text-muted);
-  max-width: 780px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem 0 0;
+  max-width: 64ch;
+  color: var(--ash);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-.metaGrid {
-  margin-top: 2.5rem;
-  display: grid;
+/* ---- CTA — one real button, since this is a real action ---- */
+
+.heroActions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 2.25rem;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.7rem;
+  background: var(--ember);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.heroCta svg {
+  font-size: 0.85em;
+  transition: transform 0.2s ease;
+}
+.heroCta:hover {
+  background: var(--parchment);
+  transform: translateY(-1px);
+}
+.heroCta:hover svg {
+  transform: translateX(3px);
+}
+
+.heroActionsNote {
+  font-size: 0.82rem;
+  color: var(--ash-dim);
+  font-style: italic;
+}
+
+
+/* ---- Hand-stamped mark — fills the empty right side of the hero
+   with the real SSIP seal. Ring, plate and tag are each rotated
+   independently, like they were pressed on at different moments —
+   a perfectly concentric badge would read as manufactured, not
+   stamped. Hidden from assistive tech since the same name already
+   appears as real text in the eyebrow and heading. ---- */
+
+.heroStamp {
+  position: absolute;
+  z-index: 1;
+  top: 46%;
+  right: clamp(-24px, -1vw, 8px);
+  width: clamp(230px, 27vw, 380px);
+  height: clamp(230px, 27vw, 380px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.stampRingSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.stampRingSvg path,
+.stampRingSvg use {
+  fill: none;
+  stroke: var(--ember);
+  stroke-linecap: round;
+}
+
+.ringPass1 {
+  stroke-width: 2.5;
+  opacity: 0.85;
+}
+
+.ringPass2 {
+  stroke-width: 1.4;
+  opacity: 0.4;
+}
+
+.inkDot {
+  fill: var(--gold);
+  opacity: 0.55;
+}
+.inkDot:nth-of-type(2) {
+  opacity: 0.35;
+}
+.inkDot:nth-of-type(3) {
+  opacity: 0.7;
+}
+
+.stampPlate {
+  position: absolute;
+  top: 16%;
+  left: 14%;
+  width: 62%;
+  height: 62%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #2a0e0a;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(242, 231, 214, 0.12);
+  transform: rotate(-4deg);
+}
+
+.stampPlateImg {
+  object-fit: contain;
+  padding: 14%;
+  box-sizing: border-box;
+}
+
+/* Faint printed-paper grain so the plate reads as pressed ink,
+   not a flat pasted PNG. */
+.stampPlate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.stampTag {
+  position: absolute;
+  right: 2%;
+  bottom: 6%;
+
+  padding: 0.45rem 1rem 0.5rem;
+
+  background: var(--parchment);
+  color: var(--ink);
+
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transform: rotate(6deg);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+
+  /* Keep the entire text inside the tag */
+  clip-path: polygon(
+    0% 8%,
+    97% 0%,
+    100% 88%,
+    4% 100%
+  );
+
+  z-index: 10;
+}
+.stampTag::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 14px;
+  width: 15px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ember);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+  .heroStamp {
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: clamp(190px, 55vw, 260px);
+    height: clamp(190px, 55vw, 260px);
+    margin: 2.5rem auto 0;
+  }
+  .stampTag {
+    right: 2%;
+    bottom: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stampTag {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem 0.35rem;
+  }
+}
+
+/* ---- Meta row — a running line, not three boxed stat cards ---- */
+
+.metaGrid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-line);
 }
 
 .metaCard {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 1rem 1.25rem;
-  box-shadow: var(--shadow-lg);
-  display: grid;
-  gap: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-right: 2.5rem;
+  margin-right: 2.5rem;
+  border-right: 1px solid var(--ink-line);
+}
+.metaCard:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .metaLabel {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary-orange);
+  font-size: 0.78rem;
+  color: var(--ash-dim);
 }
 
 .metaValue {
-  font-size: 1rem;
+  max-width: 30ch;
+  font-family: var(--font-display, Georgia, serif);
   font-weight: 600;
-  color: var(--text-primary);
+  font-size: 1.02rem;
+  color: var(--parchment);
 }
 
+@media (max-width: 700px) {
+  .metaGrid {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .metaCard {
+    padding-right: 0;
+    margin-right: 0;
+    padding-bottom: 1.25rem;
+    border-right: none;
+    border-bottom: 1px solid var(--ink-line);
+  }
+  .metaCard:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+
+/* ---- Generic section shell ---- */
+
 .section {
-  margin-top: 3rem;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--ink-line);
 }
 
 .sectionTitle {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  margin-bottom: 1rem;
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  color: var(--parchment);
 }
 
 .sectionText {
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
+  margin: 0 0 1.5rem;
+  max-width: 72ch;
+  color: var(--ash);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
+/* A marginal note, not a tinted warning box. */
 .notice {
-  background: rgba(20, 14, 30, 0.7);
-  border: 1px solid rgba(255, 107, 53, 0.35);
-  border-radius: var(--radius-lg);
-  padding: 1rem 1.25rem;
-  color: var(--text-muted);
+  max-width: 60ch;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--gold);
+  color: var(--ash-dim);
+  font-size: 0.9rem;
+  font-style: italic;
 }
+.notice p {
+  margin: 0;
+}
+
+
+/* ---- Proposal registry — a ledger, not a card grid ----
+   Category is told apart by colour via the [data-category]
+   attribute on the parent <section>. */
 
 .proposalGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  border-top: 1px dashed var(--ink-line-strong);
 }
 
 .proposalCard {
-  background: var(--gradient-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-md);
+  position: relative;
   display: grid;
-  gap: 0.6rem;
+  grid-template-columns: 60px 1fr;
+  column-gap: clamp(1.25rem, 3vw, 2.25rem);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+  border-bottom: 1px dashed var(--ink-line-strong);
+  transition: background-color 0.3s ease;
+}
+.proposalCard:nth-child(odd) .proposalId {
+  transform: rotate(-3deg);
+}
+.proposalCard:nth-child(even) .proposalId {
+  transform: rotate(2deg);
 }
 
+/* The wrapper disappears from layout so its two children can be
+   placed independently on the row's grid — no markup change
+   needed to pull the reference number into its own column. */
 .proposalHeader {
-  display: grid;
-  gap: 0.4rem;
+  display: contents;
 }
 
 .proposalId {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary-orange);
-  font-weight: 600;
+  display: inline-block;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: start;
+  font-family: var(--font-display, Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--ink-line-strong);
+  transition: color 0.3s ease;
 }
 
 .proposalStudent {
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 1rem;
+  grid-column: 2;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ash-dim);
 }
 
 .proposalTitle {
-  color: var(--text-muted);
-  margin: 0;
+  grid-column: 2;
+  margin: 0.2rem 0 0.35rem;
+  max-width: 58ch;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--parchment);
 }
 
 .proposalRemark {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  grid-column: 2;
   margin: 0;
-}
-
-.imageRow {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.imagePlaceholder {
-  border: 1px dashed rgba(255, 107, 53, 0.5);
-  border-radius: var(--radius-xl);
-  background: rgba(20, 14, 30, 0.6);
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  max-width: 60ch;
   font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ash);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    text-align: left;
-  }
+.section[data-category="a"] .proposalId { color: rgba(255, 106, 43, 0.35); }
+.section[data-category="a"] .proposalCard:hover { background: rgba(255, 106, 43, 0.035); }
+.section[data-category="a"] .proposalCard:hover .proposalId { color: var(--ember); }
 
-  .metaGrid {
+.section[data-category="b"] .proposalId { color: rgba(211, 162, 86, 0.35); }
+.section[data-category="b"] .proposalCard:hover { background: rgba(211, 162, 86, 0.035); }
+.section[data-category="b"] .proposalCard:hover .proposalId { color: var(--gold); }
+
+@media (max-width: 560px) {
+  .proposalCard {
+    grid-template-columns: 40px 1fr;
+    column-gap: 1rem;
+  }
+  .proposalId {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* ---- Process — three stages, same numeral language as the
+   registry above and the homepage pillars ---- */
+
+.processSection {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--ink-line);
+}
+
+.processRow {
+  margin-top: 2.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2.25rem, 5vw, 3rem);
+}
+
+.processRow article {
+  padding-top: 1.75rem;
+  border-top: 2px solid var(--ink-line-strong);
+}
+.processRow article:nth-child(1) { border-top-color: var(--ember); }
+.processRow article:nth-child(2) { border-top-color: var(--gold); }
+.processRow article:nth-child(3) { border-top-color: var(--slate); }
+
+.processRow span {
+  display: inline-block;
+  font-family: var(--font-display, Georgia, serif);
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink-line-strong);
+}
+.processRow article:nth-child(1) span { color: var(--ember); transform: rotate(-3deg); }
+.processRow article:nth-child(2) span { color: var(--gold); transform: rotate(2deg); }
+.processRow article:nth-child(3) span { color: var(--slate); transform: rotate(-2deg); }
+
+.processRow strong {
+  display: block;
+  margin: 1rem 0 0.6rem;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--parchment);
+}
+
+.processRow p {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--ash);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding-top: 70px;
+  }
+  .processRow {
     grid-template-columns: 1fr;
+    gap: 2.25rem;
   }
 }

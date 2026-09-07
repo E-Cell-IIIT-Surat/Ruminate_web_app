@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Kalam:wght@400;700&display=swap");
+
+.page {
+  --paper: #08060d;
+  --paper-alt: #0a0710;
+  --paper-alt-2: #0d0914;
+  --paper-alt-3: #07050a;
+  --paper-alt-4: #0c0810;
+--yellow: #ffd23f;
+  --ink: #f7f0f2;
+  --ink-soft: #cfc8d5;
+  --ink-mute: #9f97a8;
+
+  --marker: #ff6b20;
+  --marker-light: #ff9e36;
+  --marker-deep: #ed3417;
+
+  --card-bg: linear-gradient(155deg, rgba(255, 255, 255, 0.055), rgba(255, 107, 32, 0.03));
+  --card-line: rgba(255, 255, 255, 0.09);
+
+  --font-head: "Space Grotesk", sans-serif;
+  --font-hand: "Kalam", cursive;
+
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-head);
+}
+
+/* faint grid + orange margin rule, dark-paper version */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 34px),
+    linear-gradient(90deg, transparent 63px, rgba(255, 107, 32, 0.3) 63px 64.5px, transparent 65px);
+  z-index: 0;
+}
+
+.hero, .aboutSection, .journeySection, .monthlySection, .posterSection {
+  position: relative;
+  z-index: 1;
+}
+
+.heroInner, .sectionInner, .posterInner, .finalCtaInner {
+  width: min(1160px, calc(100% - 3rem));
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+  background: var(--paper);
+  border-bottom: 1px solid rgba(255, 107, 32, 0.18);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  right: -8rem;
+  top: -10rem;
+  background: radial-gradient(circle, rgba(255, 107, 32, 0.16), transparent 65%);
+  filter: blur(10px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.tape {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: #2b1400;
+  background: linear-gradient(100deg, #ffcf8c, var(--marker-light));
+  padding: 0.3rem 1rem;
+  transform: rotate(-1.6deg);
+  box-shadow: 0 4px 14px rgba(255, 107, 32, 0.25);
+}
+
+.headlineWrap { position: relative; display: inline-block; margin: 1.1rem 0 1.6rem; }
+.headline {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 9vw, 6.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 0;
+  background: linear-gradient(105deg, #ffad3d, #ff651d 50%, var(--marker-deep));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.headlineMark { display: block; width: 100%; height: 22px; margin-top: -6px; }
+
+.tagRow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.2rem 0.4rem; margin-bottom: 1.6rem; }
+.tagChip {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border: 1.5px solid rgba(247, 240, 242, 0.45);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
+}
+.tagChip[data-i="1"] { transform: rotate(-2deg); }
+.tagChip[data-i="2"] { transform: rotate(1.4deg); border-color: var(--marker); color: var(--marker-light); background: rgba(255, 107, 32, 0.08); }
+.tagChip[data-i="3"] { transform: rotate(-1deg); }
+.tagArrow { width: 2.2rem; height: 1.4rem; flex-shrink: 0; color: var(--ink-soft); }
+
+.heroLead { max-width: 60ch; color: var(--ink-soft); font-size: clamp(1rem, 1.6vw, 1.15rem); line-height: 1.75; margin: 0 0 1.8rem; }
+
+.heroActions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin-bottom: 1.6rem; }
+
+.stampButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0.7rem 1.7rem;
+  border: 2.5px solid var(--marker);
+  border-radius: 999px 6px 999px 6px / 6px 999px 6px 999px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.92rem;
+  color: var(--marker-light);
+  background: rgba(255, 107, 32, 0.06);
+  box-shadow: 0 10px 30px rgba(255, 98, 24, 0.18);
+  transform: rotate(-2deg);
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.stampButton::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--marker);
+  border-radius: inherit;
+  opacity: 0.5;
+}
+.stampButton:hover {
+  transform: rotate(0deg);
+  background: linear-gradient(110deg, var(--marker), var(--marker-light));
+  color: #140600;
+  box-shadow: 0 14px 42px rgba(255, 98, 24, 0.4);
+  border-color: transparent;
+}
+.stampButtonLight { border-color: var(--marker-light); color: var(--marker-light); }
+.stampButtonLight:hover { background: linear-gradient(110deg, var(--marker-light), var(--marker)); color: #140600; }
+
+.inkLink {
+  font-family: var(--font-head);
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+  padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.inkLink:hover { color: var(--marker-light); border-color: var(--marker-light); }
+
+.quote { font-family: var(--font-hand); font-size: 1.15rem; font-style: italic; color: var(--ink-mute); transform: rotate(-0.6deg); }
+
+.heroArt { position: relative; padding-top: 1rem; }
+.noteCard {
+  position: relative;
+  background: var(--card-bg), var(--paper-alt-2);
+  border: 1px solid var(--card-line);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  padding: 1.8rem 1.6rem 1.4rem;
+  transform: rotate(2deg);
+}
+.doodle { width: 100%; height: auto; }
+.doodle path:nth-child(1),
+.doodle path:nth-child(2) { stroke: var(--yellow); }   /* bulb outline + base lines */
+.doodle path:nth-child(3) { stroke: var(--marker); }
+.noteLabel { display: block; margin-top: 0.6rem; font-family: var(--font-hand); font-size: 1rem; color: var(--ink-soft); text-align: center; }
+
+.pin {
+  position: absolute;
+  top: -10px; left: 50%;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 32%, #ffe2bb, var(--marker));
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+}
+.pin[data-c="teal"] { background: radial-gradient(circle at 32% 32%, #fff1d8, var(--marker-light)); }
+
+.tapeCorner {
+  position: absolute;
+  width: 60px; height: 22px;
+  background: repeating-linear-gradient(135deg, rgba(255, 207, 140, 0.9) 0 6px, rgba(255, 158, 54, 0.7) 6px 12px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0.95;
+}
+.tapeTL { top: -10px; left: 14px; transform: rotate(-8deg); }
+.tapeTR { top: -10px; right: 14px; transform: rotate(7deg); }
+
+/* ---------- about ---------- */
+.aboutSection {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: linear-gradient(180deg, var(--paper-alt), var(--paper-alt-2));
+}
+
+.tab {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--marker-light);
+  border: 1.5px dashed var(--marker);
+  padding: 0.25rem 0.9rem;
+  margin-bottom: 1.6rem;
+  transform: rotate(-1deg);
+}
+
+.aboutGrid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 6vw, 5rem); }
+.aboutLead { font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.5; font-weight: 500; color: var(--ink); }
+.highlight {
+  background-image: linear-gradient(100deg, rgba(255, 107, 32, 0.32) 0%, rgba(255, 107, 32, 0.32) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.55em;
+  background-position: 0 78%;
+  padding: 0 0.1em;
+  color: var(--ink);
+}
+.aboutCopy p { font-size: 1.02rem; line-height: 1.85; color: var(--ink-soft); }
+.aboutCopy p + p { margin-top: 1.1rem; }
+
+/* ---------- journey ---------- */
+.journeySection {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: var(--paper-alt-3);
+  scroll-margin-top: 90px;
+}
+.journeyHeading { font-size: clamp(1.9rem, 4vw, 2.8rem); max-width: 22ch; margin: 0 0 2.6rem; letter-spacing: -0.02em; color: var(--ink); }
+
+.journeyTrack { display: flex; align-items: center; }
+.journeyItem { display: flex; align-items: center; flex: 1; }
+.journeyCard {
+  position: relative;
+  flex: 1;
+  background: var(--card-bg), var(--paper-alt-2);
+  border: 1px solid var(--card-line);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  padding: 1.7rem 1.5rem 1.6rem;
+  min-height: 210px;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.journeyCard:hover { border-color: rgba(255, 107, 32, 0.4); }
+.journeyCard[data-i="1"] { transform: rotate(-1.6deg); }
+.journeyCard[data-i="2"] { transform: rotate(1.2deg); }
+.journeyCard[data-i="3"] { transform: rotate(-0.8deg); }
+
+.cardTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+.cardTab { font-family: var(--font-hand); font-size: 1.2rem; color: var(--marker-light); }
+.cardIcon { font-size: 1.5rem; color: var(--marker); }
+.journeyCard h3 { font-size: 1.3rem; margin: 0 0 0.6rem; color: var(--ink); }
+.journeyCard p { font-size: 0.98rem; line-height: 1.7; color: var(--ink-soft); }
+
+.connector { width: 3.4rem; height: 2.2rem; flex-shrink: 0; color: var(--marker); }
+
+/* ---------- monthly ---------- */
+.monthlySection {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: var(--paper-alt-3);
+}
+
+.monthlyCard {
+  position: relative;
+  width: min(920px, calc(100% - 3rem));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.8rem, 5vw, 3rem);
+  padding: clamp(1.8rem, 4vw, 2.4rem) clamp(2rem, 6vw, 3.2rem);
+  background: var(--card-bg), var(--paper-alt-2);
+  border: 1px dashed rgba(255, 107, 32, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+/* die-cut ticket notches */
+.monthlyCard::before,
+.monthlyCard::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  background: var(--paper-alt-3);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.monthlyCard::before { left: -13px; }
+.monthlyCard::after { right: -13px; }
+
+.monthlyDivider {
+  align-self: stretch;
+  width: 0;
+  flex-shrink: 0;
+  border-left: 2px dashed rgba(255, 107, 32, 0.35);
+}
+
+.stampBadge {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px double var(--marker);
+  display: grid;
+  place-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  transform: rotate(-8deg);
+  color: var(--marker-light);
+  background: rgba(255, 107, 32, 0.07);
+  box-shadow: 0 0 34px rgba(255, 107, 32, 0.14);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  padding: 0 0.6rem;
+}
+.stampIcon { font-size: 1.3rem; }
+
+.monthlyNote {
+  font-family: var(--font-hand);
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+.monthlyNote strong { color: var(--marker-light); }
+
+@media (max-width: 700px) {
+  .monthlyCard {
+    flex-direction: column;
+    text-align: center;
+    padding-block: 2.2rem;
+  }
+  .monthlyDivider {
+    align-self: auto;
+    width: 60%;
+    border-left: none;
+    border-top: 2px dashed rgba(255, 107, 32, 0.35);
+  }
+  .monthlyCard::before { top: -13px; left: 50%; transform: translate(-50%, 0); }
+  .monthlyCard::after { top: auto; bottom: -13px; left: 50%; right: auto; transform: translate(-50%, 0); }
+}
+/* ---------- poster ---------- */
+.posterSection {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: linear-gradient(180deg, var(--paper-alt-3), var(--paper-alt-4));
+}
+.posterInner { display: grid; grid-template-columns: 0.85fr minmax(280px, 0.55fr); gap: clamp(2.5rem, 8vw, 6rem); align-items: center; }
+.posterCopy h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 0.6rem 0 1rem; color: var(--ink); }
+.posterCopy p { font-size: 1.02rem; line-height: 1.8; color: var(--ink-soft); max-width: 46ch; margin-bottom: 1.2rem; }
+
+.posterFrame {
+  position: relative;
+  background: var(--card-bg), var(--paper-alt-2);
+  border: 1px solid var(--card-line);
+  padding: 0.6rem 0.6rem 1rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  transform: rotate(-2.4deg);
+  margin: 0;
+}
+.posterFrame img { width: 100%; height: auto; display: block; }
+.posterFrame figcaption { text-align: center; font-family: var(--font-hand); font-size: 1rem; color: var(--ink-mute); padding-top: 0.6rem; }
+
+/* ---------- final cta ---------- */
+.finalCta {
+  position: relative;
+  padding: clamp(4.5rem, 9vw, 7rem) 1.5rem clamp(3.5rem, 7vw, 5rem);
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255, 107, 32, 0.18), transparent 45%),
+    var(--paper);
+  border-top: 1px solid rgba(255, 107, 32, 0.15);
+  color: var(--ink);
+}
+.finalCta::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 26px;
+  background: var(--paper-alt-4);
+  clip-path: polygon(0% 0%, 4% 100%, 9% 20%, 14% 100%, 19% 10%, 25% 100%, 31% 25%, 37% 100%,
+    43% 5%, 49% 100%, 55% 20%, 61% 100%, 67% 10%, 73% 100%, 79% 25%, 85% 100%,
+    91% 15%, 96% 100%, 100% 0%);
+}
+.finalCtaInner { display: grid; justify-items: center; gap: 0.5rem; }
+.finalNote { font-family: var(--font-hand); font-size: 1.2rem; color: var(--ink-soft); }
+.finalCta h2 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin: 0 0 1.6rem; letter-spacing: -0.02em; color: var(--marker-light); }
+
+/* ---------- motion ---------- */
+.headline, .tape, .tagChip, .noteCard { animation: settle 700ms ease both; }
+.tape { animation-delay: 0ms; }
+.headline { animation-delay: 90ms; }
+.tagChip[data-i="1"] { animation-delay: 220ms; }
+.tagChip[data-i="2"] { animation-delay: 300ms; }
+.tagChip[data-i="3"] { animation-delay: 380ms; }
+.noteCard { animation-delay: 260ms; }
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(10px) rotate(0deg); }
+  to { opacity: 1; }
+}
+
+.stampButton:focus-visible, .inkLink:focus-visible {
+  outline: 2px solid var(--marker-light);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headline, .tape, .tagChip, .noteCard, .stampButton, .journeyCard { animation: none; transition: none; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .heroInner, .aboutGrid, .posterInner { grid-template-columns: 1fr; }
+  .heroArt { justify-self: center; width: min(360px, 90vw); }
+  .journeyTrack { flex-direction: column; align-items: stretch; }
+  .journeyItem { flex-direction: column; }
+  .connector { transform: rotate(90deg); margin-block: 0.4rem; }
+  .posterFrame { width: min(420px, 100%); justify-self: center; }
+  .posterCopy { text-align: center; }
+  .posterCopy p { margin-inline: auto; }
+}
+
+@media (max-width: 560px) {
+  .page { padding-top: 64px; }
+  .page::before { background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 30px); }
+  .heroInner, .sectionInner, .posterInner { width: min(100% - 2rem, 1160px); }
+  .headline { font-size: clamp(2.6rem, 15vw, 3.6rem); }
+  .heroActions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .monthlyWrap { flex-direction: column; text-align: center; }
+}

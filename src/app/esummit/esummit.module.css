@@ -309,3 +309,12 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+/* Final E-Summit flagship layer */
+.page{padding-top:80px;background:#070706;color:var(--paper-100)}.page::before{color:rgba(255,100,39,.025)}
+.hero{padding:clamp(5rem,10vw,9rem) var(--content-gutter);background:radial-gradient(circle at 78% 18%,rgba(255,92,28,.15),transparent 27rem),#060606}.heroGrid{width:min(var(--content-width),100%);margin:auto;gap:clamp(2rem,6vw,6rem)}
+.eyebrow{color:var(--flame-400)}.heroTitle{margin:.65rem 0 1.3rem;font-size:clamp(3.8rem,8vw,8rem);line-height:.87;letter-spacing:-.065em}.heroSubtitle{max-width:720px;color:#aaa097;font-size:clamp(1rem,1.4vw,1.18rem)}
+.highlightCard,.heroCard,.card,.winnerCard,.eventCard,.photoBox{border-color:rgba(255,255,255,.085);border-radius:var(--radius-lg);background:#0d0c0b}.highlightLabel,.eventTag,.metaLabel{color:var(--flame-400)}.highlightValue,.metaValue{color:#eee6de}
+.section,.sectionAlt{padding:clamp(4rem,8vw,7rem) var(--content-gutter);background:#070706;border-top:1px solid rgba(255,180,109,.1)}.sectionAlt{background:#0a0908}.sectionTitle{width:min(var(--content-width),100%);margin-inline:auto;font-size:clamp(2.6rem,5.6vw,5.3rem)}.sectionText,.gridTwo,.winnerGrid,.eventGrid,.photoGrid{width:min(var(--content-width),100%);margin-inline:auto}.sectionText{color:#aaa097}.card:hover,.winnerCard:hover,.eventCard:hover,.photoBox:hover{border-color:rgba(255,130,67,.36);transform:translateY(-4px);box-shadow:var(--shadow-card)}
+.chip{border-color:rgba(255,180,109,.18);color:#d9d0c7;background:rgba(255,100,39,.05)}.photoBox{color:#a59b92;background:linear-gradient(145deg,rgba(255,100,39,.055),rgba(255,255,255,.015))}
+@media(max-width:700px){.page{padding-top:70px}.heroTitle{font-size:clamp(3.3rem,16vw,5.2rem)}}

@@ -20,7 +20,6 @@ const members = [
     image: "https://pub-d9e37e07152c4e608d951985e3cf2832.r2.dev/Our%20Team/yogesh%20khinchi%201.png",
   },
 ];
-
 export default function ContactUs() {
   return (
     <section className={styles.contactSection}>
@@ -42,6 +41,8 @@ export default function ContactUs() {
                 width={120}
                 height={120}
                 className={styles.memberImage}
+                loading="lazy"
+                unoptimized
               />
             </div>
             <p className={styles.memberRole}>{member.role}</p>
