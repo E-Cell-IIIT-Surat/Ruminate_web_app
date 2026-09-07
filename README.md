@@ -92,12 +92,12 @@ Cloudflare recommends attaching a domain you control to an R2 bucket to serve ob
 6. Set this in local and production environments:
 
 ```env
-NEXT_PUBLIC_MEDIA_BASE_URL=https://media.ecelliiitsurat.in
+NEXT_PUBLIC_MEDIA_BASE_URL=
 R2_ACCOUNT_ID=<Cloudflare account id>
 R2_ACCESS_KEY_ID=<R2 API token access key>
 R2_SECRET_ACCESS_KEY=<R2 API token secret>
 R2_BUCKET_NAME=website-images
-R2_PUBLIC_BASE_URL=https://media.ecelliiitsurat.in
+R2_PUBLIC_BASE_URL=
 R2_GALLERY_PREFIX=
 R2_GALLERY_EXCLUDE_PREFIXES=
 ```
