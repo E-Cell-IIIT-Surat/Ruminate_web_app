@@ -20,7 +20,7 @@ export default function ContactForm() {
         type="email"
         name="email"
         className={styles.input}
-        placeholder="you@domain.com"
+        placeholder="ruminate.ecelliiitsurat.ac.in"
         aria-label="Email address"
         required
       />
